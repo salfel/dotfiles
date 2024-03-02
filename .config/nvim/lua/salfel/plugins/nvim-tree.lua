@@ -13,12 +13,11 @@ return {
                 group_empty = true
             },
             filters = {
-                dotfiles = true
+                dotfiles = false
             }
         })
 
         vim.keymap.set("n", "<leader>n", ':NvimTreeFindFileToggle<CR>')
-        vim.keymap.set("n", "<leader>N", ':NvimTreeFindFile<CR>')
 
         local api = require("nvim-tree.api")
         local Event = api.events.Event
