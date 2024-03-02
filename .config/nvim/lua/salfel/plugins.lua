@@ -25,7 +25,8 @@ require("lazy").setup(requirePlugins({
     "gitsigns",
     "floaterm",
     "dashboard",
-    "luasnip"
+    "luasnip",
+    "silicon"
 }, {
     "tpope/vim-surround",
     "tpope/vim-commentary",
