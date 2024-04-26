@@ -120,6 +120,7 @@ return {
         vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
         vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>")
         vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>")
+        vim.keymap.set("n", "gl", ":lua vim.diagnostic.open_float()<CR>")
         vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { silent = true })
         vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
         vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
