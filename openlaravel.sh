@@ -5,6 +5,11 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+if ! [ -d ~/Code/$1 ]; then
+    echo "Project does not exist"
+    exit 1
+fi
+
 tmux new-session -d -s $1
 tmux send-keys -t $1:1 'cd ~/Code/'$1 C-m
 tmux send-keys -t $1:1 'nvim' C-m
