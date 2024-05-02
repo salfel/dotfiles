@@ -29,7 +29,8 @@ require("lazy").setup(requirePlugins({
     "silicon",
     "none-ls",
     "indent-blankline",
-    "neogit"
+    "neogit",
+    "copilotchat"
 }, {
     "tpope/vim-surround",
     "tpope/vim-commentary",
