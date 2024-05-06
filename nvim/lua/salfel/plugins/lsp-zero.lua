@@ -25,7 +25,7 @@ return {
             end
         })
 
-        local lsps = { "tsserver", "tailwindcss", "templ", "gopls", "golangci_lint_ls", "htmx", "html", "lua_ls",
+        local lsps = { "tsserver", "tailwindcss", "templ", "gopls", "golangci_lint_ls", "html", "lua_ls",
             "pyright", "biome", "intelephense", "phpactor" }
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
