@@ -8,11 +8,22 @@ return {
             sources = {
                 null_ls.builtins.formatting.gofmt,
                 null_ls.builtins.formatting.goimports,
-                null_ls.builtins.formatting.biome,
-                null_ls.builtins.formatting.pint,
+                null_ls.builtins.formatting.biome.with({
+                    condition = function(utils)
+                        return utils.root_has_file("biome.json")
+                    end
+                }),
+                null_ls.builtins.formatting.pint.with({
+                    condition = function(utils)
+                        return utils.root_has_file("vendor/bin/pint")
+                    end
+                }),
                 null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.prettier.with({
-                    extra_filetypes = { "astro" }
+                    extra_filetypes = { "astro" },
+                    condition = function(utils)
+                        return utils.root_has_file(".prettierrc")
+                    end
                 })
             },
             on_attach = function(client, bufnr)

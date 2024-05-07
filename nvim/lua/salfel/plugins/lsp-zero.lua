@@ -79,10 +79,10 @@ return {
                         filetypes = { "php", "blade" },
                     })
                 end,
-                ["phpactor"] = function ()
+                ["phpactor"] = function()
                     require('lspconfig').phpactor.setup({
                         capabilities = capabilities,
-                        on_attach = function(client, bufnr)
+                        on_attach = function(client, _)
                             client.server_capabilities.completionProvider = false
                             client.server_capabilities.hoverProvider = false
                             client.server_capabilities.implementationProvider = false
