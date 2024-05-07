@@ -10,6 +10,10 @@ return {
                 null_ls.builtins.formatting.goimports,
                 null_ls.builtins.formatting.biome,
                 null_ls.builtins.formatting.pint,
+                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.prettier.with({
+                    extra_filetypes = { "astro" }
+                })
             },
             on_attach = function(client, bufnr)
                 if client.supports_method("textDocument/formatting") then
@@ -21,7 +25,7 @@ return {
                         group = augroup,
                         buffer = bufnr,
                         callback = function()
-                            vim.lsp.buf.format({ bufnr = bufnr })
+                            vim.lsp.buf.format({ async = false })
                         end
                     })
                 end
