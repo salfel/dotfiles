@@ -11,7 +11,7 @@ ln -s $SCRIPT_DIR/kitty $HOME/.config/kitty
 ln -s $SCRIPT_DIR/tmux $HOME/.config/tmux
 ln -s $SCRIPT_DIR/.zshrc $HOME/.zshrc
 ln -s $SCRIPT_DIR/.p10k.zsh $HOME/.p10k.zsh
-ln -s $SCRIPT_DIR/openlaravel.sh $HOME/.local/bin/openlaravel
+ln -s $SCRIPT_DIR/openproject.sh $HOME/.local/bin/openproject
 
 # Neovim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
