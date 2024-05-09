@@ -1,7 +1,13 @@
 #!/bin/bash
 
+storeFile=~/.openproject
+
 stack=$1
 project=$2
+
+if [ -f ~/.openproject ]; then
+    IFS=',' read -r stack project < ~/.openproject
+fi
 
 if [ -z "$stack" ]; then
     echo "Please provide the stack name"
@@ -44,3 +50,5 @@ elif [ $stack = "astro" ]; then
 
     tmux attach-session -t $project:1
 fi
+
+echo "$stack,$project" > $storeFile
