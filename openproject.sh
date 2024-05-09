@@ -20,16 +20,16 @@ fi
 
 if [ $stack = "laravel" ]; then
     tmux new-session -d -s $project
-    tmux send-keys -t $project:1 'cd ~/Code/'$1 C-m
+    tmux send-keys -t $project:1 'cd ~/Code/'$project C-m
     tmux send-keys -t $project:1 'nvim' C-m
     tmux new-window
     tmux send-keys -t $project:2 'cd ~/Code/'$1 C-m
     tmux send-keys -t $project:2 'artisan octane:start --watch' C-m
-    tmux split-window -v -t $1:2
-    tmux send-keys -t $project:2 'cd ~/Code/'$1 C-m
+    tmux split-window -v -t $project:2
+    tmux send-keys -t $project:2 'cd ~/Code/'$project C-m
     tmux send-keys -t $project:2 'bun run dev' C-m
     tmux new-window
-    tmux send-keys -t $project:3 'cd ~/Code/'$1 C-m
+    tmux send-keys -t $project:3 'cd ~/Code/'$project C-m
 
     tmux attach-session -t $project:1
 elif [ $stack = "astro" ]; then
@@ -39,8 +39,8 @@ elif [ $stack = "astro" ]; then
     tmux new-window
     tmux send-keys -t $project:2 'cd ~/Code/'$project C-m
     tmux send-keys -t $project:2 'bun run dev' C-m
-    tmux split-window -v -t $1:2
-    tmux send-keys -t $project:3 'cd ~/Code/'$project C-m
+    tmux split-window -v -t $project:2
+    tmux send-keys -t $project:2 'cd ~/Code/'$project C-m
 
     tmux attach-session -t $project:1
 fi
