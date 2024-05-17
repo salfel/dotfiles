@@ -135,4 +135,5 @@ export PATH="$BUN_INSTALL/bin:$PATH:$HOME/.local/bin:$HOME/go/bin:$GOROOT/bin:/u
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.p10k.zsh.
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin
+export TERMINAL=kitty

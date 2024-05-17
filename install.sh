@@ -59,3 +59,5 @@ bun install -g tailwindcss
 go install github.com/a-h/templ/cmd/templ@latest
 go install github.com/cosmtrek/air@latest
 
+ln -sf $SCRIPT_DIR/i3 $HOME/.config/i3
+ln -sf $SCRIPT_DIR/i3blocks $HOME/.config/i3blocks
