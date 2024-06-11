@@ -58,8 +58,3 @@ bun install -g tailwindcss
 # Go Packages
 go install github.com/a-h/templ/cmd/templ@latest
 go install github.com/cosmtrek/air@latest
-
-ln -sf $SCRIPT_DIR/i3 $HOME/.config/i3
-ln -sf $SCRIPT_DIR/networkmanager_dmnu $HOME/.local/bin/networkmanager_dmnu
-ln -sf $SCRIPT_DIR/networkmanager-dmenu $HOME/.config/networkmanager-dmenu
-ln -sf $SCRIPT_DIR/polybar $HOME/.config/polybar
