@@ -1,6 +1,6 @@
-#! /usr/bin/zsh
+#! /usr/bin/bash
 
-sudo dnf install -y git curl make gcc cmake zsh stow ripgrep fzf rustup golang 
+sudo apt install -y git curl make gcc cmake zsh stow ripgrep fzf rustup golang 
 
 mkdir $HOME/.local/bin
 
