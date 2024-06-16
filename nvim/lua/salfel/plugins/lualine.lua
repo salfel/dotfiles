@@ -10,7 +10,8 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch", "diff" },
                 lualine_c = { "diagnostics" },
-                lualine_x = { "filetype" },
+                lualine_x = { "filename" },
+                lualine_y = { "filetype" }
             }
         })
     end
