@@ -15,24 +15,14 @@ return {
 
         null_ls.setup({
             sources = {
-                null_ls.builtins.formatting.gofmt.with({
-                    condition = function(utils)
-                        return checkRoot(utils, { "go.mod" })
-                    end
-                }),
-                null_ls.builtins.formatting.goimports.with({
-                    condition = function(utils)
-                        return checkRoot(utils, { "go.mod" })
-                    end
-                }),
                 null_ls.builtins.formatting.biome.with({
                     condition = function(utils)
                         return utils.root_has_file("biome.json")
-                    end
+                    end,
                 }),
                 null_ls.builtins.formatting.pint.with({
                     condition = function(utils)
-                        return checkRoot(utils, { ".pint.json" })
+                        return checkRoot(utils, { "pint.json" })
                     end
                 }),
                 null_ls.builtins.formatting.stylua,

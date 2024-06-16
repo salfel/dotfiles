@@ -1,46 +1,27 @@
-local function requirePlugins(plugins, finalPlugins)
-    local newTable = {}
+local utils = require("salfel/utils")
 
-    for _, value in pairs(plugins) do
-        table.insert(newTable, require("salfel/plugins/" .. value))
-    end
-
-    for _, value in pairs(finalPlugins) do
-        table.insert(newTable, value)
-    end
-
-    return newTable
-end
-
-require("lazy").setup(requirePlugins({
+local plugins = utils.requirePlugins({
     "which-key",
-    "catppuccin",
     "telescope",
-    "nvim-tree",
+    "rose-pine",
+    "oil",
     "lualine",
-    "treesitter",
-    "bufferline",
-    "bufdelete",
-    "lsp-zero",
     "gitsigns",
-    "floaterm",
-    "dashboard",
-    "luasnip",
-    "silicon",
+    "treesitter",
+    "lsp-zero",
+    "rustaceanvim",
     "none-ls",
-    "indent-blankline",
-    "neogit",
     "copilotchat"
 }, {
     "tpope/vim-surround",
-    "tpope/vim-commentary",
-    { "windwp/nvim-autopairs", config = true},
+    { "windwp/nvim-autopairs",               config = true },
     "farmergreg/vim-lastplace",
-    "ku1ik/vim-pasta",
-    "lewis6991/gitsigns.nvim",
-    "tpope/vim-unimpaired",
-    "github/copilot.vim",
     "christoomey/vim-tmux-navigator",
-    "tpope/vim-fugitive",
-    "alvan/vim-closetag"
-}))
+    "alvan/vim-closetag",
+    "ku1ik/vim-pasta",
+    "tpope/vim-unimpaired",
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    "github/copilot.vim",
+})
+
+require("lazy").setup(plugins)

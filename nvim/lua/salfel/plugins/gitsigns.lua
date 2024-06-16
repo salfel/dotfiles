@@ -3,14 +3,17 @@ return {
     config = function()
         require('gitsigns').setup({
             on_attach = function (bufnr)
-                local gs = require('gitsigns')
+                local gs = require("gitsigns")
+                local wk = require("which-key")
 
-                local function opts(desc)
-                    return { buffer = bufnr, desc = desc}
-                end
-                vim.keymap.set("n", "<leader>ph", gs.preview_hunk, opts "preview hunk")
-                vim.keymap.set("n", "<leader>rh", gs.reset_hunk, opts "reset hunk")
-                vim.keymap.set("n", "<leader>gb", gs.blame_line, opts "Blame hunk")
+                wk.register({
+                    h = {
+                        name = "Git hunks",
+                        p = { gs.preview_hunk, "Preview Hunk" },
+                        r = { gs.reset_hunk, "Reset Hunk" },
+                        b = { gs.blame_line, "Blame Hunk" }
+                    }
+                }, { prefix = "<leader>" } )
             end
         })
     end

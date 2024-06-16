@@ -1,47 +1,48 @@
 return {
-	"nvim-telescope/telescope.nvim", tag = '0.1.5',
-	dependencies = {
-        "nvim-lua/plenary.nvim",
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
     },
-	config = function()
-        local actions = require('telescope.actions')
+    config = function()
+        local actions = require("telescope.actions")
 
-        require('telescope').setup({
+        require("telescope").setup({
             defaults = {
-                file_ignore_patterns = { "node_modules", "vendor", ".git" },
-                layout_config = {
-                    prompt_position = 'top'
-                },
-                sorting_strategy = 'ascending',
+                file_ignore_patterns = { "node_modules", "vendor", ".git/" },
                 mappings = {
                     i = {
-                        ['<esc>'] = actions.close
+                        ["<esc>"] = actions.close
                     }
-                },
+                }
             },
             pickers = {
                 find_files = {
                     hidden = true,
-                    no_ignore = true
+                },
+                oldfiles = {
+                    prompt_title = "History"
+                }
+            },
+            extensions = {
+                fzf = {
+                    fuzzy = true
                 }
             }
         })
 
-        require("telescope").load_extension("fzf")
-
-		local builtin = require('telescope.builtin')
-
         local wk = require("which-key")
+        local builtin = require("telescope.builtin")
+
         wk.register({
             f = {
-                name = "Telescope",
-                f = { builtin.find_files, "Find Files" },
-                g = { builtin.live_grep, "Live Grep" },
-                b = { builtin.buffers, "Buffers" },
-                h = { builtin.oldfiles, "History" },
-                s = { builtin.lsp_workspace_symbols, "Workspace Symbols" },
+                name = "Telescope | Find",
+                f = { function() builtin.find_files() end, "Find Files" },
+                h = { function() builtin.oldfiles() end, "History" },
+                g = { function() builtin.live_grep() end, "Live Grep" },
+                s = { function() builtin.lsp_workspace_symbols() end, "Lsp Symbols" }
             }
-        }, { prefix = "<leader>"})
-	end
+        }, { prefix = "<leader>" })
+    end
 }

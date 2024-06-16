@@ -8,7 +8,7 @@ return {
     opts = {
         debug = true
     },
-    config = function ()
+    config = function()
         require("CopilotChat").setup()
         local wk = require("which-key")
         wk.register({
@@ -16,6 +16,6 @@ return {
                 name = "Copilot",
                 c = { "<cmd>CopilotChat<cr>", "Open Copilot Chat" }
             }
-        }, { prefix = "<leader>"})
+        }, { prefix = "<leader>" })
     end
 }
