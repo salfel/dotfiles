@@ -11,7 +11,8 @@ local plugins = utils.requirePlugins({
     "lsp-zero",
     "rustaceanvim",
     "none-ls",
-    "copilotchat"
+    "copilotchat",
+    "bufdelete",
 }, {
     "tpope/vim-surround",
     { "windwp/nvim-autopairs",               config = true },
