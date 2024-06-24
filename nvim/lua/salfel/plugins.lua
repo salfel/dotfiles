@@ -11,8 +11,8 @@ local plugins = utils.requirePlugins({
     "lsp-zero",
     "rustaceanvim",
     "none-ls",
-    "copilotchat",
     "bufdelete",
+    "supermaven"
 }, {
     "tpope/vim-surround",
     { "windwp/nvim-autopairs",               config = true },
@@ -22,7 +22,6 @@ local plugins = utils.requirePlugins({
     "ku1ik/vim-pasta",
     "tpope/vim-unimpaired",
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    "github/copilot.vim",
 })
 
 require("lazy").setup(plugins)
