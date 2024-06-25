@@ -4,6 +4,7 @@ local plugins = utils.requirePlugins({
     "which-key",
     "telescope",
     "rose-pine",
+    "kanagawa",
     "oil",
     "lualine",
     "gitsigns",
