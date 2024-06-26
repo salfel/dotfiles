@@ -42,7 +42,8 @@ return {
                 f = { function() builtin.find_files() end, "Find Files" },
                 h = { function() builtin.oldfiles() end, "History" },
                 g = { function() builtin.live_grep() end, "Live Grep" },
-                s = { function() builtin.lsp_workspace_symbols() end, "Lsp Symbols" }
+                b = { function() builtin.buffers() end, "Buffers" },
+                s = { function() builtin.lsp_workspace_symbols() end, "Lsp Symbols" },
             }
         }, { prefix = "<leader>" })
     end
