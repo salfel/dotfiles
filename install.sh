@@ -9,6 +9,9 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ln -s $SCRIPT_DIR/nvim $HOME/.config/nvim
 ln -s $SCRIPT_DIR/kitty $HOME/.config/kitty
 ln -s $SCRIPT_DIR/tmux $HOME/.config/tmux
+ln -s $SCRIPT_DIR/i3 $HOME/.config/i3
+ln -s $SCRIPT_DIR/polybar $HOME/.config/polybar
+ln -s $SCRIPT_DIR/spicetify $HOME/.config/spicetify
 ln -s $SCRIPT_DIR/.zshrc $HOME/.zshrc
 ln -s $SCRIPT_DIR/.p10k.zsh $HOME/.p10k.zsh
 ln -s $SCRIPT_DIR/openproject.sh $HOME/.local/bin/openproject
