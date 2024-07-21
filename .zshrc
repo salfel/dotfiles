@@ -137,3 +137,5 @@ export PATH="$BUN_INSTALL/bin:$PATH:$HOME/.local/bin:$HOME/go/bin:$GOROOT/bin:/u
 [[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
 export PATH=$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin
 export TERMINAL=kitty
+
+export PATH=$PATH:/home/salfel/.spicetify
