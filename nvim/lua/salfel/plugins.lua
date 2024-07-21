@@ -3,8 +3,8 @@ local utils = require("salfel/utils")
 local plugins = utils.requirePlugins({
     "which-key",
     "telescope",
-    "rose-pine",
-    "kanagawa",
+    "catppuccin",
+    "bufferline",
     "oil",
     "lualine",
     "gitsigns",
@@ -13,7 +13,7 @@ local plugins = utils.requirePlugins({
     "rustaceanvim",
     "none-ls",
     "bufdelete",
-    "supermaven"
+    -- "supermaven"
 }, {
     "tpope/vim-surround",
     { "windwp/nvim-autopairs",               config = true },
