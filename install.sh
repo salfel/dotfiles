@@ -61,3 +61,15 @@ bun install -g tailwindcss
 # Go Packages
 go install github.com/a-h/templ/cmd/templ@latest
 go install github.com/cosmtrek/air@latest
+
+# Spicetify
+curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh | sh
+
+## Spicetify config
+ln -s ~/.config/spicetify/Themes/catppuccin ~/.spicetify/Themes
+
+sudo chmod a+wr /var/lib/flatpak/app/com.spotify.Client/x86_64/stable/active/files/extra/share/spotify/
+
+spicetify config extensions adBlock.js
+spicetify config extensions fullAppDisplay.js
+spicetify apply
