@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-sudo apt install -y git curl make gcc cmake zsh stow ripgrep fzf rustup golang 
+sudo apt install -y git curl make gcc cmake zsh stow ripgrep fzf rustup golang playerctl 
 
 mkdir $HOME/.local/bin
 
