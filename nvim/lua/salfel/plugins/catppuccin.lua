@@ -1,5 +1,6 @@
 return {
-    "catppuccin/nvim", name = "catppuccin",
+    "catppuccin/nvim",
+    name = "catppuccin",
     config = function()
         require("catppuccin").setup({
             integrations = {
@@ -11,7 +12,8 @@ return {
                 treesitter_context = true,
                 treesitter = true,
                 nvimtree = true,
-            }
+            },
+            transparent_background = true
         })
 
         vim.cmd("colorscheme catppuccin-mocha")
