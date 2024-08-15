@@ -139,3 +139,11 @@ export PATH=$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin:~/.cargo/bin
 export TERMINAL=kitty
 
 export PATH=$PATH:/home/salfel/.spicetify
+
+# pnpm
+export PNPM_HOME="/home/salfel/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
