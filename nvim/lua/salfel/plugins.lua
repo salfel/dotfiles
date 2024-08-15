@@ -13,6 +13,7 @@ local plugins = utils.requirePlugins({
     "rustaceanvim",
     "none-ls",
     "bufdelete",
+    "lazydev",
     -- "supermaven"
 }, {
     "tpope/vim-surround",
