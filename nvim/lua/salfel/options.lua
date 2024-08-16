@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 vim.g.localmapleader = ' '
 
+vim.opt.relativenumber = true
+
 vim.opt.termguicolors = true
 
 vim.opt.expandtab = true
