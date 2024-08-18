@@ -1,0 +1,108 @@
+final_space = true
+version = 2
+
+[palette]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+
+# Backgrounds for each segment
+os = "p:green"
+path = "p:blue"
+git = "p:maroon"
+
+execution = "p:peach"
+time = "p:yellow"
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+
+  [[blocks.segments]]
+  type = "os"
+  style = "diamond"
+  trailing_diamond = ""
+  foreground = "black"
+  background = "p:os"
+  template = " {{ .Icon }} "
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+
+  [[blocks.segments]]
+  type = "path"
+  style = "powerline"
+  powerline_symbol = ""
+  foreground = "black"
+  background = "p:path"
+
+    [blocks.segments.properties]
+    style = "full"
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+  
+  [[blocks.segments]]
+  type = "git"
+  style = "accordion"
+  foreground = "black"
+  background = "p:git"
+  template = " {{ .HEAD }} {{ .BranchStatus }} "
+  powerline_symbol = ""
+
+    [blocks.segments.properties]
+    branch_icon = " "
+    cherry_pick_icon = " "
+    commit_icon = " "
+    fetch_status = true
+    merge_icon = " "
+    no_commits_icon = " "
+    rebase_icon = " "
+    revert_icon = " "
+    tag_icon = " "
+
+[[blocks]]
+alignment = "right"
+type = "prompt"
+
+  [[blocks.segments]]
+  type = "time"
+  style = "diamond"
+  foreground = "black"
+  background = "p:time"
+  leading_diamond = ""
+
+[[blocks]]
+alignment = "left"
+type = "prompt"
+newline = true
+
+  [[blocks.segments]]
+  style = "plain"
+  type = "text"
+  foreground_templates = [
+    "{{ if gt .Code 0 }}red{{end}}",
+    "{{if eq .Code 0}}magenta{{end}}"
+  ]
+  template = ""
+
+[transient_prompt]
+template = " "
+foreground_templates = [
+  "{{if gt .Code 0}}red{{end}}",
+  "{{if eq .Code 0}}magenta{{end}}"
+]
