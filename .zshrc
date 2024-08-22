@@ -136,6 +136,8 @@ export TERMINAL=kitty
 
 export PATH=$PATH:/home/salfel/.spicetify
 
+export EDITOR=nvim
+
 # pnpm
 export PNPM_HOME="/home/salfel/.local/share/pnpm"
 case ":$PATH:" in
