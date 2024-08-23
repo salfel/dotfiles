@@ -19,6 +19,7 @@
         "cpu",
         "memory",
         "pulseaudio",
+        "hyprland/language",
         "battery"
     ],
     "custom/os": {
@@ -32,6 +33,11 @@
             "default": "○",
             "active": "●" 
         }
+    },
+    "hyprland/language": {
+        "format" : "    {}",
+        "format-en": "us",
+        "format-de": "de"
     },
     "network": {
         "format-wifi": "󰖩    {essid}",
