@@ -18,6 +18,7 @@
         "network",
         "cpu",
         "memory",
+        "pulseaudio",
         "battery"
     ],
     "custom/os": {
@@ -46,6 +47,10 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "    {:%H:%M}",
+    },
+    "pulseaudio": {
+        "format": "    {volume}%",
+        "format-muted": "     0%"
     },
     "battery": {
         "bat": "BAT1",
