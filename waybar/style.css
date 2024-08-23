@@ -76,6 +76,10 @@ button {
     padding: 0 24px
 }
 
+window#waybar.empty #window {
+    background: transparent
+}
+
 /*#battery {*/
 /*    background-color: #ffffff;*/
 /*    color: #000000;*/
