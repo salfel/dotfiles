@@ -60,6 +60,10 @@ button {
     color: @blue
 }
 
+#workspaces button:hover {
+    background: @base;
+}
+
 #workspaces button.active {
     color: @green
 }
