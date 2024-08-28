@@ -41,7 +41,7 @@ return {
 
         require("mason").setup({})
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "gopls", "intelephense", "phpactor", "astro" },
+            ensure_installed = { "lua_ls", "tsserver", "gopls", "phpactor", "astro" },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({})
