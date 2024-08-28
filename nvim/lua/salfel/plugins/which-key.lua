@@ -8,8 +8,8 @@ return {
     config = function()
         local wk = require("which-key")
 
-        wk.register({
-            w = { ":WhichKey<CR>", "Which Key" },
-        }, { prefix = "<leader>" })
+        wk.add({
+            { "<leader>w", ":WhichKey<CR>", desc = "Which Key" }
+        })
     end
 }

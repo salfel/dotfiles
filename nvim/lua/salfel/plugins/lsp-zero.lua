@@ -13,13 +13,15 @@ return {
         local lsp_zero = require("lsp-zero")
         local wk = require("which-key")
 
-        lsp_zero.on_attach = function(_, bufnr)
+        local function on_attach(_, bufnr)
             lsp_zero.default_keymaps({ bufnr = bufnr })
         end
 
+        lsp_zero.on_attach = on_attach
+
         vim.g.rustaceanvim = {
             server = {
-                on_attach = lsp_zero.on_attach,
+                on_attach = on_attach,
                 capabilities = lsp_zero.get_capabilities(),
                 ["rust-analyzer"] = { "rust" }
             }
@@ -33,11 +35,9 @@ return {
             }
         })
 
-        wk.register({
-            r = {
-                n = { vim.lsp.buf.rename, "Rename" },
-            }
-        }, { prefix = "<leader>" })
+        wk.add({
+            { "<leader>rn", vim.lsp.buf.rename, desc = "Rename" }
+        })
 
         require("mason").setup({})
         require("mason-lspconfig").setup({

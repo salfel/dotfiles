@@ -36,15 +36,12 @@ return {
         local wk = require("which-key")
         local builtin = require("telescope.builtin")
 
-        wk.register({
-            f = {
-                name = "Telescope | Find",
-                f = { function() builtin.find_files() end, "Find Files" },
-                h = { function() builtin.oldfiles() end, "History" },
-                g = { function() builtin.live_grep() end, "Live Grep" },
-                b = { function() builtin.buffers() end, "Buffers" },
-                s = { function() builtin.lsp_workspace_symbols() end, "Lsp Symbols" },
-            }
-        }, { prefix = "<leader>" })
+        wk.add({
+            { "<leader>ff", builtin.find_files,            desc = "Find Files" },
+            { "<leader>fh", builtin.oldfiles,              desc = "History" },
+            { "<leader>fg", builtin.live_grep,             desc = "Live Grep" },
+            { "<leader>fb", builtin.buffers,               desc = "Buffers" },
+            { "<leader>fs", builtin.lsp_workspace_symbols, desc = "Lsp Symbols" },
+        })
     end
 }

@@ -2,18 +2,17 @@ return {
     "lewis6991/gitsigns.nvim",
     config = function()
         require('gitsigns').setup({
-            on_attach = function (bufnr)
+            on_attach = function()
                 local gs = require("gitsigns")
                 local wk = require("which-key")
 
-                wk.register({
-                    h = {
-                        name = "Git hunks",
-                        p = { gs.preview_hunk, "Preview Hunk" },
-                        r = { gs.reset_hunk, "Reset Hunk" },
-                        b = { gs.blame_line, "Blame Hunk" }
-                    }
-                }, { prefix = "<leader>" } )
+                wk.add({
+                    { "<leader>hp", gs.preview_hunk, group = "[H]unk", desc = "Preview Hunk" },
+                    { "<leader>hr", gs.reset_hunk,   group = "[H]unk", desc = "Reset Hunk" },
+                    { "<leader>hb", gs.blame_line,   group = "[H]unk", desc = "Blame Hunk" },
+                    { "<leader>[h", gs.next_hunk,    group = "[H]unk", desc = "Next Hunk" },
+                    { "<leader>]h", gs.prev_hunk,    group = "[H]unk", desc = "Prev Hunk" },
+                })
             end
         })
     end
