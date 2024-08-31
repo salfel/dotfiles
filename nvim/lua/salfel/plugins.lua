@@ -14,7 +14,7 @@ local plugins = utils.requirePlugins({
     "none-ls",
     "bufdelete",
     "lazydev",
-    -- "supermaven"
+    "undotree"
 }, {
     "tpope/vim-surround",
     { "windwp/nvim-autopairs",               config = true },
