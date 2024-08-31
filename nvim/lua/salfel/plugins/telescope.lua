@@ -33,6 +33,8 @@ return {
             }
         })
 
+        require('telescope').load_extension('fzf')
+
         local wk = require("which-key")
         local builtin = require("telescope.builtin")
 
