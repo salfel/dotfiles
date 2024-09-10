@@ -56,7 +56,7 @@
     },
     "pulseaudio": {
         "format": "    {volume}%",
-        "format-muted": "     0%"
+        "format-muted": "    0%"
     },
     "battery": {
         "bat": "BAT1",
