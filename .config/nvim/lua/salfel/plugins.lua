@@ -14,7 +14,7 @@ local plugins = utils.requirePlugins({
     "none-ls",
     "bufdelete",
     "lazydev",
-    "undotree"
+    "undotree",
 }, {
     "tpope/vim-surround",
     { "windwp/nvim-autopairs",               config = true },
@@ -24,6 +24,7 @@ local plugins = utils.requirePlugins({
     "ku1ik/vim-pasta",
     "tpope/vim-unimpaired",
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    "nelsyeung/twig.vim"
 })
 
 require("lazy").setup(plugins)
