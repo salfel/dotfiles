@@ -10,7 +10,7 @@ return {
 
         require("telescope").setup({
             defaults = {
-                file_ignore_patterns = { "node_modules", "vendor", ".git/", "target", "dist" },
+                file_ignore_patterns = { "node_modules", "vendor", ".git/", "target", "dist", ".pio" },
                 mappings = {
                     i = {
                         ["<esc>"] = actions.close
