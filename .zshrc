@@ -115,9 +115,6 @@ alias pest="vendor/bin/pest"
 alias sail="vendor/bin/sail"
 alias posh="oh-my-posh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -130,11 +127,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH:$HOME/.local/bin:$HOME/go/bin:$GOROOT/bin:/usr/local/go/bin:$HOME/.config/composer/vendor/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/.p10k.zsh.
-[[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
 export PATH=$HOME/.local/bin:$PATH:/var/lib/flatpak/exports/bin:~/.cargo/bin
 export TERMINAL=kitty
 
-export PATH=$PATH:/home/salfel/.spicetify
 
 export EDITOR=nvim
 
