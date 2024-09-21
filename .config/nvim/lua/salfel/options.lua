@@ -18,3 +18,5 @@ vim.opt.sidescrolloff = 12
 vim.opt.undofile = true
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.wrap = false
