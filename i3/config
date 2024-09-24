@@ -1,0 +1,26 @@
+set $mod Mod4
+
+font pango:JetBrainsMono Nerd Fonts 10
+
+exec --no-startup-d picom
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale ~/Pictures/catppuccin-wallpaper-logo.png
+
+# enable tapping on touchpad
+exec --no-startup-id xinput set-prop "ASUE140C:00 04F3:3145 Touchpad" "libinput Tapping Enabled" 1
+
+gaps inner 12
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#         status_command i3status
+# }
+
+include ~/.config/i3/keybindings.conf
+include ~/.config/i3/audio.conf
+include ~/.config/i3/workspaces.conf
+include ~/.config/i3/theme.conf
