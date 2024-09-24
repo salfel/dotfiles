@@ -35,32 +35,32 @@
         }
     },
     "hyprland/language": {
-        "format" : "    {}",
+        "format" : "  {}",
         "format-en": "us",
         "format-de": "de"
     },
     "network": {
-        "format-wifi": "󰖩    {essid}",
-        "format-disconnected": "󰖪    Disconnected",
+        "format-wifi": "󰖩  {essid}",
+        "format-disconnected": "󰖪  Disconnected",
         "tooltip": false
     },
     "cpu": {
-        "format": "    {usage}%"
+        "format": "  {usage}%"
     },
     "memory": {
-        "format": "    {percentage}%"
+        "format": "  {percentage}%"
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "   {:%H:%M       %d-%m-%y}",
+        "format": "  {:%H:%M | %d-%m-%y}  ",
     },
     "pulseaudio": {
-        "format": "    {volume}%",
+        "format": "  {volume}%",
         "format-muted": "    0%"
     },
     "battery": {
         "bat": "BAT1",
-        "format": "{icon}    {capacity}%",
+        "format": "{icon} {capacity}%",
         "states": {
             "warning": 30,
             "critical": 15
