@@ -67,9 +67,7 @@ button {
 
 #workspaces button.active {
     color: @green;
-    background: @base;
-    border-radius: 100%;
-    border: 1px @surface1 solid
+    font-weight: 900;
 }
 
 #workspaces button.empty {
@@ -88,24 +86,11 @@ window#waybar.empty #window {
     background: transparent
 }
 
-/*#battery {*/
-/*    background-color: #ffffff;*/
-/*    color: #000000;*/
-/*}*/
+#clock {
+    margin-left: 8px;
+    margin-right: 8px;
+}
 
-/*#battery.charging, #battery.plugged {*/
-/*    color: #ffffff;*/
-/*    background-color: #26A65B;*/
-/*}*/
-/**/
-/*@keyframes blink {*/
-/*    to {*/
-/*        background-color: #ffffff;*/
-/*        color: #000000;*/
-/*    }*/
-/*}*/
-/**/
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
