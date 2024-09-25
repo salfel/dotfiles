@@ -28,11 +28,7 @@
     },
     "hyprland/workspaces": {
         "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "default": "○",
-            "active": "●" 
-        }
+        "format": "{icon}"
     },
     "hyprland/language": {
         "format" : "  {}",

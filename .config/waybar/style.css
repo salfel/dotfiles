@@ -57,7 +57,8 @@ button {
 }
 
 #workspaces button { 
-    color: @blue
+    color: @blue;
+    margin: 8px 0;
 }
 
 #workspaces button:hover {
@@ -65,7 +66,10 @@ button {
 }
 
 #workspaces button.active {
-    color: @green
+    color: @green;
+    background: @base;
+    border-radius: 100%;
+    border: 1px @surface1 solid
 }
 
 #workspaces button.empty {
