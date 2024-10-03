@@ -141,4 +141,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/config.toml)"
+eval "$(starship init zsh)"
