@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-sudo pacman -S stow hyprpaper hyprlock hypridle ulauncher neovim waybar wl-clipboard yazi lazygit zsh-autosuggestions zsh-syntax-highlighting
+sudo pacman -S stow hyprpaper hyprlock hypridle ulauncher neovim waybar wl-clipboard yazi lazygit zsh-autosuggestions zsh-syntax-highlighting starship
 
 # ZSH
 sudo lchsh $USER
