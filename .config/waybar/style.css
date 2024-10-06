@@ -2,106 +2,83 @@
 
 * {
     font-family: JetBrainsMono Nerd Font;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 window#waybar {
     background: transparent;
-    color: #ffffff;
+    color: @crust;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+.module {
+    padding: 0 12px;
+    border-radius: 10px;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#workspaces,
-#window,
-#language,
-#power-profiles-daemon,
-#custom-os,
-#mpd {
-    background: @base;
-    border: 1px solid @surface1;
-    padding: 0 16px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    border-radius: 12px;
-    margin-left: 3px;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
-}
-
-#custom-os,
-#network {
-    margin-left: 0px;
+.modules-center {
+    margin: 0 8px
 }
 
 #custom-os {
-    padding: 0 20px 0 16px;
-    color: @blue;
-    font-size: 20px;
+    background: linear-gradient(to bottom right, @lavender, @sapphire);
+    padding-left: 14px;
+    padding-right: 17px;
 }
 
-#workspaces button { 
-    color: @blue;
-    margin: 8px 0;
+#workspaces {
+    background-image: linear-gradient(to bottom right, @sapphire, @teal);
+}
+
+#workspaces button {
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #workspaces button:hover {
-    background: @base;
+    background: transparent;
 }
 
 #workspaces button.active {
-    color: @green;
     font-weight: 900;
 }
 
-#workspaces button.empty {
-    color: @yellow
-}
-
 #workspaces button.urgent {
-    color: @red;
+    color: red;
+    font-weight: 900;
 }
 
 #window {
-    padding: 0 24px
+    background: linear-gradient(to bottom right, @teal, @green)
 }
 
 window#waybar.empty #window {
-    background: transparent
+    opacity: 0
 }
 
-#clock {
-    margin-left: 8px;
-    margin-right: 8px;
+#clock { 
+    background: linear-gradient(to bottom, @mauve, @flamingo)
 }
 
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#network {
+    background: linear-gradient(to bottom left, @peach, @maroon);
+}
+
+#cpu {
+    background: linear-gradient(to bottom left, @yellow, @peach)
+}
+
+#memory {
+    background: linear-gradient(to bottom left, @green, @yellow);
+}
+
+#pulseaudio {
+    background: linear-gradient(to bottom left, @teal, @green);
+}
+
+#language {
+    background: linear-gradient(to bottom left, @blue, @teal);
+}
+
+#battery {
+    background: linear-gradient(to bottom left, @lavender, @blue);
 }
