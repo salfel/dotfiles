@@ -35,6 +35,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
+    outline: transparent;
+    border: transparent;
     background: transparent;
 }
 
