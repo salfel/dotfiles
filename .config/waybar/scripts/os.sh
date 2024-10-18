@@ -4,9 +4,9 @@ source /etc/os-release
 
 case "$ID" in
     nixos)
-        echo  
+        echo 
         ;;
     arch)
-        echo 󰣇 
+        echo 󰣇
         ;;
 esac

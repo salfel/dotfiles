@@ -22,7 +22,7 @@ window#waybar {
 #custom-os {
     background: linear-gradient(to bottom right, @lavender, @sapphire);
     padding-left: 14px;
-    padding-right: 17px;
+    padding-right: 18px;
 }
 
 #workspaces {
