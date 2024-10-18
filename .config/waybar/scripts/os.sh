@@ -1,3 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "󰣇"
+source /etc/os-release
+
+case "$ID" in
+    nixos)
+        echo  
+        ;;
+    arch)
+        echo 󰣇 
+        ;;
+esac
