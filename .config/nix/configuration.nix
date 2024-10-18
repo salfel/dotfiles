@@ -105,6 +105,7 @@
     kicad
     pulseaudio
     obsidian
+    gh
   ];
 
   fonts.packages = with pkgs; [ 
