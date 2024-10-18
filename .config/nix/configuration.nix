@@ -74,7 +74,11 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = with pkgs; [ firefoxpwa ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -96,6 +100,11 @@
     wl-clipboard
     inputs.zen-browser.packages."${system}".specific
     lazygit
+    spotify
+    firefoxpwa
+    kicad
+    pulseaudio
+    obsidian
   ];
 
   fonts.packages = with pkgs; [ 
