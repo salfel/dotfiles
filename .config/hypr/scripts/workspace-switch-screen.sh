@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 active_monitor=$(hyprctl activeworkspace | grep workspace | awk '{print $7}' | sed -r 's/://')
 monitors=$(hyprctl monitors | grep Monitor | awk '{print $2}')

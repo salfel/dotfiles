@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 default_monitor=eDP-1
 monitors=$(xrandr | grep connected | awk '{print $1}' | wc -l)
