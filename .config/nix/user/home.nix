@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, builtins, ... }:
 
 {
+  imports = [
+    ./shell
+  ];
+
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
@@ -12,6 +16,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    TERM = "kitty";
   };
 
   # Let Home Manager install and manage itself.

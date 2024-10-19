@@ -7,10 +7,12 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    catppuccin.url = "github:catppuccin/nix";
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs: 
   let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -25,7 +27,10 @@
     homeConfigurations = {
       felix = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ 
+          ./user/home.nix
+          catppuccin.homeManagerModules.catppuccin
+        ];
       };
     };
   };
