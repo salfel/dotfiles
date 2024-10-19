@@ -97,6 +97,7 @@
     hyprpaper
     hypridle
     hyprlock
+    hyprcursor
     wl-clipboard
     inputs.zen-browser.packages."${system}".specific
     lazygit
@@ -106,6 +107,10 @@
     pulseaudio
     obsidian
     gh
+    brightnessctl
+    btop
+    wineWowPackages.stable
+    playerctl
   ];
 
   fonts.packages = with pkgs; [ 
