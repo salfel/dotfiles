@@ -65,6 +65,11 @@
     #media-session.enable = true;
   };
 
+  # shells
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true; 
+
   users.users.felix = {
     isNormalUser = true;
     description = "Felix Salcher";
@@ -85,9 +90,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    tmux
     neovim
     kitty
-    tmux
     starship
     waybar
     ulauncher
@@ -109,6 +114,8 @@
     btop
     wineWowPackages.stable
     playerctl
+    python3
+    catppuccin-cursors.mochaMauve
   ];
 
   fonts.packages = with pkgs; [ 
