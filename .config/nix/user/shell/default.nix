@@ -4,5 +4,7 @@
     ./zsh.nix
     ./starship.nix
     ./tmux.nix
+    ./git.nix
+    ./kitty.nix
   ];
 }
