@@ -65,8 +65,6 @@
     #media-session.enable = true;
   };
 
-  users.defaultUserShell = pkgs.zsh;
-
   users.users.felix = {
     isNormalUser = true;
     description = "Felix Salcher";
@@ -116,8 +114,6 @@
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
-
-  programs.zsh.enable = true;
 
   programs.hyprland.enable = true;
 
