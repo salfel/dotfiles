@@ -116,7 +116,8 @@
     wineWowPackages.stable
     playerctl
     python3
-    catppuccin-cursors.mochaMauve
+    libreoffice
+    gnome-tweaks
   ];
 
   fonts.packages = with pkgs; [ 
