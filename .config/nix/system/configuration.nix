@@ -110,6 +110,17 @@
     python3
     libreoffice
     gnome-tweaks
+    nodejs
+    gcc
+    fzf
+    ripgrep
+    gnumake
+    cmake
+    go
+    php83
+    php83Packages.composer
+    brave
+    ncurses
   ];
 
   fonts.packages = with pkgs; [ 
