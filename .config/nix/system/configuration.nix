@@ -77,13 +77,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
-  # Install firefox.
-  programs.firefox = {
-    enable = true;
-    package = pkgs.firefox;
-    nativeMessagingHosts.packages = with pkgs; [ firefoxpwa ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -106,7 +99,6 @@
     inputs.zen-browser.packages."${system}".specific
     lazygit
     spotify
-    firefoxpwa
     kicad
     pulseaudio
     obsidian
