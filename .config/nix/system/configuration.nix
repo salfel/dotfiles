@@ -121,6 +121,9 @@
     php83Packages.composer
     brave
     ncurses
+    beekeeper-studio
+    banana-cursor
+    import ../pkgs
   ];
 
   fonts.packages = with pkgs; [ 

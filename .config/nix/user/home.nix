@@ -1,6 +1,8 @@
 { config, pkgs, lib, builtins, ... }:
 
-{
+let 
+  custom-pkgs = import ./pkgs { inherit pkgs; };
+in {
   imports = [
     ./shell
   ];
@@ -8,8 +10,17 @@
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
+    custom-pkgs.banana-cursor
   ];
+
+  home.pointerCursor = {
+    x11.enable = true;
+    gtk.enable = true;
+    package = custom-pkgs.banana-cursor;
+    size = 64;
+    name = "Banana-Catppuccin-Mocha";
+  };
 
   home.file = {
   };

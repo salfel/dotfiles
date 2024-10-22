@@ -17,6 +17,8 @@
 
     extraConfig = ''
       modify_font cell_height 140%
+      modify_font underline_position 8px
+      modify_font underline_thickness 200%
     '';
 
     catppuccin.enable = true;
