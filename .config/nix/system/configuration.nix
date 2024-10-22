@@ -122,12 +122,19 @@
     brave
     ncurses
     beekeeper-studio
-    banana-cursor
-    import ../pkgs
+    vscode
+    platformio
+    unzip
   ];
 
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  services.udev.packages = with pkgs; [ 
+    platformio-core
+    platformio-core.udev
+    openocd
   ];
 
   programs.hyprland.enable = true;
