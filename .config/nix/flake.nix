@@ -10,9 +10,11 @@
     catppuccin.url = "github:catppuccin/nix";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, catppuccin, nixos-hardware, ... }@inputs: 
   let 
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -20,7 +22,10 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./system/configuration.nix ];
+        modules = [ 
+          ./system/configuration.nix
+          nixos-hardware.nixosModules.framework-13-7040-amd
+        ];
         specialArgs = { inherit inputs; inherit system; };
       };
     };
