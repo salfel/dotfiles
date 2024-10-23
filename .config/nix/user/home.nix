@@ -5,6 +5,7 @@ let
 in {
   imports = [
     ./shell
+    ./wofi.nix
   ];
 
   home.username = "felix";

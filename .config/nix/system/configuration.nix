@@ -126,6 +126,7 @@
     vscode
     platformio
     unzip
+    wofi
   ];
 
   fonts.packages = with pkgs; [ 
