@@ -28,7 +28,6 @@ in {
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERM = "kitty";
   };
 
   # Let Home Manager install and manage itself.

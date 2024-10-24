@@ -43,4 +43,8 @@
       set -g update-environment "DISPLAY WAYLAND_DISPLAY XDG_RUNTIME_DIR HYPRLAND_INSTANCE_SIGNATURE"
     '';
   };
+
+  home.sessionVariables = {
+    XTERM = "xterm-256color";
+  };
 }
