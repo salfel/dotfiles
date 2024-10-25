@@ -127,8 +127,10 @@
     platformio
     unzip
     wofi
+    nixd
   ];
 
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];

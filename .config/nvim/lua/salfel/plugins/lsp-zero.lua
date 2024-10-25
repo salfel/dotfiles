@@ -42,7 +42,7 @@ return {
 
         require("mason").setup({})
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "tsserver", "gopls", "intelephense", "astro" },
+            ensure_installed = { "lua_ls", "ts_ls", "gopls", "intelephense", "astro" },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({})
@@ -64,6 +64,18 @@ return {
                         }
                     })
                 end
+            }
+        })
+
+        require("lspconfig").nixd.setup({
+            cmd = { "nixd" },
+            settings = {
+                nixd = {
+                    nixpkgs = "import <nixpkgs> { }"
+                },
+                formatting = {
+                    command = "nixfmt"
+                }
             }
         })
 
