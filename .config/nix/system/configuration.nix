@@ -1,10 +1,14 @@
-{ config, pkgs, inputs, system, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
+
+  nixpkgs.overlays = [
+    (import ../overlays/easyeda2kicad.nix)
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -125,12 +129,12 @@
     beekeeper-studio
     vscode
     platformio
+    easyeda2kicad
     unzip
     wofi
     nixd
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
