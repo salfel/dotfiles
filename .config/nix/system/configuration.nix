@@ -132,6 +132,9 @@
     easyeda2kicad
     unzip
     wofi
+    rustc
+    cargo
+    rust-analyzer
     nixd
   ];
 
