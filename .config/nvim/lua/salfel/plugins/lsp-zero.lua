@@ -79,6 +79,15 @@ return {
             }
         })
 
+        -- tabs are of length 2 in nix
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = "nix",
+          callback = function()
+            vim.bo.tabstop = 2
+            vim.bo.shiftwidth = 2
+          end,
+        })
+
         vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")
         vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
         vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
