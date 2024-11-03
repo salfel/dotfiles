@@ -8,39 +8,39 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
       
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, nixos-hardware, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs: 
   let 
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      machines = [ "framework" ];
+
+      mkMachine = name:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./machines/${name}/hardware-configuration.nix
+            ./configuration.nix
+          ];
+          specialArgs = { inherit inputs; inherit system; };
+        };
   in {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./system/configuration.nix
-          nixos-hardware.nixosModules.framework-13-7040-amd
-        ];
-        specialArgs = { inherit inputs; inherit system; };
-      };
-    };
+    nixosConfigurations = builtins.listToAttrs (map (name: { inherit name; value = mkMachine name; }) machines);
     homeConfigurations = {
       felix = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            inputs.hyprpanel.overlay
-          ];
-        };
         modules = [ 
-          ./user/home.nix
+          ./home/home.nix
           catppuccin.homeManagerModules.catppuccin
         ];
       };
