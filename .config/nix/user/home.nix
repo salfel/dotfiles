@@ -13,6 +13,8 @@ in {
 
   home.packages = with pkgs; [
     custom-pkgs.banana-cursor
+
+    hyprpanel
   ];
 
   home.pointerCursor = {

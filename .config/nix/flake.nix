@@ -12,6 +12,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+      
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = { self, nixpkgs, home-manager, catppuccin, nixos-hardware, ... }@inputs: 
@@ -31,7 +33,12 @@
     };
     homeConfigurations = {
       felix = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
+        };
         modules = [ 
           ./user/home.nix
           catppuccin.homeManagerModules.catppuccin
