@@ -1,7 +1,7 @@
-{ config, pkgs, lib, builtins, ... }:
+{ pkgs, ... }:
 
 let 
-  custom-pkgs = import ./pkgs { inherit pkgs; };
+  custom-pkgs = import ../pkgs { inherit pkgs; };
 in {
   imports = [
     ./shell

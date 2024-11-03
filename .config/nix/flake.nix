@@ -8,21 +8,27 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     catppuccin.url = "github:catppuccin/nix";
-    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
       
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs: 
   let 
       system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+
+        overlays = [
+          (import ./overlays/easyeda2kicad.nix)
+          inputs.hyprpanel.overlay
+        ];
+      };
 
       machines = [ "framework" ];
 
@@ -39,6 +45,8 @@
     nixosConfigurations = builtins.listToAttrs (map (name: { inherit name; value = mkMachine name; }) machines);
     homeConfigurations = {
       felix = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
         modules = [ 
           ./home/home.nix
           catppuccin.homeManagerModules.catppuccin

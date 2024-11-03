@@ -3,11 +3,11 @@
 {
   imports =
     [
+      ./modules/languages.nix
     ];
 
   nixpkgs.overlays = [
     (import ./overlays/easyeda2kicad.nix)
-    inputs.hyprpanel.overlay
   ];
 
   # Bootloader.
@@ -111,18 +111,10 @@
     btop
     wineWowPackages.stable
     playerctl
-    python3
     libreoffice
     gnome-tweaks
-    nodejs
-    gcc
     fzf
     ripgrep
-    gnumake
-    cmake
-    go
-    php83
-    php83Packages.composer
     brave
     ncurses
     beekeeper-studio
@@ -131,10 +123,6 @@
     easyeda2kicad
     unzip
     wofi
-    rustc
-    cargo
-    rust-analyzer
-    nixd
     fastfetch
     nerdfetch
     neofetch
