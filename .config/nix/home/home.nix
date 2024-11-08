@@ -15,6 +15,11 @@ in {
     custom-pkgs.banana-cursor
   ];
 
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   home.pointerCursor = {
     x11.enable = true;
     gtk.enable = true;
