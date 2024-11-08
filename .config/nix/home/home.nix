@@ -11,10 +11,8 @@ in {
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = with pkgs; [
+  home.packages = [
     custom-pkgs.banana-cursor
-
-    hyprpanel
   ];
 
   home.pointerCursor = {

@@ -13,9 +13,6 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-      
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs: 
@@ -26,7 +23,6 @@
 
         overlays = [
           (import ./overlays/easyeda2kicad.nix)
-          inputs.hyprpanel.overlay
         ];
       };
 
