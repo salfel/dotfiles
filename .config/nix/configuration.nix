@@ -129,6 +129,7 @@
     swaynotificationcenter
     yazi
     bruno
+    chromium
   ];
 
   fonts.packages = with pkgs; [ 
