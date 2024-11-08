@@ -115,7 +115,6 @@
     gnome-tweaks
     fzf
     ripgrep
-    brave
     ncurses
     beekeeper-studio
     vscode
