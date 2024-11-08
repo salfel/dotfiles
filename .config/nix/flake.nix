@@ -12,10 +12,13 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, catppuccin, disko, ... }@inputs: 
   let 
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -32,7 +35,10 @@
         nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
+            disko.nixosModules.disko
+            ./machines/${name}/disko-config.nix
             ./machines/${name}/hardware-configuration.nix
+
             ./configuration.nix
           ];
           specialArgs = { inherit inputs; inherit system; };
