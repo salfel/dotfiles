@@ -129,6 +129,7 @@
     yazi
     bruno
     chromium
+    stow
   ];
 
   fonts.packages = with pkgs; [ 
