@@ -29,6 +29,11 @@ in {
   };
 
   home.file = {
+    ".config/nvim".source = ../../nvim;
+    ".config/tmux".source = ../../tmux;
+    ".config/waybar".source = ../../waybar;
+    ".config/fastfetch".source = ../../fastfetch;
+    ".config/hypr".source = ../../hypr;
   };
 
   home.sessionVariables = {
