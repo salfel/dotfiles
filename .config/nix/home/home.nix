@@ -8,6 +8,13 @@ in {
     ./wofi.nix
   ];
 
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "flakes" "nix-command" ];
+    };
+  };
+
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
