@@ -1,86 +1,63 @@
 @import "mocha.css";
 
 * {
+    all: unset;
     font-family: JetBrainsMono Nerd Font;
-    font-size: 16px;
 }
 
 window#waybar {
-    background: transparent;
-    color: @crust;
+    background: @base;
+    color: @text;
+    border-radius: 8px;
+    border: 1px solid @rosewater;
 }
 
 .module {
-    padding: 0 12px;
-    border-radius: 10px;
+    margin: 8px;
+    border-radius: 16px;
 }
 
 .modules-center {
-    margin: 0 8px
+    margin: 0 32px;
+}
+
+tooltip {
+    background: @crust;
+    border: .5px solid white;
+    border-radius: 4px;
 }
 
 #custom-os {
-    background: linear-gradient(to bottom right, @lavender, @sapphire);
-    padding-left: 14px;
-    padding-right: 18px;
-}
-
-#workspaces {
-    background-image: linear-gradient(to bottom right, @sapphire, @teal);
+    color: @blue;
+    margin-left: 16px;
 }
 
 #workspaces button {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 0 6px
 }
 
-#workspaces button:hover {
-    outline: transparent;
-    border: transparent;
-    background: transparent;
+#workspaces button.empty {
+    color: @yellow;
 }
 
 #workspaces button.active {
+    color: @green;
     font-weight: 900;
 }
 
 #workspaces button.urgent {
-    color: red;
-    font-weight: 900;
+    color: @red;
+    font-weight: 700;
 }
 
-#window {
-    background: linear-gradient(to bottom right, @teal, @green)
+#battery.warning {
+    color: @peach;
 }
 
-window#waybar.empty #window {
-    opacity: 0
-}
-
-#clock { 
-    background: linear-gradient(to bottom, @mauve, @flamingo)
-}
-
-#network {
-    background: linear-gradient(to bottom left, @peach, @maroon);
-}
-
-#cpu {
-    background: linear-gradient(to bottom left, @yellow, @peach)
-}
-
-#memory {
-    background: linear-gradient(to bottom left, @green, @yellow);
-}
-
-#pulseaudio {
-    background: linear-gradient(to bottom left, @teal, @green);
-}
-
-#language {
-    background: linear-gradient(to bottom left, @blue, @teal);
+#battery.critical {
+    color: @maroon;
 }
 
 #battery {
-    background: linear-gradient(to bottom left, @lavender, @blue);
+    margin-right: 16px;
 }
