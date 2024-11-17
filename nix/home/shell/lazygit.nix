@@ -4,7 +4,7 @@
 
     catppuccin = {
       enable = true;
-      accent = "mauve";
+      accent = "rosewater";
     };
 
     settings = {
