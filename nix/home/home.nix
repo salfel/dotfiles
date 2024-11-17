@@ -35,22 +35,12 @@ in {
     name = "Banana-Catppuccin-Mocha";
   };
 
-  home.file = {
-    ".config/nvim".source = ../../nvim;
-    ".config/tmux".source = ../../tmux;
-    ".config/waybar".source = ../../waybar;
-    ".config/fastfetch".source = ../../fastfetch;
-    ".config/hypr".source = ../../hypr;
-  };
-
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  catppuccin.enable = true;
 
   home.stateVersion = "24.05"; 
 }
