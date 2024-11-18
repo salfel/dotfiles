@@ -78,7 +78,7 @@
   users.users.felix = {
     isNormalUser = true;
     description = "Felix Salcher";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -156,7 +156,14 @@
 
   programs.hyprland.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+
+    virtualbox.host.enable = true;
+    virtualbox.guest.enable = true;
+    virtualbox.guest.dragAndDrop = true;
+  };
+
 
   programs.gnupg.agent = {
     enable = true;
