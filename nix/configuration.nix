@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./modules/languages.nix
+      ./modules
     ];
 
   nixpkgs.overlays = [
@@ -84,60 +84,53 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    git
-    tmux
-    neovim
-    kitty
-    starship
+    # Desktop Utilities
     waybar
     ulauncher
+    wofi
     hyprshot
     hyprpaper
     hypridle
     hyprlock
     hyprcursor
     wl-clipboard
-    inputs.zen-browser.packages."${system}".specific
-    lazygit
-    spotify
-    kicad
     pulseaudio
-    obsidian
-    gh
     brightnessctl
-    btop
-    wineWowPackages.stable
     playerctl
+    swaynotificationcenter
+
+    # Apps
+    spotify
+    discord
     libreoffice
-    gnome-tweaks
+    obsidian
+    inputs.zen-browser.packages."${system}".specific
+    chromium
+
+    # Terminal utilities
+    git
+    tmux
+    neovim
+    kitty
+    starship
+    lazygit
+    gh
+    btop
+    yazi
+    fastfetch
+    stow
+    unzip
     fzf
     ripgrep
-    ncurses
+  
+    # Dev Apps
     beekeeper-studio
     vscode
-    platformio
-    easyeda2kicad
-    unzip
-    wofi
-    fastfetch
-    nerdfetch
-    neofetch
-    swaynotificationcenter
-    yazi
     bruno
-    chromium
-    stow
-    kanata
   ];
 
   fonts.packages = with pkgs; [ 
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
-
-  services.udev.packages = with pkgs; [ 
-    platformio-core
-    platformio-core.udev
-    openocd
   ];
 
   # 1password
@@ -164,6 +157,7 @@
     virtualbox.guest.dragAndDrop = true;
   };
 
+  boot.initrd.kernelModules = [ "vboxdrv" "vboxnetadp" "vboxnetflt" ];
 
   programs.gnupg.agent = {
     enable = true;
