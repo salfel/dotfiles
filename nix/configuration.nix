@@ -108,13 +108,11 @@
     chromium
 
     # Terminal utilities
-    git
     tmux
     neovim
     kitty
     starship
     lazygit
-    gh
     btop
     yazi
     fastfetch
