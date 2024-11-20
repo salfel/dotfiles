@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.localmapleader = ' '
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
 
 vim.opt.relativenumber = true
 
