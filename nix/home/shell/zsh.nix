@@ -10,6 +10,10 @@
     oh-my-zsh = {
       enable = true;
     };
+
+    shellAliases = {
+      mux = "tmuxinator start";
+    };
   
     initExtra = ''
       eval "$(starship init zsh)"

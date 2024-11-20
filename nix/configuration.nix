@@ -109,6 +109,7 @@
 
     # Terminal utilities
     tmux
+    tmuxinator
     neovim
     kitty
     starship
