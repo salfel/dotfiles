@@ -32,7 +32,7 @@ return {
 			servers = {
 				["rust-analyzer"] = { "rust" },
 				["gopls"] = { "go" },
-				["lua_ls"] = { "lua" },
+				["stylua"] = { "lua" },
 			},
 		})
 
@@ -48,21 +48,27 @@ return {
 					require("lspconfig")[server_name].setup({})
 				end,
 				lua_ls = function()
-					require("lspconfig").lua_ls.setup({
-						settings = {
-							Lua = {
-								diagnostics = {
-									globals = {
-										"vim",
-									},
-								},
-								workspace = {
-									library = vim.api.nvim_get_runtime_file("", true),
-								},
-							},
-						},
-					})
+					require("lspconfig").lua_ls.setup({})
 				end,
+			},
+		})
+
+		require("lspconfig").lua_ls.setup({
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					workspace = {
+						checkThirdParty = false,
+						library = {
+							vim.env.VIMRUNTIME,
+						},
+					},
+					format = {
+						enable = false,
+					},
+				},
 			},
 		})
 
