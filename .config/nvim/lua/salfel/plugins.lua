@@ -17,6 +17,7 @@ local plugins = utils.requirePlugins({
 	"undotree",
 	"aerial",
 	"leetcode",
+	"markdown",
 }, {
 	"tpope/vim-surround",
 	{ "windwp/nvim-autopairs", config = true },

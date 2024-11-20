@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     python3
     nodejs
+    yarn
     go
     php83
     php83Packages.composer
