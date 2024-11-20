@@ -42,12 +42,11 @@ return {
 
         require("mason").setup({})
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "ts_ls", "gopls", "intelephense", "astro" },
+            ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
             handlers = {
                 function(server_name)
                     require("lspconfig")[server_name].setup({})
                 end,
-                rust_analyzer = lsp_zero.noop,
                 lua_ls = function()
                     require("lspconfig").lua_ls.setup({
                         settings = {
@@ -63,7 +62,7 @@ return {
                             }
                         }
                     })
-                end
+                end,
             }
         })
 
@@ -81,11 +80,11 @@ return {
 
         -- tabs are of length 2 in nix
         vim.api.nvim_create_autocmd("FileType", {
-          pattern = "nix",
-          callback = function()
-            vim.bo.tabstop = 2
-            vim.bo.shiftwidth = 2
-          end,
+            pattern = "nix",
+            callback = function()
+                vim.bo.tabstop = 2
+                vim.bo.shiftwidth = 2
+            end,
         })
 
         vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")

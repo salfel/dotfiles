@@ -17,5 +17,12 @@
     # LSPs
     rust-analyzer
     nixd
+    lua-language-server
+    clang-tools
+
+    # Formatter
+    rustfmt
+    nixfmt
+    stylua
   ];
 }
