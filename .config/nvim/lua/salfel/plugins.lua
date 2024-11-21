@@ -18,6 +18,8 @@ local plugins = utils.requirePlugins({
 	"aerial",
 	"leetcode",
 	"markdown",
+	"copilot",
+	"avante",
 }, {
 	"tpope/vim-surround",
 	{ "windwp/nvim-autopairs", config = true },
