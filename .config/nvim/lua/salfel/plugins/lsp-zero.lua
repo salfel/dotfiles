@@ -28,14 +28,6 @@ return {
 			},
 		}
 
-		lsp_zero.format_on_save({
-			servers = {
-				["rust-analyzer"] = { "rust" },
-				["gopls"] = { "go" },
-				["stylua"] = { "lua" },
-			},
-		})
-
 		wk.add({
 			{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename" },
 		})
@@ -72,17 +64,7 @@ return {
 			},
 		})
 
-		require("lspconfig").nixd.setup({
-			cmd = { "nixd" },
-			settings = {
-				nixd = {
-					nixpkgs = "import <nixpkgs> { }",
-				},
-				formatting = {
-					command = "nixfmt",
-				},
-			},
-		})
+		require("lspconfig").nixd.setup({})
 
 		-- tabs are of length 2 in nix
 		vim.api.nvim_create_autocmd("FileType", {
