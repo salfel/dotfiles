@@ -7,8 +7,6 @@
       accent = "rosewater";
     };
 
-    settings = {
-      gui = {};
-    };
+    settings = { gui = { }; };
   };
 }

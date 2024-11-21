@@ -1,7 +1,1 @@
-{
-  imports = [
-    ./languages.nix
-    ./hardware.nix
-    ./apps.nix
-  ];
-}
+{ imports = [ ./languages.nix ./hardware.nix ./apps.nix ]; }

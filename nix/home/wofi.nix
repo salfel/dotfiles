@@ -1,5 +1,4 @@
-{ config, ... }: 
-{
+{ config, ... }: {
   programs.wofi = {
     enable = true;
 
@@ -71,12 +70,12 @@
       @define-color	mantle-rgb  rgb(24, 24, 37);
       @define-color	crust  #11111b;
       @define-color	crust-rgb  rgb(17, 17, 27);
-      
+
       * {
         font-family: 'Inconsolata Nerd Font', monospace;
         font-size: 14px;
       }
-      
+
       /* Window */
       window {
         margin: 0px;
@@ -86,18 +85,18 @@
         background-color: @base;
         animation: slideIn 0.5s ease-in-out both;
       }
-      
+
       /* Slide In */
       @keyframes slideIn {
         0% {
            opacity: 0;
         }
-      
+
         100% {
            opacity: 1;
         }
       }
-      
+
       /* Inner Box */
       #inner-box {
         margin: 5px;
@@ -106,18 +105,18 @@
         background-color: @base;
         animation: fadeIn 0.5s ease-in-out both;
       }
-      
+
       /* Fade In */
       @keyframes fadeIn {
         0% {
            opacity: 0;
         }
-      
+
         100% {
            opacity: 1;
         }
       }
-      
+
       /* Outer Box */
       #outer-box {
         margin: 5px;
@@ -125,7 +124,7 @@
         border: none;
         background-color: @base;
       }
-      
+
       /* Scroll */
       #scroll {
         margin: 0px;
@@ -133,7 +132,7 @@
         border: none;
         background-color: @base;
       }
-      
+
       /* Input */
       #input {
         margin: 5px 20px;
@@ -144,16 +143,16 @@
         background-color: @base;
         animation: fadeIn 0.5s ease-in-out both;
       }
-      
+
       #input image {
           border: none;
           color: @red;
       }
-      
+
       #input * {
         outline: 4px solid @red!important;
       }
-      
+
       /* Text */
       #text {
         margin: 5px;
@@ -161,29 +160,29 @@
         color: @text;
         animation: fadeIn 0.5s ease-in-out both;
       }
-      
+
       #entry {
         background-color: @base;
       }
-      
+
       #entry arrow {
         border: none;
         color: @lavender;
       }
-      
+
       /* Selected Entry */
       #entry:selected {
         border: 0.11em solid @lavender;
       }
-      
+
       #entry:selected #text {
         color: @mauve;
       }
-      
+
       #entry:drop(active) {
         background-color: @lavender!important;
       }   
-      
+
     '';
   };
 }

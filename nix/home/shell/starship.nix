@@ -1,8 +1,7 @@
-{ config, pkgs, lib, ... }: 
-{
+{ config, pkgs, lib, ... }: {
   programs.starship = {
     enable = true;
-  
+
     settings = {
       format = lib.concatStrings [
         "[](surface0)"
@@ -19,9 +18,9 @@
         "[ ](fg:purple)"
         "$line_break$character"
       ];
-  
+
       palette = "catppuccin_mocha";
-  
+
       palettes = {
         catppuccin_mocha = {
           rosewater = "#f5e0dc";
@@ -52,11 +51,11 @@
           crust = "#11111b";
         };
       };
-  
+
       os = {
         disabled = false;
         style = "bg:surface0 fg:text";
-  
+
         symbols = {
           Ubuntu = "󰕈 ";
           SUSE = " ";
@@ -79,46 +78,46 @@
           NixOS = " ";
         };
       };
-  
+
       username = {
         show_always = true;
         style_user = "bg:surface0 fg:text";
         style_root = "bg:surface0 fg:text";
         format = "[ $user ]($style)";
       };
-  
+
       directory = {
         style = "fg:mantle bg:peach";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "../";
       };
-  
+
       git_branch = {
         symbol = "";
         style = "bg:blue";
         format = "[[ $symbol $branch ](fg:base bg:green)]($style)";
       };
-  
+
       git_status = {
         style = "bg:blue";
         format = "[[($all_status$ahead_behind )](fg:base bg:green)]($style)";
       };
-  
+
       time = {
         disabled = false;
         time_format = "%R";
         style = "bg:peach";
         format = "[[  $time ](fg:mantle bg:purple)]($style)";
       };
-  
+
       cmd_duration = {
         min_time = 1000;
         format = "[ took $duration ](fg:base bg:blue)";
       };
-  
+
       line_break.disabled = false;
-  
+
       character = {
         success_symbol = "[❯](bold fg:green)";
         error_symbol = "[❯](bold fg:red)";

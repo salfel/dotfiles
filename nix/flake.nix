@@ -18,15 +18,13 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, disko, ... }@inputs: 
-  let 
+  outputs = { nixpkgs, home-manager, catppuccin, disko, ... }@inputs:
+    let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
 
-        overlays = [
-          (import ./overlays/easyeda2kicad.nix)
-        ];
+        overlays = [ (import ./overlays/easyeda2kicad.nix) ];
       };
 
       machines = [ "framework" ];
@@ -41,19 +39,23 @@
 
             ./configuration.nix
           ];
-          specialArgs = { inherit inputs; inherit system; };
+          specialArgs = {
+            inherit inputs;
+            inherit system;
+          };
         };
-  in {
-    nixosConfigurations = builtins.listToAttrs (map (name: { inherit name; value = mkMachine name; }) machines);
-    homeConfigurations = {
-      felix = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+    in {
+      nixosConfigurations = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = mkMachine name;
+      }) machines);
+      homeConfigurations = {
+        felix = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-        modules = [ 
-          ./home/home.nix
-          catppuccin.homeManagerModules.catppuccin
-        ];
+          modules =
+            [ ./home/home.nix catppuccin.homeManagerModules.catppuccin ];
+        };
       };
     };
-  };
 }

@@ -4,17 +4,13 @@
     autosuggestion.enable = true;
     syntaxHighlighting = {
       enable = true;
-      catppuccin.enable = true; 
-    };
-    
-    oh-my-zsh = {
-      enable = true;
+      catppuccin.enable = true;
     };
 
-    shellAliases = {
-      mux = "tmuxinator start";
-    };
-  
+    oh-my-zsh = { enable = true; };
+
+    shellAliases = { mux = "tmuxinator start"; };
+
     initExtra = ''
       eval "$(starship init zsh)"
     '';

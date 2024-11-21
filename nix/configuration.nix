@@ -1,14 +1,9 @@
 { pkgs, inputs, system, lib, ... }:
 
 {
-  imports =
-    [
-      ./modules
-    ];
+  imports = [ ./modules ];
 
-  nixpkgs.overlays = [
-    (import ./overlays/easyeda2kicad.nix)
-  ];
+  nixpkgs.overlays = [ (import ./overlays/easyeda2kicad.nix) ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,7 +62,7 @@
   # shells
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true; 
+  programs.zsh.enable = true;
 
   users.users.felix = {
     isNormalUser = true;
@@ -115,22 +110,19 @@
     unzip
     fzf
     ripgrep
-  
+
     # Dev Apps
     beekeeper-studio
     vscode
     bruno
   ];
 
-  fonts.packages = with pkgs; [ 
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
+  fonts.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
   # 1password
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "1password-gui"
-    "1password"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [ "1password-gui" "1password" ];
 
   programs._1password.enable = true;
   programs._1password-gui = {

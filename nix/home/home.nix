@@ -1,26 +1,18 @@
 { pkgs, ... }:
 
-let 
-  custom-pkgs = import ../pkgs { inherit pkgs; };
+let custom-pkgs = import ../pkgs { inherit pkgs; };
 in {
-  imports = [
-    ./shell
-    ./wofi.nix
-  ];
+  imports = [ ./shell ./wofi.nix ];
 
   nix = {
     package = pkgs.nix;
-    settings = {
-      experimental-features = [ "flakes" "nix-command" ];
-    };
+    settings = { experimental-features = [ "flakes" "nix-command" ]; };
   };
 
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = [
-    custom-pkgs.banana-cursor
-  ];
+  home.packages = [ custom-pkgs.banana-cursor ];
 
   dconf = {
     enable = true;
@@ -35,12 +27,10 @@ in {
     name = "Banana-Catppuccin-Mocha";
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.stateVersion = "24.05"; 
+  home.stateVersion = "24.05";
 }
