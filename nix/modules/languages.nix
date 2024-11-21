@@ -23,7 +23,7 @@
 
     # Formatter
     rustfmt
-    nixfmt
+    nixfmt-classic
     stylua
   ];
 }
