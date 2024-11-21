@@ -125,7 +125,7 @@ return {
 			formatting = {
 				format = function(entry, vim_item)
 					if vim.tbl_contains({ "path" }, entry.source.name) then
-						local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
+						local icon, hl_group = require("nvim-web-devicons").get_icon(entry.completion_item.label)
 						if icon then
 							vim_item.kind = icon
 							vim_item.kind_hl_group = hl_group
@@ -135,6 +135,8 @@ return {
 
 					return require("lspkind").cmp_format({ with_text = true })(entry, vim_item)
 				end,
+				expandable_indicator = false,
+				fields = { "abbr", "kind", "menu" },
 			},
 		})
 	end,
