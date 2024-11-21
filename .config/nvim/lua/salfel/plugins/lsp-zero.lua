@@ -64,7 +64,11 @@ return {
 			},
 		})
 
-		require("lspconfig").nixd.setup({})
+		local custom_lsp_servers = { "nixd", "ccls" }
+
+		for _, server_name in pairs(custom_lsp_servers) do
+			require("lspconfig")[server_name].setup({})
+		end
 
 		-- tabs are of length 2 in nix
 		vim.api.nvim_create_autocmd("FileType", {

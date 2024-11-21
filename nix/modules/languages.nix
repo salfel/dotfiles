@@ -19,6 +19,7 @@
     nixd
     lua-language-server
     clang-tools
+    ccls
 
     # Formatter
     rustfmt
