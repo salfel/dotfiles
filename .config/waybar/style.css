@@ -58,6 +58,10 @@ tooltip {
     color: @maroon;
 }
 
+#battery.charging {
+    color: @green
+}
+
 #battery {
     margin-right: 16px;
 }
