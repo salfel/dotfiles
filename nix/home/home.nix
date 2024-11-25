@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let custom-pkgs = import ../pkgs { inherit pkgs; };
 in {
@@ -28,6 +28,8 @@ in {
   };
 
   home.sessionVariables = { EDITOR = "nvim"; };
+
+  home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
