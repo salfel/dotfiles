@@ -19,6 +19,9 @@ return {
 			rainbow = {
 				enable = true,
 			},
+			highlight = {
+				enable = true,
+			},
 		})
 	end,
 }
