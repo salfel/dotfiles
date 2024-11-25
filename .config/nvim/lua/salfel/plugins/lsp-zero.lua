@@ -45,6 +45,13 @@ return {
 			},
 		})
 
+		-- needed for rustaceanvim
+		lsp_zero.format_on_save({
+			servers = {
+				["rust-analyzer"] = { "rust" },
+			},
+		})
+
 		require("lspconfig").lua_ls.setup({
 			settings = {
 				Lua = {
