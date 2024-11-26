@@ -95,6 +95,7 @@
     obsidian
     inputs.zen-browser.packages."${system}".specific
     chromium
+    discord
 
     # Terminal utilities
     tmux
@@ -110,11 +111,13 @@
     unzip
     fzf
     ripgrep
+    cloc
 
     # Dev Apps
     beekeeper-studio
     vscode
     bruno
+    postman
   ];
 
   fonts.packages = with pkgs;
