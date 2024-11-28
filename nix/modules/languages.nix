@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    # Languages
     python3
     nodejs
     yarn
@@ -25,5 +26,8 @@
     rustfmt
     nixfmt-classic
     stylua
+
+    # Dev packages
+    air
   ];
 }
