@@ -113,6 +113,7 @@
     fzf
     ripgrep
     cloc
+    silicon
 
     # Dev Apps
     beekeeper-studio

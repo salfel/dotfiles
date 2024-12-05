@@ -18,6 +18,7 @@ local plugins = utils.requirePlugins({
 	"markdown",
 	"copilot",
 	"avante",
+	"silicon",
 }, {
 	"tpope/vim-surround",
 	{ "windwp/nvim-autopairs", config = true },
