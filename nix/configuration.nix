@@ -141,12 +141,13 @@
   virtualisation = {
     docker.enable = true;
 
-    virtualbox.host.enable = true;
-    virtualbox.guest.enable = true;
-    virtualbox.guest.dragAndDrop = true;
+    virtualbox.host = {
+      enable = true;
+      enableExtensionPack = true;
+      enableKvm = true;
+      addNetworkInterface = false;
+    };
   };
-
-  boot.initrd.kernelModules = [ "vboxdrv" "vboxnetadp" "vboxnetflt" ];
 
   programs.gnupg.agent = {
     enable = true;
