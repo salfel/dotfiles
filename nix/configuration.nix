@@ -106,9 +106,6 @@
     neovim
     kitty
     starship
-    lazygit
-    btop
-    yazi
     fastfetch
     stow
     unzip
