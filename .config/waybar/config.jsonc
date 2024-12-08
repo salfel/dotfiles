@@ -2,14 +2,13 @@
 {
     "margin-left": 12,
     "margin-right": 12,
-    "margin-top": 8,
+    "margin-top": 12,
     "reload_style_on_change": true,
     "modules-left": [
-        "custom/os",
-        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces",
     ],
     "modules-right": [
         "network",
