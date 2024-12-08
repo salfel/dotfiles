@@ -7,7 +7,6 @@
       accent = "rosewater";
     };
 
-
     settings = { gui = { skipDiscardChangeWarning = true; }; };
   };
 }
