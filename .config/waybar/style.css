@@ -31,6 +31,11 @@ tooltip {
     margin-left: 0
 }
 
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
 #battery {
     margin-right: 0
 }
