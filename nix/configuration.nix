@@ -97,6 +97,7 @@
     inputs.zen-browser.packages."${system}".specific
     chromium
     discord
+    steam
 
     # Terminal utilities
     tmux
@@ -130,8 +131,6 @@
     enable = true;
     polkitPolicyOwners = [ "felix" ];
   };
-
-  programs.steam.enable = true;
 
   programs.hyprland.enable = true;
 
