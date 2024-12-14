@@ -69,3 +69,7 @@ window#waybar.empty #window {
 #battery.charging {
     color: @green
 }
+
+#battery.full {
+    color: @sapphire
+}

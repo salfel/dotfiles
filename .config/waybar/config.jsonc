@@ -54,7 +54,9 @@
     "battery": {
         "bat": "BAT1",
         "format": "{icon} {capacity}%",
+        "interval": 5,
         "states": {
+            "full": 80,
             "warning": 30,
             "critical": 15
         },
