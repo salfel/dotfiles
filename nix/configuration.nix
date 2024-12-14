@@ -98,6 +98,7 @@
     chromium
     discord
     steam
+    lunar-client
 
     # Terminal utilities
     tmux
