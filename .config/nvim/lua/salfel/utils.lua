@@ -12,6 +12,17 @@ local function requirePlugins(plugins, finalPlugins)
 	return newTable
 end
 
+local function isQuickFixOpen()
+	for _, win in ipairs(vim.fn.getwininfo()) do
+		if win.quickfix == 1 then
+			return true
+		end
+	end
+
+	return false
+end
+
 return {
 	requirePlugins = requirePlugins,
+	isQuickFixOpen = isQuickFixOpen,
 }

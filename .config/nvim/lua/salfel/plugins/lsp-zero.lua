@@ -13,6 +13,7 @@ return {
 	config = function()
 		local lsp_zero = require("lsp-zero")
 		local wk = require("which-key")
+		local utils = require("salfel/utils")
 
 		local function on_attach(_, bufnr)
 			lsp_zero.default_keymaps({ bufnr = bufnr })
@@ -86,17 +87,25 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>")
-		vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-		vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
-		vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>")
-		vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-		vim.keymap.set("n", "gi", ":Telescope lsp_implementations<CR>")
-		vim.keymap.set("n", "gr", ":Telescope lsp_references<CR>")
+		vim.keymap.set("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>")
+		vim.keymap.set("n", "]d", ":lua vim.diagnostic.goto_next()<CR>")
+		vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
+		vim.keymap.set("n", "ga", ":lua vim.lsp.buf.code_action()<CR>")
+		vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>")
 		vim.keymap.set("n", "gl", ":lua vim.diagnostic.open_float()<CR>")
-		vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", { silent = true })
-		vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
-		vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+		vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<CR>")
+		vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
+
+		vim.keymap.set("n", "<C-n>", function()
+			if utils.isQuickFixOpen() then
+				vim.cmd("cnext")
+			end
+		end)
+		vim.keymap.set("n", "<C-p>", function()
+			if utils.isQuickFixOpen() then
+				vim.cmd("cprev")
+			end
+		end)
 
 		local cmp = require("cmp")
 
