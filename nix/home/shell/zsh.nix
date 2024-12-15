@@ -11,7 +11,7 @@
 
     shellAliases = {
       mux = "tmuxinator start";
-      ls = "ls -l --color=auto";
+      ls = "ls -la --color=auto";
     };
 
     initExtra = ''
