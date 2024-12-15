@@ -56,7 +56,8 @@
         "format": "{icon} {capacity}%",
         "interval": 5,
         "states": {
-            "full": 80,
+            "full": 100,
+            "normal": 79,
             "warning": 30,
             "critical": 15
         },
