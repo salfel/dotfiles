@@ -9,12 +9,14 @@
       always_parse_args = true;
       show_all = false;
       term = "kitty";
+      allow_images = true;
+      no_actions = true;
       hide_scroll = true;
       print_command = true;
       insensitive = true;
       prompt = "";
-      key_down = "Ctrl-n";
-      key_up = "Ctrl-p";
+      key_forward = "Ctrl-n";
+      key_backward = "Ctrl-p";
     };
 
     style = ''
@@ -80,8 +82,8 @@
       window {
         margin: 0px;
         padding: 10px;
-        border: 0.16em solid @lavender;
-        border-radius: 0.1em;
+        border: 0.16em solid @rosewater;
+        border-radius: 10px;
         background-color: @base;
         animation: slideIn 0.5s ease-in-out both;
       }
