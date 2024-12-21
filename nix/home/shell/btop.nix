@@ -3,6 +3,9 @@
     enable = true;
     catppuccin.enable = true;
 
-    settings = { vim_keys = true; };
+    settings = {
+      vim_keys = true;
+      update_ms = 500;
+    };
   };
 }
