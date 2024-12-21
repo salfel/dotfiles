@@ -1,4 +1,6 @@
 {
+  catppuccin.kitty.enable = true;
+
   programs.kitty = {
     enable = true;
 
@@ -19,7 +21,5 @@
       modify_font underline_position 8px
       modify_font underline_thickness 200%
     '';
-
-    catppuccin.enable = true;
   };
 }
