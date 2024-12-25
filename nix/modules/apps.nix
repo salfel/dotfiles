@@ -4,7 +4,7 @@
     discord
     libreoffice
     obsidian
-    inputs.zen-browser.packages."${system}"
+    inputs.zen-browser.packages."${system}".default
     lunar-client
     steam
     chromium
