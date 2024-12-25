@@ -1,4 +1,4 @@
-{ pkgs, inputs, system, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [ ./modules ];
