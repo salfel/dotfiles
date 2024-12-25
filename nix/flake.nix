@@ -34,6 +34,7 @@
           inherit system;
           modules = [
             disko.nixosModules.disko
+            catppuccin.nixosModules.catppuccin
             ./machines/${name}/disko-config.nix
             ./machines/${name}/hardware-configuration.nix
 
