@@ -89,17 +89,6 @@
     playerctl
     swaynotificationcenter
 
-    # Apps
-    spotify
-    discord
-    libreoffice
-    obsidian
-    inputs.zen-browser.packages."${system}".specific
-    chromium
-    discord
-    steam
-    lunar-client
-
     # Terminal utilities
     tmux
     tmuxinator
