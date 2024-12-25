@@ -2,7 +2,7 @@
 
 let custom-pkgs = import ../pkgs { inherit pkgs; };
 in {
-  imports = [ ./shell ./wofi.nix ];
+  imports = [ ./shell ./wofi.nix ./rofi.nix ];
 
   nix = {
     package = pkgs.nix;

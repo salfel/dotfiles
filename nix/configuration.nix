@@ -85,6 +85,7 @@
     waybar
     ulauncher
     wofi
+    rofi
     hyprshot
     hyprpaper
     hypridle
