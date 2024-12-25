@@ -3,7 +3,9 @@
     # Languages
     python3
     nodejs
+    pnpm
     yarn
+    bun
     go
     php83
     php83Packages.composer
@@ -26,6 +28,7 @@
     rustfmt
     nixfmt-classic
     stylua
+    biome
 
     # Dev packages
     air
