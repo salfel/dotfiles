@@ -15,6 +15,8 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
+    ghostty.url = "github:ghostty-org/ghostty";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 

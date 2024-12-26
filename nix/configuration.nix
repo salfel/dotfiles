@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, system, ... }:
 
 {
   imports = [ ./modules ];
@@ -102,7 +102,7 @@
     tmuxinator
     neovim
     kitty
-    starship
+    inputs.ghostty.packages.${system}.default
     fastfetch
     stow
     unzip
