@@ -1,7 +1,0 @@
-name: dotfiles
-root: ~/Code/dotfiles
-
-windows:
-  - editor: nvim
-  - git: lazygit
-  - commands:

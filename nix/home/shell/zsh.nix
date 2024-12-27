@@ -8,10 +8,7 @@
 
     oh-my-zsh = { enable = true; };
 
-    shellAliases = {
-      mux = "tmuxinator start";
-      ls = "ls -la --color=auto";
-    };
+    shellAliases = { ls = "ls -la --color=auto"; };
 
     initExtra = ''
       # set cursor style

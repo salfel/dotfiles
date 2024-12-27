@@ -99,8 +99,6 @@
 
     # Terminal utilities
     tmux
-    tmuxinator
-    tmux-sessionizer
     neovim
     kitty
     inputs.ghostty.packages.${system}.default
