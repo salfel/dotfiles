@@ -1,28 +1,19 @@
-local function requirePlugins(plugins, finalPlugins)
-	local newTable = {}
+local function getQuickFix()
+	local open = false
 
-	for _, value in pairs(plugins) do
-		table.insert(newTable, require("salfel/plugins/" .. value))
-	end
-
-	for _, value in pairs(finalPlugins) do
-		table.insert(newTable, value)
-	end
-
-	return newTable
-end
-
-local function isQuickFixOpen()
 	for _, win in ipairs(vim.fn.getwininfo()) do
 		if win.quickfix == 1 then
-			return true
+			open = true
 		end
 	end
 
-	return false
+	return {
+		open = open,
+		current = vim.fn.getqflist({ idx = 0 }).idx,
+		length = #vim.fn.getqflist(),
+	}
 end
 
 return {
-	requirePlugins = requirePlugins,
-	isQuickFixOpen = isQuickFixOpen,
+	getQuickFix = getQuickFix,
 }

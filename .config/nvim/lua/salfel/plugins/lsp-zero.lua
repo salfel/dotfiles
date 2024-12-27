@@ -97,13 +97,25 @@ return {
 		vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
 
 		vim.keymap.set("n", "<C-n>", function()
-			if utils.isQuickFixOpen() then
-				vim.cmd("cnext")
+			local quickFix = utils.getQuickFix()
+
+			if quickFix.open then
+				if quickFix.current == quickFix.length then
+					vim.cmd("cc1")
+				else
+					vim.cmd("cnext")
+				end
 			end
 		end)
 		vim.keymap.set("n", "<C-p>", function()
-			if utils.isQuickFixOpen() then
-				vim.cmd("cprev")
+			local quickFix = utils.getQuickFix()
+
+			if quickFix.open then
+				if quickFix.current == 1 then
+					vim.cmd("cc" .. quickFix.length)
+				else
+					vim.cmd("cprev")
+				end
 			end
 		end)
 
