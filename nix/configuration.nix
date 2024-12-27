@@ -100,7 +100,6 @@
     # Terminal utilities
     tmux
     neovim
-    kitty
     inputs.ghostty.packages.${system}.default
     fastfetch
     stow
