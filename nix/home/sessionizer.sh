@@ -28,4 +28,9 @@ tmux new-window -t $name:3 -n 'terminal' -c $path
 
 # Select first window and attach to session
 tmux select-window -t $name:1
-tmux attach-session -t $name
+
+if [[ -z $TMUX ]]; then
+    tmux attach-session -t $name
+else 
+    tmux switch-client -t $name
+fi
