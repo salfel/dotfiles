@@ -122,6 +122,8 @@ return {
 		vim.keymap.set("n", "<C-n>", nextQuickFix)
 		vim.keymap.set("n", "<C-p>", prevQuickFix)
 
+		vim.keymap.set("n", "<leader>c", ":cclose<CR>")
+
 		local cmp = require("cmp")
 
 		cmp.setup({
