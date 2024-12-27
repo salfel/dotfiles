@@ -87,16 +87,7 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>")
-		vim.keymap.set("n", "]d", ":lua vim.diagnostic.goto_next()<CR>")
-		vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
-		vim.keymap.set("n", "ga", ":lua vim.lsp.buf.code_action()<CR>")
-		vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<CR>")
-		vim.keymap.set("n", "gl", ":lua vim.diagnostic.open_float()<CR>")
-		vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<CR>")
-		vim.keymap.set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
-
-		vim.keymap.set("n", "<C-n>", function()
+		local function nextQuickFix()
 			local quickFix = utils.getQuickFix()
 
 			if quickFix.open then
@@ -106,8 +97,9 @@ return {
 					vim.cmd("cnext")
 				end
 			end
-		end)
-		vim.keymap.set("n", "<C-p>", function()
+		end
+
+		local function prevQuickFix()
 			local quickFix = utils.getQuickFix()
 
 			if quickFix.open then
@@ -117,7 +109,18 @@ return {
 					vim.cmd("cprev")
 				end
 			end
-		end)
+		end
+
+		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references)
+		vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover)
+
+		vim.keymap.set("n", "<C-n>", nextQuickFix)
+		vim.keymap.set("n", "<C-p>", prevQuickFix)
 
 		local cmp = require("cmp")
 
