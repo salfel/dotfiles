@@ -14,6 +14,9 @@
     };
 
     initExtra = ''
+      # set cursor style
+      echo -ne '\e[5 q'
+
       eval "$(starship init zsh)"
     '';
   };
