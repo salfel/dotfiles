@@ -1,5 +1,5 @@
 configuration {
     show-icons: true;
-    terminal: "kitty";
+    terminal: "ghostty";
 }
 @theme "catppuccin-mocha"
