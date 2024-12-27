@@ -1,6 +1,9 @@
 { pkgs, config, ... }:
 
-let custom-pkgs = import ../pkgs { inherit pkgs; };
+let
+  custom-pkgs = import ../pkgs { inherit pkgs; };
+  sessionizer-script =
+    pkgs.writeScriptBin "sessionizer" (builtins.readFile ./sessionizer.sh);
 in {
   imports = [ ./shell ./wofi.nix ./rofi.nix ];
 
@@ -12,7 +15,7 @@ in {
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = [ custom-pkgs.banana-cursor ];
+  home.packages = [ custom-pkgs.banana-cursor sessionizer-script ];
 
   dconf = {
     enable = true;
