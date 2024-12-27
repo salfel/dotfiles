@@ -10,6 +10,7 @@
     php83
     php83Packages.composer
     cargo
+    zig
 
     # Compilers
     gcc
