@@ -7,5 +7,6 @@
     ./lazygit.nix
     ./btop.nix
     ./yazi.nix
+    ./misc.nix
   ];
 }
