@@ -84,7 +84,6 @@
     # Desktop Utilities
     waybar
     ulauncher
-    wofi
     rofi
     hyprshot
     hyprpaper
