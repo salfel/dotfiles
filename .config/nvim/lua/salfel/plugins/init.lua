@@ -8,4 +8,5 @@ return {
 	"tpope/vim-unimpaired",
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"nelsyeung/twig.vim",
+	{ "salfel/quickfix-navigator", opts = {} },
 }

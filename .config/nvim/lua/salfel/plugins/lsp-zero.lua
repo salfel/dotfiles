@@ -13,7 +13,6 @@ return {
 	config = function()
 		local lsp_zero = require("lsp-zero")
 		local wk = require("which-key")
-		local utils = require("salfel/utils")
 
 		local function on_attach(_, bufnr)
 			lsp_zero.default_keymaps({ bufnr = bufnr })
@@ -87,30 +86,6 @@ return {
 			end,
 		})
 
-		local function nextQuickFix()
-			local quickFix = utils.getQuickFix()
-
-			if quickFix.open then
-				if quickFix.current == quickFix.length then
-					vim.cmd("cc1")
-				else
-					vim.cmd("cnext")
-				end
-			end
-		end
-
-		local function prevQuickFix()
-			local quickFix = utils.getQuickFix()
-
-			if quickFix.open then
-				if quickFix.current == 1 then
-					vim.cmd("cc" .. quickFix.length)
-				else
-					vim.cmd("cprev")
-				end
-			end
-		end
-
 		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -118,11 +93,6 @@ return {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references)
 		vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover)
-
-		vim.keymap.set("n", "<C-n>", nextQuickFix)
-		vim.keymap.set("n", "<C-p>", prevQuickFix)
-
-		vim.keymap.set("n", "<leader>c", ":cclose<CR>")
 
 		local cmp = require("cmp")
 
