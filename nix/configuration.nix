@@ -106,6 +106,7 @@
     fzf
     ripgrep
     cloc
+    tree
     silicon
 
     # Dev Apps
