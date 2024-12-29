@@ -20,3 +20,5 @@ vim.opt.undofile = true
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.wrap = false
+
+vim.opt.signcolumn = "yes:1"
