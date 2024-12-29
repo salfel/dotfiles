@@ -6,7 +6,7 @@ return {
 	"alvan/vim-closetag",
 	"ku1ik/vim-pasta",
 	"tpope/vim-unimpaired",
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", opts = {} },
 	"nelsyeung/twig.vim",
 	{ "salfel/quickfix-navigator", opts = {} },
 }
