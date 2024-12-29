@@ -14,4 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 require("salfel/options")
 require("salfel/keymaps")
 
-require("lazy").setup("salfel/plugins")
+require("lazy").setup({
+	spec = {
+		{
+			import = "salfel/plugins",
+		},
+	},
+	change_detection = {
+		notify = false,
+	},
+})
