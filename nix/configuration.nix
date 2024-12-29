@@ -112,7 +112,6 @@
     # Dev Apps
     beekeeper-studio
     vscode
-    bruno
     postman
   ];
 
