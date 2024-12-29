@@ -26,6 +26,8 @@ return {
 					end,
 				}),
 				null_ls.builtins.formatting.stylua,
+				-- Rust formatting
+				null_ls.builtins.formatting.dxfmt,
 				null_ls.builtins.formatting.nixfmt,
 				null_ls.builtins.formatting.gofmt,
 				null_ls.builtins.formatting.prettier.with({

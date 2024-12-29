@@ -1,8 +1,6 @@
 return {
-	"VonHeikemen/lsp-zero.nvim",
-	branch = "v3.x",
+	"neovim/nvim-lspconfig",
 	dependencies = {
-		"neovim/nvim-lspconfig",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/nvim-cmp",
 		"L3MON4D3/LuaSnip",
@@ -11,27 +9,6 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	config = function()
-		local lsp_zero = require("lsp-zero")
-		local wk = require("which-key")
-
-		local function on_attach(_, bufnr)
-			lsp_zero.default_keymaps({ bufnr = bufnr })
-		end
-
-		lsp_zero.on_attach = on_attach
-
-		vim.g.rustaceanvim = {
-			server = {
-				on_attach = on_attach,
-				capabilities = lsp_zero.get_capabilities(),
-				["rust-analyzer"] = { "rust" },
-			},
-		}
-
-		wk.add({
-			{ "<leader>rn", vim.lsp.buf.rename, desc = "Rename" },
-		})
-
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
@@ -39,39 +16,12 @@ return {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,
-				lua_ls = function()
-					require("lspconfig").lua_ls.setup({})
-				end,
+				rust_analyzer = function() end,
 			},
 		})
 
-		-- needed for rustaceanvim
-		lsp_zero.format_on_save({
-			servers = {
-				["rust-analyzer"] = { "rust" },
-			},
-		})
-
-		require("lspconfig").lua_ls.setup({
-			settings = {
-				Lua = {
-					runtime = {
-						version = "LuaJIT",
-					},
-					workspace = {
-						checkThirdParty = false,
-						library = {
-							vim.env.VIMRUNTIME,
-						},
-					},
-					format = {
-						enable = false,
-					},
-				},
-			},
-		})
-
-		local custom_lsp_servers = { "nixd", "ccls" }
+		-- Language Servers not able to be installed through mason due to dynamic linking
+		local custom_lsp_servers = { "nixd", "ccls", "lua_ls" }
 
 		for _, server_name in pairs(custom_lsp_servers) do
 			require("lspconfig")[server_name].setup({})
@@ -93,6 +43,7 @@ return {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references)
 		vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover)
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
 		local cmp = require("cmp")
 
@@ -103,7 +54,6 @@ return {
 				{ name = "nvim_lua" },
 				{ name = "buffer" },
 				{ name = "luasnip" },
-				{ name = "supermaven" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
