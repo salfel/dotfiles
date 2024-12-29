@@ -10,8 +10,8 @@ return {
 					{ "<leader>hp", gs.preview_hunk, group = "[H]unk", desc = "Preview Hunk" },
 					{ "<leader>hr", gs.reset_hunk, group = "[H]unk", desc = "Reset Hunk" },
 					{ "<leader>hb", gs.blame_line, group = "[H]unk", desc = "Blame Hunk" },
-					{ "[h", gs.next_hunk, group = "[H]unk", desc = "Next Hunk" },
-					{ "]h", gs.prev_hunk, group = "[H]unk", desc = "Prev Hunk" },
+					{ "[h", gs.nav_hunk("next"), group = "[H]unk", desc = "Next Hunk" },
+					{ "]h", gs.nav_hunk("prev"), group = "[H]unk", desc = "Prev Hunk" },
 				})
 			end,
 		})
