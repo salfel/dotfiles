@@ -2,8 +2,8 @@
 
 let
   custom-pkgs = import ../pkgs { inherit pkgs; };
-  sessionizer-script =
-    pkgs.writeScriptBin "sessionizer" (builtins.readFile ./sessionizer.sh);
+  sessionizer-script = pkgs.writeScriptBin "sessionizer"
+    (builtins.readFile ./scripts/sessionizer.sh);
 in {
   imports = [ ./shell ];
 
