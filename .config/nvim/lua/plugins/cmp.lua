@@ -15,7 +15,6 @@ return {
                 { name = "nvim_lua" },
                 { name = "buffer" },
                 { name = "luasnip" },
-                { name = "supermaven" },
             },
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
