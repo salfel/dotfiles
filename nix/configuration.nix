@@ -108,6 +108,7 @@
     cloc
     tree
     silicon
+    jq
 
     # Dev Apps
     beekeeper-studio
