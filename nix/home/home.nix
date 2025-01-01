@@ -5,7 +5,7 @@ let
   sessionizer-script = pkgs.writeScriptBin "sessionizer"
     (builtins.readFile ./scripts/sessionizer.sh);
 in {
-  imports = [ ./shell ];
+  imports = [ ./shell ./applications ];
 
   nix = {
     package = pkgs.nix;
