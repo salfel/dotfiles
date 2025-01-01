@@ -26,6 +26,11 @@ tmux send-keys -t $name:2 'lazygit' C-m
 # Window 3: Terminal
 tmux new-window -t $name:3 -n 'terminal' -c $path
 
+if [ $name = 'dotfiles' ]; then
+    tmux new-window -t $name:4 -n 'btop' -c $path
+    tmux send-keys -t $name:4 'btop' C-m
+fi
+
 # Select first window and attach to session
 tmux select-window -t $name:1
 
