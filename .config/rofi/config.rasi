@@ -1,5 +1,6 @@
 configuration {
     show-icons: true;
+    sort: true;
     terminal: "ghostty";
 }
 @theme "catppuccin-mocha"
