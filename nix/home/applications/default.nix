@@ -1,1 +1,1 @@
-{ imports = [ ./windows ]; }
+{ imports = [ ./windows ./ghostty.nix ]; }

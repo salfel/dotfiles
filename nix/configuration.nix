@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, system, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [ ./modules ];
@@ -99,7 +99,7 @@
     # Terminal utilities
     tmux
     neovim
-    inputs.ghostty.packages.${system}.default
+    ghostty
     fastfetch
     stow
     unzip
