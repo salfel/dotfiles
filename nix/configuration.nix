@@ -83,7 +83,6 @@
   environment.systemPackages = with pkgs; [
     # Desktop Utilities
     waybar
-    ulauncher
     rofi
     hyprshot
     hyprpaper
