@@ -15,6 +15,8 @@
       echo -ne '\e[5 q'
 
       eval "$(starship init zsh)"
+
+      tmux attach > /dev/null 2>&1
     '';
   };
 }
