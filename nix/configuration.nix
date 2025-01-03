@@ -6,15 +6,8 @@
   nixpkgs.overlays = [ (import ./overlays/easyeda2kicad.nix) ];
 
   # Bootloader.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      efiSupport = true;
-    };
-  };
-
-  catppuccin.grub.enable = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
 
