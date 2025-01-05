@@ -26,6 +26,15 @@ tmux send-keys -t $name:2 'lazygit' C-m
 # Window 3: Terminal
 tmux new-window -t $name:3 -n 'terminal' -c $path
 
+# check if directory has a flake.nix
+flake=$(find $path -maxdepth 2 -type f -name flake.nix)
+if [[ -n $flake ]]; then
+    tmux send-keys -t $name:3 'nix develop' C-m
+    tmux send-keys -t $name:3 'zsh' C-m
+    tmux send-keys -t $name:3 'clear' C-m
+fi
+
+
 if [ $name = 'dotfiles' ]; then
     tmux new-window -t $name:4 -n 'btop' -c $path
     tmux send-keys -t $name:4 'btop' C-m
