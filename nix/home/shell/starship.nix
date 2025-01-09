@@ -4,18 +4,10 @@
 
     settings = {
       format = lib.concatStrings [
-        "[](surface0)"
-        "$os"
-        "[](bg:peach fg:surface0)"
         "$directory"
-        "[](fg:peach bg:green)"
         "$git_branch"
         "$git_status"
-        "[](fg:green bg:blue)"
-        "$cmd_duration"
-        "[](fg:blue bg:purple)"
-        "$time"
-        "[ ](fg:purple)"
+        "$git_metrics"
         "$line_break$character"
       ];
 
@@ -52,42 +44,8 @@
         };
       };
 
-      os = {
-        disabled = false;
-        style = "bg:surface0 fg:text";
-
-        symbols = {
-          Ubuntu = "󰕈 ";
-          SUSE = " ";
-          Raspbian = "󰐿 ";
-          Mint = "󰣭 ";
-          Macos = " ";
-          Manjaro = " ";
-          Linux = "󰌽 ";
-          Gentoo = "󰣨 ";
-          Fedora = "󰣛 ";
-          Alpine = " ";
-          Amazon = " ";
-          Android = " ";
-          Arch = "󰣇 ";
-          Artix = "󰣇 ";
-          CentOS = " ";
-          Debian = "󰣚 ";
-          Redhat = "󱄛 ";
-          RedHatEnterprise = "󱄛 ";
-          NixOS = " ";
-        };
-      };
-
-      username = {
-        show_always = true;
-        style_user = "bg:surface0 fg:text";
-        style_root = "bg:surface0 fg:text";
-        format = "[ $user ]($style)";
-      };
-
       directory = {
-        style = "fg:mantle bg:peach";
+        style = "fg:rosewater bold italic";
         format = "[ $path ]($style)";
         truncation_length = 3;
         truncation_symbol = "../";
@@ -95,25 +53,17 @@
 
       git_branch = {
         symbol = "";
-        style = "bg:blue";
-        format = "[[ $symbol $branch ](fg:base bg:green)]($style)";
+        format = "[[ $symbol $branch ](fg:blue)]($style)";
       };
 
       git_status = {
-        style = "bg:blue";
-        format = "[[($all_status$ahead_behind )](fg:base bg:green)]($style)";
+        format = "[[($all_status$ahead_behind )](fg:blue)]($style)";
       };
 
-      time = {
+      git_metrics = {
         disabled = false;
-        time_format = "%R";
-        style = "bg:peach";
-        format = "[[  $time ](fg:mantle bg:purple)]($style)";
-      };
-
-      cmd_duration = {
-        min_time = 1000;
-        format = "[ took $duration ](fg:base bg:blue)";
+        added_style = "italic green";
+        deleted_style = "italic red";
       };
 
       line_break.disabled = false;
