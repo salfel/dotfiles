@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-path=$(find ~/Code -maxdepth 3 -type d -name .git | sed 's/\/.git//' | fzf)
+path=$(find ~/Projects ~/Work -maxdepth 3 -type d -name .git | sed 's/\/.git//' | fzf)
 
 if [[ -z $path ]]; then
     exit 0
