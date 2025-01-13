@@ -13,13 +13,16 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, disko, ... }@inputs:
+  outputs = { nixpkgs, home-manager, catppuccin, disko, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -35,6 +38,7 @@
           inherit system;
           modules = [
             disko.nixosModules.disko
+            sops-nix.nixosModules.sops
             ./machines/${name}/disko-config.nix
             ./machines/${name}/hardware-configuration.nix
 

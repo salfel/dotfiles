@@ -34,6 +34,8 @@ in {
 
   home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

@@ -106,6 +106,9 @@
     beekeeper-studio
     vscode
     postman
+
+    sops
+    age
   ];
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
