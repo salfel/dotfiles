@@ -6,6 +6,7 @@
     ./lazygit.nix
     ./btop.nix
     ./yazi.nix
+    ./ssh.nix
     ./misc.nix
   ];
 }

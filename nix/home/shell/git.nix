@@ -6,12 +6,5 @@
 
     userEmail = "dev.felix.salcher@gmail.com";
     userName = "Felix Salcher";
-
-    extraConfig = {
-      credential = {
-        helper = "manager";
-        credentialStore = "secretservice";
-      };
-    };
   };
 }

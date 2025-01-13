@@ -1,0 +1,7 @@
+keys: 
+  - &felix age1m4sxyu0yyvm37pgkjz43996ks0pqf7zhyjdgg4x868h8nnz2y56q29jzqm
+creation_rules:
+  - path_regex: nix/secrets/[^/]+\.(yaml|json)$
+    key_groups:
+      - age:
+          - *felix
