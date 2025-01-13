@@ -9,12 +9,14 @@
         mode = "0600";
         owner = "felix";
         group = "users";
+        sopsFile = ../secrets/ssh.json;
       };
       "github_token.pub" = {
         path = "/home/felix/.ssh/github_token.pub";
         mode = "0640";
         owner = "felix";
         group = "users";
+        sopsFile = ../secrets/ssh.json;
       };
     };
   };
