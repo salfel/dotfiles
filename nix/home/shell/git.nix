@@ -12,6 +12,8 @@
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = config.sops.templates.allowed_signers.path;
       user.signingKey = "/home/felix/.ssh/signing_key";
+
+      push.autoSetupRemote = true;
     };
   };
 }
