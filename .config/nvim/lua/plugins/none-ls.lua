@@ -29,6 +29,7 @@ return {
                 null_ls.builtins.formatting.dxfmt,
                 null_ls.builtins.formatting.nixfmt,
                 null_ls.builtins.formatting.gofmt,
+                null_ls.builtins.formatting.clang_format,
                 null_ls.builtins.formatting.prettier.with({
                     extra_filetypes = { "astro" },
                     condition = function(utils)
