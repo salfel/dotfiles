@@ -11,22 +11,20 @@
     php83Packages.composer
     cargo
     zig
+    rustup
 
     # Compilers
     gcc
     gnumake
     cmake
-    rustc
 
     # LSPs
-    rust-analyzer
     nixd
     lua-language-server
     clang-tools
     ccls
 
     # Formatter
-    rustfmt
     nixfmt-classic
     stylua
     biome
