@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     # Languages
     python3
+    python3Packages.pip
     nodejs
     pnpm
     yarn
@@ -23,6 +24,8 @@
     lua-language-server
     clang-tools
     ccls
+    clang
+    clang-tools
 
     # Formatter
     nixfmt-classic
