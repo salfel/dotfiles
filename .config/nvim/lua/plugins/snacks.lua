@@ -7,7 +7,9 @@ return {
         explorer = {
             replace_netrw = true,
         },
-        notifier = {},
+        notifier = {
+            enabled = true,
+        },
         picker = {
             sources = {},
             win = {
@@ -22,6 +24,8 @@ return {
 
     config = function()
         local snacks = require("snacks")
+
+        snacks.indent.enable()
 
         vim.keymap.set("n", "<leader>e", function()
             snacks.explorer({
