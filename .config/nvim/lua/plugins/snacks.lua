@@ -41,7 +41,7 @@ return {
             explorer = finder,
             grep = finder,
             recent = finder,
-            lsp_workspace_symbols = { win = window },
+            lsp_workspace_symbols = finder,
         }
 
         snacks.indent.enable()
