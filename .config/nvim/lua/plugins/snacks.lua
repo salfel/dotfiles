@@ -37,8 +37,16 @@ return {
             win = window,
         }
         local config = {
+            explorer = {
+                hidden = true,
+                win = window,
+                layout = {
+                    layout = {
+                        position = "right",
+                    },
+                },
+            },
             files = finder,
-            explorer = finder,
             grep = finder,
             recent = finder,
             lsp_workspace_symbols = finder,
@@ -65,6 +73,9 @@ return {
         end)
         vim.keymap.set("n", "<leader>fs", function()
             snacks.picker.lsp_workspace_symbols(config.lsp_workspace_symbols)
+        end)
+        vim.keymap.set("n", "<leader>fd", function()
+            snacks.picker.diagnostics({})
         end)
     end,
 }
