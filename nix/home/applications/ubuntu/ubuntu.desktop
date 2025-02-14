@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Ubuntu
+Comment=Ubuntu Virtual Machine
+Exec=VBoxManage startvm ubuntu
+Icon=ubuntu
+Terminal=false
+Categories=System;Emulator;
+Keywords=ubuntu;virtual machine;vm;
