@@ -1,1 +1,1 @@
-{ pkgs, ... }: { environment.systemPackages = with pkgs; [ scilab-bin ]; }
+{ pkgs, ... }: { environment.systemPackages = with pkgs; [ ]; }
