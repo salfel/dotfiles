@@ -111,7 +111,10 @@
     age
 
     gimp
+    keymapp
   ];
+
+  hardware.keyboard.zsa.enable = true;
 
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
