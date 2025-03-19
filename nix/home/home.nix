@@ -32,7 +32,10 @@ in {
 
   home.sessionVariables = { EDITOR = "nvim"; };
 
-  home.sessionPath = [ "${config.home.homeDirectory}/go/bin" ];
+  home.sessionPath = [
+    "${config.home.homeDirectory}/go/bin"
+    "${config.home.homeDirectory}/.cargo/bin"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
