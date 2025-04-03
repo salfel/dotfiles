@@ -101,6 +101,7 @@
     tree
     silicon
     jq
+    xxd
 
     # Dev Apps
     beekeeper-studio
