@@ -20,7 +20,7 @@ return {
                     "--smart-case",
                     "--hidden",
                 },
-                file_ignore_patterns = { "node_modules", "vendor", ".git/", "target", "dist", ".pio", "out" },
+                file_ignore_patterns = { "node_modules", "vendor", ".git/", "target", "dist", ".pio/", "out" },
                 mappings = {
                     i = {
                         ["<esc>"] = actions.close,
