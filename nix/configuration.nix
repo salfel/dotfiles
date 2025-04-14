@@ -104,7 +104,6 @@
     xxd
 
     # Dev Apps
-    beekeeper-studio
     vscode
     postman
 
