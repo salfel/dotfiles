@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ powertop tlp ];
+  environment.systemPackages = with pkgs; [ powertop tlp auto-cpufreq ];
 
   services.tlp = {
     enable = true;
