@@ -106,6 +106,7 @@
     # Dev Apps
     vscode
     postman
+    qemu
 
     sops
     age
