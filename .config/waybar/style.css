@@ -3,45 +3,68 @@
 * {
     all: unset;
     font-family: JetBrainsMono Nerd Font;
+    font-size: 14px;
 }
 
 window#waybar {
     color: @text;
+    background: @crust;
+    border-bottom: @lavender .5px solid;
 }
 
-.module {
-    margin: 0px 8px;
-    padding: 6px 12px;
-    border: .5px solid white;
-    border-radius: 8px;
-    background: @crust;
+.modules-right {
+    margin: 8 12;
+    padding: 6 0;
 }
 
 .modules-center {
     margin: 0 32px;
 }
 
+.modules-left {
+    margin: 0 12;
+}
+
+.module {
+    margin: 0 8;
+}
+
+#network {
+    color: @red;
+}
+
+#cpu {
+    color: @peach;
+}
+
+#memory {
+    color: @yellow;
+}
+
+#pulseaudio {
+    color: @green;
+}
+
+#language {
+    color: @sapphire;
+}
+
+#clock {
+    color: @lavender;
+} 
+
+#battery {
+    color: @text;
+}
+
 tooltip {
     background: @crust;
-    border: .5px solid white;
+    border: .5px solid @lavender;
     border-radius: 4px;
 }
 
-#window {
-    margin-left: 0
-}
-
-window#waybar.empty #window {
-    background-color: transparent;
-    border: none;
-}
-
-#battery {
-    margin-right: 0
-}
-
 #workspaces button {
-    padding: 0 6px
+    padding: 0 4px
 }
 
 #workspaces button.empty {
@@ -72,4 +95,8 @@ window#waybar.empty #window {
 
 #battery.full {
     color: @sapphire
+}
+
+#battery {
+    margin-left: 12px
 }
