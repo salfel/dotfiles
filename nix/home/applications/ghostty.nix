@@ -6,7 +6,7 @@
       gtk-titlebar = false;
 
       font-family = "JetBrainsMono Nerd Font";
-      font-size = 15;
+      font-size = 12;
 
       adjust-underline-position = 6;
       adjust-underline-thickness = 1;
