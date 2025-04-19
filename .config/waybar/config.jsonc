@@ -16,10 +16,6 @@
         "clock",
         "battery",
     ],
-    "custom/os": {
-        "exec": "~/.config/waybar/scripts/os.sh",
-        "restart_interval": 1
-    },
     "hyprland/workspaces": {
         "all-outputs": true,
         "format": "{icon}"
