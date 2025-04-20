@@ -7,6 +7,8 @@ let
 in {
   imports = [ ./shell ./applications ./default.nix ];
 
+  catppuccin.accent = "lavender";
+
   nix = {
     package = pkgs.nix;
     settings = { experimental-features = [ "flakes" "nix-command" ]; };
