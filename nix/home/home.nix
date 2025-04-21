@@ -1,11 +1,8 @@
 { pkgs, config, ... }:
 
-let
-  custom-pkgs = import ../pkgs { inherit pkgs; };
-  sessionizer-script = pkgs.writeScriptBin "sessionizer"
-    (builtins.readFile ./scripts/sessionizer.sh);
+let custom-pkgs = import ../pkgs { inherit pkgs; };
 in {
-  imports = [ ./shell ./applications ./default.nix ];
+  imports = [ ./shell ./applications ./scripts ./secrets.nix ];
 
   catppuccin.accent = "lavender";
 
@@ -17,7 +14,7 @@ in {
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = [ custom-pkgs.banana-cursor sessionizer-script ];
+  home.packages = [ custom-pkgs.banana-cursor ];
 
   dconf = {
     enable = true;

@@ -87,6 +87,7 @@
     brightnessctl
     playerctl
     swaynotificationcenter
+    libnotify
 
     # Terminal utilities
     tmux
