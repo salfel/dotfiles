@@ -10,7 +10,7 @@
 
     shellAliases = { ls = "ls -la --color=auto"; };
 
-    initExtra = ''
+    initContent = ''
       # set cursor style
       echo -ne '\e[5 q'
     '';
