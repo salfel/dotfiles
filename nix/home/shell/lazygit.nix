@@ -4,6 +4,11 @@
   programs.lazygit = {
     enable = true;
 
-    settings = { gui = { skipDiscardChangeWarning = true; }; };
+    settings = {
+      gui = {
+        skipDiscardChangeWarning = true;
+        switchTabsWithPanelJumpKeys = true;
+      };
+    };
   };
 }
