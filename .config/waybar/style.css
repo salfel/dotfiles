@@ -6,6 +6,10 @@
     font-size: 14px;
 }
 
+window.eDP-1.* {
+    font-size: 20px
+}
+
 window#waybar {
     color: @text;
     background: @crust;
