@@ -53,35 +53,16 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
-  };
 
-  services.blueman.enable = true;
-
-  # sound
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-
-    wireplumber.extraConfig.bluetoothEnhancements = {
-      # Add these lines to enable and prioritize better codecs
-      "bluez5.codec-preference" = [ "ldac" "aptx-hd" "aptx" "aac" "sbc" ];
-      "bluez5.enable-aac" = true;
-      "bluez5.enable-aptx" = true;
-      "bluez5.enable-aptx-hd" = true;
-      "bluez5.enable-ldac" = true;
-
-      "monitor.bluez.properties" = {
-        "bluez5.enable-sbc-xq" = true;
-        "bluez5.enable-msbc" = true;
-        "bluez5.enable-hw-volume" = true;
-        "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+    settings = {
+      General = {
+        Enable = "Source,Sink,Media,Socket";
+        Experimental = true;
       };
     };
   };
+
+  services.blueman.enable = true;
 
   # shells
   environment.shells = with pkgs; [ zsh ];

@@ -1,1 +1,4 @@
-{ imports = [ ./languages.nix ./hardware.nix ./apps.nix ./battery.nix ]; }
+{
+  imports =
+    [ ./languages.nix ./hardware.nix ./apps.nix ./battery.nix ./audio.nix ];
+}
