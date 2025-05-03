@@ -57,6 +57,7 @@
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
+        AutoConnect = true;
         Experimental = true;
       };
     };
