@@ -125,7 +125,14 @@
 
   hardware.keyboard.zsa.enable = true;
 
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    lato
+    roboto
+    montserrat
+    open-sans
+    oswald
+  ];
 
   # 1password
   nixpkgs.config.allowUnfreePredicate = pkg:
