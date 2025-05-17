@@ -1,44 +1,44 @@
 return {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-    },
-    config = function()
-        require("mason").setup({})
-        require("mason-lspconfig").setup({
-            ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
-            handlers = {
-                function(server_name)
-                    require("lspconfig")[server_name].setup({})
-                end,
-                rust_analyzer = function() end,
-            },
-        })
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	},
+	config = function()
+		require("mason").setup({})
+		require("mason-lspconfig").setup({
+			ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
+			handlers = {
+				function(server_name)
+					require("lspconfig")[server_name].setup({})
+				end,
+				rust_analyzer = function() end,
+			},
+		})
 
-        -- Language Servers not able to be installed through mason due to dynamic linking
-        local custom_lsp_servers = { "nixd", "ccls", "lua_ls", "zls" }
+		-- Language Servers not able to be installed through mason due to dynamic linking
+		local custom_lsp_servers = { "nixd", "ccls", "lua_ls", "zls" }
 
-        for _, server_name in pairs(custom_lsp_servers) do
-            require("lspconfig")[server_name].setup({})
-        end
+		for _, server_name in pairs(custom_lsp_servers) do
+			require("lspconfig")[server_name].setup({})
+		end
 
-        -- tabs are of length 2 in nix
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = "nix",
-            callback = function()
-                vim.bo.tabstop = 2
-                vim.bo.shiftwidth = 2
-            end,
-        })
+		-- tabs are of length 2 in nix
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "nix",
+			callback = function()
+				vim.bo.tabstop = 2
+				vim.bo.shiftwidth = 2
+			end,
+		})
 
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-        vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references)
-        vim.keymap.set("n", "gl", vim.diagnostic.open_float)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-    end,
+		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references)
+		vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover)
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+	end,
 }
