@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 
-let custom-pkgs = import ../pkgs { inherit pkgs; };
+let customPkgs = import ../pkgs { inherit pkgs; };
 in {
   imports = [ ./shell ./applications ./scripts ./secrets.nix ];
 
@@ -14,7 +14,7 @@ in {
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = [ custom-pkgs.banana-cursor ];
+  home.packages = [ customPkgs.banana-cursor ];
 
   dconf = {
     enable = true;
@@ -24,7 +24,7 @@ in {
   home.pointerCursor = {
     x11.enable = true;
     gtk.enable = true;
-    package = custom-pkgs.banana-cursor;
+    package = customPkgs.banana-cursor;
     size = 64;
     name = "Banana-Catppuccin-Mocha";
   };
