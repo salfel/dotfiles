@@ -1,5 +1,9 @@
-{ pkgs, config, ... }: {
-  home.packages = with pkgs; [ git gh git-credential-manager ];
+{
+  pkgs,
+  config,
+  ...
+}: {
+  home.packages = with pkgs; [git gh git-credential-manager];
 
   programs.git = {
     enable = true;

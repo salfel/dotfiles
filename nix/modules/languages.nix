@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # Languages
     python3
@@ -28,6 +28,7 @@
     clang-tools
 
     # Formatter
+    alejandra
     nixfmt-classic
     stylua
     biome

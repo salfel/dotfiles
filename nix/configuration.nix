@@ -1,7 +1,9 @@
-{ pkgs, lib, ... }:
-
 {
-  imports = [ ./modules ];
+  pkgs,
+  lib,
+  ...
+}: {
+  imports = [./modules];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -64,14 +66,14 @@
   services.blueman.enable = true;
 
   # shells
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
   users.users.felix = {
     isNormalUser = true;
     description = "Felix Salcher";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
+    extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -134,12 +136,12 @@
 
   # 1password
   nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [ "1password-gui" "1password" ];
+    builtins.elem (lib.getName pkg) ["1password-gui" "1password"];
 
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
-    polkitPolicyOwners = [ "felix" ];
+    polkitPolicyOwners = ["felix"];
   };
 
   programs.hyprland.enable = true;

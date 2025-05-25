@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   keyboard = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
   kmonadCfg = ''
     (defcfg
@@ -33,7 +32,7 @@ let
 
   '';
 in {
-  environment.systemPackages = with pkgs; [ kmonad ];
+  environment.systemPackages = with pkgs; [kmonad];
 
   services.kmonad = {
     enable = true;

@@ -1,20 +1,23 @@
-{ pkgs, config, ... }:
-
-let customPkgs = import ../pkgs { inherit pkgs; };
+{
+  pkgs,
+  config,
+  ...
+}: let
+  customPkgs = import ../pkgs {inherit pkgs;};
 in {
-  imports = [ ./shell ./applications ./scripts ./secrets.nix ];
+  imports = [./shell ./applications ./scripts ./secrets.nix];
 
   catppuccin.accent = "lavender";
 
   nix = {
     package = pkgs.nix;
-    settings = { experimental-features = [ "flakes" "nix-command" ]; };
+    settings = {experimental-features = ["flakes" "nix-command"];};
   };
 
   home.username = "felix";
   home.homeDirectory = "/home/felix";
 
-  home.packages = [ customPkgs.banana-cursor ];
+  home.packages = [customPkgs.banana-cursor];
 
   dconf = {
     enable = true;
@@ -29,7 +32,7 @@ in {
     name = "Banana-Catppuccin-Mocha";
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {EDITOR = "nvim";};
 
   home.sessionPath = [
     "${config.home.homeDirectory}/go/bin"

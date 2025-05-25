@@ -4,6 +4,6 @@
   programs.yazi = {
     enable = true;
 
-    settings = { show_hidden = true; };
+    settings = {show_hidden = true;};
   };
 }

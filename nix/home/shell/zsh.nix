@@ -4,11 +4,11 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
-    syntaxHighlighting = { enable = true; };
+    syntaxHighlighting = {enable = true;};
 
-    oh-my-zsh = { enable = true; };
+    oh-my-zsh = {enable = true;};
 
-    shellAliases = { ls = "ls -la --color=auto"; };
+    shellAliases = {ls = "ls -la --color=auto";};
 
     initContent = ''
       # set cursor style

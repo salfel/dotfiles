@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   sops = {
     defaultSopsFile = ../secrets/secrets.json;
     age.keyFile = "/home/felix/.config/sops/age/keys.txt";

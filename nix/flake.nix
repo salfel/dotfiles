@@ -22,43 +22,50 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, disko, sops-nix, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    catppuccin,
+    disko,
+    sops-nix,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {inherit system;};
 
-      machines = [ "framework" ];
+    machines = ["framework"];
 
-      mkMachine = name:
-        nixpkgs.lib.nixosSystem {
+    mkMachine = name:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          disko.nixosModules.disko
+          ./machines/${name}/disko-config.nix
+          ./machines/${name}/hardware-configuration.nix
+
+          ./configuration.nix
+        ];
+        specialArgs = {
+          inherit inputs;
           inherit system;
-          modules = [
-            disko.nixosModules.disko
-            ./machines/${name}/disko-config.nix
-            ./machines/${name}/hardware-configuration.nix
-
-            ./configuration.nix
-          ];
-          specialArgs = {
-            inherit inputs;
-            inherit system;
-          };
-        };
-    in {
-      nixosConfigurations = builtins.listToAttrs (map (name: {
-        inherit name;
-        value = mkMachine name;
-      }) machines);
-      homeConfigurations = {
-        felix = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            ./home/home.nix
-            catppuccin.homeModules.catppuccin
-            sops-nix.homeManagerModules.sops
-          ];
         };
       };
+  in {
+    nixosConfigurations = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = mkMachine name;
+      })
+      machines);
+    homeConfigurations = {
+      felix = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./home/home.nix
+          catppuccin.homeModules.catppuccin
+          sops-nix.homeManagerModules.sops
+        ];
+      };
     };
+  };
 }

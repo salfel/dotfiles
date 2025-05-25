@@ -1,4 +1,5 @@
-let githubToken = "/home/felix/.ssh/github_token";
+let
+  githubToken = "/home/felix/.ssh/github_token";
 in {
   programs.ssh = {
     enable = true;
