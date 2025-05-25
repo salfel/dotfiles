@@ -25,11 +25,7 @@
   outputs = { nixpkgs, home-manager, catppuccin, disko, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-
-        overlays = [ (import ./overlays/easyeda2kicad.nix) ];
-      };
+      pkgs = import nixpkgs { inherit system; };
 
       machines = [ "framework" ];
 
