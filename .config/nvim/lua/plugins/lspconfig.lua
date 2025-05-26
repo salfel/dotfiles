@@ -32,8 +32,12 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-		vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+		vim.keymap.set("n", "[d", function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end)
+		vim.keymap.set("n", "]d", function()
+			vim.diagnostic.jump({ counter = -1, float = true })
+		end)
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 		vim.keymap.set("n", "ga", vim.lsp.buf.code_action)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references)
