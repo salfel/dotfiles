@@ -15,19 +15,19 @@
     )
 
     (defalias
-        met_a (tap-hold-next-release 200 a lmet)
-        alt_s (tap-hold-next-release 200 s lalt)
+        alt_a (tap-hold-next-release 200 a lalt)
+        met_s (tap-hold-next-release 200 s lmet)
         sft_d (tap-hold-next-release 200 d lsft)
         ctl_f (tap-hold-next-release 200 f lctl)
 
         ctl_j (tap-hold-next-release 200 j rctl)
         sft_k (tap-hold-next-release 200 k rsft)
-        alt_l (tap-hold-next-release 200 l lalt)
-        met_; (tap-hold-next-release 200 ; rmet)
+        met_l (tap-hold-next-release 200 l rmet)
+        alt_; (tap-hold-next-release 200 ; lalt)
     )
 
     (deflayer homerowmods
-        esc capslock @met_a   @alt_s   @sft_d   @ctl_f   g   h   @ctl_j   @sft_k   @alt_l   @met_;
+        esc capslock @alt_a   @met_s   @sft_d   @ctl_f   g   h   @ctl_j   @sft_k   @met_l   @alt_;
     )
 
   '';
