@@ -8,6 +8,21 @@ fi
 
 name=$(basename $path)
 
+has_flake() {
+    flake=$(find $path -maxdepth 2 -type f -name flake.nix)
+    if [[ -n $flake ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+develop() {
+    tmux send-keys -t $name:$1 'nix develop' C-m
+    tmux send-keys -t $name:$1 'zsh' C-m
+    tmux send-keys -t $name:$1 'clear' C-m
+}
+
 if tmux has-session -t=$name 2> /dev/null; then
     tmux attach -t $name
     exit 0
@@ -17,23 +32,17 @@ tmux new-session -d -s $name -c $path
 
 # Window 1: Editor
 tmux rename-window -t $name:1 'editor'
+has_flake | develop 1
 tmux send-keys -t $name:1 'nvim' C-m
 
 # Window 2: Git
 tmux new-window -t $name:2 -n 'git' -c $path
+has_flake | develop 2
 tmux send-keys -t $name:2 'lazygit' C-m
 
 # Window 3: Terminal
 tmux new-window -t $name:3 -n 'terminal' -c $path
-
-# check if directory has a flake.nix
-flake=$(find $path -maxdepth 2 -type f -name flake.nix)
-if [[ -n $flake ]]; then
-    tmux send-keys -t $name:3 'nix develop' C-m
-    tmux send-keys -t $name:3 'zsh' C-m
-    tmux send-keys -t $name:3 'clear' C-m
-fi
-
+has_flake | develop 3
 
 if [ $name = 'dotfiles' ]; then
     tmux new-window -t $name:4 -n 'btop' -c $path
