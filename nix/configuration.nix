@@ -121,6 +121,9 @@
     keymapp
 
     pavucontrol
+    networkmanagerapplet
+
+    obs-studio
   ];
 
   hardware.keyboard.zsa.enable = true;

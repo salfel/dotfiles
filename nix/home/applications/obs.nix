@@ -1,0 +1,3 @@
+{
+  catppuccin.obs.enable = true;
+}

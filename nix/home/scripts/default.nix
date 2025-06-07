@@ -4,4 +4,4 @@
   networkmanager-script =
     pkgs.writeScriptBin "networkmanager"
     (builtins.readFile ./networkmanager.sh);
-in {home.packages = [sessionizer-script networkmanager-script];}
+in {home.packages = [sessionizer-script];}
