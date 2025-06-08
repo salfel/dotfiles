@@ -2,27 +2,36 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "main",
 	build = ":TSUpdate",
-	dependencies = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	},
+	opts = {},
 	config = function()
-		require("nvim-treesitter").setup()
-		require("ts_context_commentstring").setup({})
-		vim.g.skip_ts_context_commentstring_module = true
+		local treesitter = require("nvim-treesitter")
 
-		require("nvim-treesitter.configs").setup({
-			autotag = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
-			rainbow = {
-				enable = true,
-			},
-			highlight = {
-				enable = true,
-			},
+		treesitter
+			.update({
+				"rust",
+				"go",
+				"lua",
+				"javascript",
+				"typescript",
+				"php",
+				"python",
+				"c",
+				"cpp",
+			})
+			:wait(5 * 60 * 1000)
+
+		-- Highlighting
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "<filetype>" },
+			callback = function()
+				vim.treesitter.start()
+			end,
 		})
+
+		-- Indentation
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+		-- Folds
+		vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 	end,
 }
