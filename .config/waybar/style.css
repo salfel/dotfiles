@@ -7,13 +7,13 @@
 }
 
 window.eDP-1.* {
-    font-size: 14px
+    font-size: 14px;
 }
 
 window#waybar {
     color: @text;
     background: @crust;
-    border-bottom: @lavender .5px solid;
+    border-bottom: @lavender 0.5px solid;
 }
 
 .modules-right {
@@ -55,7 +55,7 @@ window#waybar {
 
 #clock {
     color: @lavender;
-} 
+}
 
 #battery {
     color: @text;
@@ -63,10 +63,10 @@ window#waybar {
 
 #tray menu {
     background: @crust;
-    border: .5px solid @lavender;
+    border: 0.5px solid @lavender;
     outline-offset: 0px;
     border-radius: 4px;
-    padding: .5px
+    padding: 0.5px;
 }
 
 #tray menu menuitem {
@@ -80,12 +80,12 @@ window#waybar {
 
 tooltip {
     background: @crust;
-    border: .5px solid @lavender;
+    border: 0.5px solid @lavender;
     border-radius: 4px;
 }
 
 #workspaces button {
-    padding: 0 4px
+    padding: 0 4px;
 }
 
 #workspaces button.empty {
@@ -111,13 +111,13 @@ tooltip {
 }
 
 #battery.charging {
-    color: @green
+    color: @green;
 }
 
 #battery.full {
-    color: @sapphire
+    color: @sapphire;
 }
 
 #battery {
-    margin-left: 12px
+    margin-left: 12px;
 }

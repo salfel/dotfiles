@@ -1,0 +1,3 @@
+{
+  imports = [./prettier.nix];
+}

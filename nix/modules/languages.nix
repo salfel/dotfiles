@@ -32,6 +32,8 @@
     nixfmt-classic
     stylua
     biome
+    prettier
+    black
 
     # Dev packages
     air

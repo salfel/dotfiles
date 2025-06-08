@@ -9,6 +9,7 @@ return {
 			astro = { "prettier" },
 			javascript = { "biome" },
 			typescript = { "biome" },
+			css = { "prettier" },
 			nix = { "alejandra" },
 		},
 		format_on_save = {
