@@ -61,6 +61,23 @@ window#waybar {
     color: @text;
 }
 
+#tray menu {
+    background: @crust;
+    border: .5px solid @lavender;
+    outline-offset: 0px;
+    border-radius: 4px;
+    padding: .5px
+}
+
+#tray menu menuitem {
+    padding: 8px 12px;
+}
+
+#tray menu menuitem:hover {
+    background-color: @mantle;
+    color: @white;
+}
+
 tooltip {
     background: @crust;
     border: .5px solid @lavender;

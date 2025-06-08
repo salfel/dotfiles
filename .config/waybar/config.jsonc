@@ -8,6 +8,7 @@
         "hyprland/workspaces",
     ],
     "modules-right": [
+        "tray",
         "network",
         "cpu",
         "memory",
@@ -39,6 +40,10 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "  {:%H:%M}",
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
     },
     "pulseaudio": {
         "format": "  {volume}%",
