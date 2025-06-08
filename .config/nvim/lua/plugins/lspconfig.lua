@@ -17,7 +17,7 @@ return {
 		})
 
 		-- Language Servers not able to be installed through mason due to dynamic linking
-		local custom_lsp_servers = { "nixd", "ccls", "lua_ls", "zls" }
+		local custom_lsp_servers = { "nixd", "ccls", "lua_ls", "zls", "rust_analyzer" }
 
 		for _, server_name in pairs(custom_lsp_servers) do
 			require("lspconfig")[server_name].setup({})

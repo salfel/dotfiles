@@ -3,7 +3,6 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
-			rust = { "dxfmt" },
 			go = { "gofmt" },
 			python = { "black" },
 			cpp = { "clang-format" },
