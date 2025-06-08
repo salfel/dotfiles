@@ -7,15 +7,15 @@ return {
 				local wk = require("which-key")
 
 				wk.add({
-					{ "<leader>hp", gs.preview_hunk, group = "[H]unk", desc = "Preview Hunk" },
-					{ "<leader>hr", gs.reset_hunk, group = "[H]unk", desc = "Reset Hunk" },
-					{ "<leader>hb", gs.blame_line, group = "[H]unk", desc = "Blame Hunk" },
+					{ "<leader>h", group = "[H]unk" },
+					{ "<leader>hp", gs.preview_hunk, desc = "Preview Hunk" },
+					{ "<leader>hr", gs.reset_hunk, desc = "Reset Hunk" },
+					{ "<leader>hb", gs.blame_line, desc = "Blame Hunk" },
 					{
 						"[h",
 						function()
 							gs.nav_hunk("next")
 						end,
-						group = "[H]unk",
 						desc = "Next Hunk",
 					},
 					{
@@ -23,7 +23,6 @@ return {
 						function()
 							gs.nav_hunk("prev")
 						end,
-						group = "[H]unk",
 						desc = "Prev Hunk",
 					},
 				})

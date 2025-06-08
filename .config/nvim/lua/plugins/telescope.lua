@@ -58,6 +58,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		wk.add({
+			{ "<leader>f", group = "[F]ind" },
 			{ "<leader>ff", builtin.find_files, desc = "Find Files" },
 			{ "<leader>fh", builtin.oldfiles, desc = "History" },
 			{ "<leader>fg", builtin.live_grep, desc = "Live Grep" },
