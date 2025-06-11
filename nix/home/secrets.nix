@@ -25,11 +25,21 @@
         mode = "0640";
         sopsFile = ../secrets/signing.json;
       };
+
+      "openai_secret_key" = {
+        path = "${config.home.homeDirectory}/.opeanai";
+        mode = "0640";
+        sopsFile = ../secrets/openai.json;
+      };
     };
 
     templates = {
       allowed_signers.content = ''
         * ${config.sops.placeholder."signing_key.pub"}
+      '';
+
+      openai_secret_key.content = ''
+        ${config.sops.placeholder."openai_secret_key"}
       '';
     };
   };
