@@ -14,7 +14,10 @@ return {
 				},
 			},
 		},
-		file_selector = "telescope", -- Set telescope as file picker
+		selector = {
+			provider = "telescope",
+			provider_opts = {},
+		},
 	},
 	build = "make",
 	dependencies = {
