@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [./modules];
@@ -124,6 +125,8 @@
     networkmanagerapplet
 
     obs-studio
+
+    inputs.sessionizer.packages.${system}.default
   ];
 
   hardware.keyboard.zsa.enable = true;
