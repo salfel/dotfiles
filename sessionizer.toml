@@ -9,3 +9,7 @@ cmd = ["lazygit"]
 [[windows]]
 name = "Terminal"
 path = "nix"
+
+[[windows]]
+name = "System Monitor"
+cmd = ["btop"]
