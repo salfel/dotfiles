@@ -9,5 +9,6 @@
     ./ssh.nix
     ./misc.nix
     ./zoxide.nix
+    ./ghostty.nix
   ];
 }

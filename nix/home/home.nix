@@ -5,7 +5,7 @@
 }: let
   customPkgs = import ../pkgs {inherit pkgs;};
 in {
-  imports = [./shell ./applications ./secrets.nix ./languages];
+  imports = [./terminal ./secrets.nix ./languages];
 
   catppuccin.accent = "lavender";
 
