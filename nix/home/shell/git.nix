@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  ignorePath = "~/.gitignore";
+  ignorePath = "${config.home.homeDirectory}/.gitignore";
   ignoreFiles = ''
     .ccls-cache
   '';
