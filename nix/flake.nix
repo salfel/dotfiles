@@ -36,7 +36,26 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
 
+    users = ["felix"];
     machines = ["framework"];
+
+    customPkgs = import ./pkgs {inherit pkgs;};
+
+    mkUser = name:
+      home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          ./home/users/${name}/default.nix
+          ./home/common
+          catppuccin.homeModules.catppuccin
+          sops-nix.homeManagerModules.sops
+        ];
+
+        extraSpecialArgs = {
+          inherit customPkgs;
+        };
+      };
 
     mkMachine = name:
       nixpkgs.lib.nixosSystem {
@@ -59,16 +78,10 @@
         value = mkMachine name;
       })
       machines);
-    homeConfigurations = {
-      felix = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          ./home/home.nix
-          catppuccin.homeModules.catppuccin
-          sops-nix.homeManagerModules.sops
-        ];
-      };
-    };
+    homeConfigurations = builtins.listToAttrs (map (name: {
+        inherit name;
+        value = mkUser name;
+      })
+      users);
   };
 }
