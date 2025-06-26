@@ -27,7 +27,7 @@
 
       "openai_secret_key" = {
         path = "${config.home.homeDirectory}/.opeanai";
-        mode = "0640";
+        mode = "0600";
         sopsFile = ../../../secrets/openai.json;
       };
     };
