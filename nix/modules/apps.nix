@@ -13,5 +13,6 @@
     lunar-client
     steam
     chromium
+    filezilla
   ];
 }

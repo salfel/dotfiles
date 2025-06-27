@@ -36,7 +36,7 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
 
-    users = ["felix"];
+    users = ["felix" "work"];
     machines = ["framework"];
 
     customPkgs = import ./pkgs {inherit pkgs;};

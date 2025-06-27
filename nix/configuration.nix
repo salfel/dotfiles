@@ -71,10 +71,18 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  users.users.felix = {
-    isNormalUser = true;
-    description = "Felix Salcher";
-    extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
+  users.users = {
+    felix = {
+      isNormalUser = true;
+      description = "Felix Salcher";
+      extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
+    };
+
+    work = {
+      isNormalUser = true;
+      description = "Work";
+      extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
