@@ -6,64 +6,71 @@
     font-size: 12px;
 }
 
-window.eDP-1.* {
-    font-size: 14px;
-}
-
-window#waybar {
-    color: @text;
-    background: @crust;
-    border-bottom: @lavender 0.5px solid;
-}
-
-.modules-right {
-    margin: 8 12;
-    padding: 6 0;
-}
-
-.modules-center {
-    margin: 0 32px;
-}
-
-.modules-left {
-    margin: 0 12;
-}
-
-.module {
-    margin: 0 8;
-}
-
-#network {
-    color: @red;
-}
-
-#cpu {
-    color: @peach;
-}
-
-#memory {
-    color: @yellow;
-}
-
-#pulseaudio {
-    color: @green;
-}
-
-#language {
-    color: @sapphire;
-}
-
-#clock {
-    color: @lavender;
-}
-
+#window,
+#tray,
+#network,
+#cpu,
+#memory,
+#temperature,
+#cava,
+#pulseaudio,
+#language,
+#clock,
 #battery {
-    color: @text;
+    background: @crust;
+    padding: 4px 12px;
+}
+
+#tray,
+#network,
+#language,
+#clock {
+    border-radius: 16px;
+    margin-right: 12px;
+}
+
+#workspaces:first-child {
+    margin-left: 0px;
+}
+
+#workspaces:last-child {
+    margin-right: 0px;
+}
+
+#workspaces button {
+    margin: 2px;
+    padding: 4px 10px;
+    background: @crust;
+    border-radius: 16px;
+}
+
+#workspaces button.urgent {
+    background: @maroon;
+    color: @crust;
+}
+
+#workspaces button.empty {
+    background: @peach;
+    color: @crust;
+}
+
+#workspaces button.active {
+    padding: 4px 20px;
+    background: @green;
+    color: @crust;
+}
+
+#window {
+    border-radius: 16px;
+    margin: 0 24px 0 12px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
 }
 
 #tray menu {
     background: @crust;
-    border: 0.5px solid @lavender;
     outline-offset: 0px;
     border-radius: 4px;
     padding: 0.5px;
@@ -78,28 +85,36 @@ window#waybar {
     color: @white;
 }
 
+#cpu {
+    border-radius: 16px 0 0 16px;
+}
+
+#temperature {
+    border-radius: 0 16px 16px 0;
+}
+
+#temperature.critical {
+    color: @maroon;
+}
+
+#cava {
+    border-radius: 16px 0 0 16px;
+    margin-left: 12px;
+}
+
+#pulseaudio {
+    border-radius: 0 16px 16px 0;
+    margin-right: 12px;
+}
+
 tooltip {
     background: @crust;
     border: 0.5px solid @lavender;
     border-radius: 4px;
 }
 
-#workspaces button {
-    padding: 0 4px;
-}
-
-#workspaces button.empty {
-    color: @yellow;
-}
-
-#workspaces button.active {
-    color: @green;
-    font-weight: 900;
-}
-
-#workspaces button.urgent {
-    color: @red;
-    font-weight: 700;
+#battery {
+    border-radius: 16px;
 }
 
 #battery.warning {
@@ -116,8 +131,4 @@ tooltip {
 
 #battery.full {
     color: @sapphire;
-}
-
-#battery {
-    margin-left: 12px;
 }

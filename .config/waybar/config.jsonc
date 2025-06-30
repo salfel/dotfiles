@@ -1,30 +1,41 @@
 // -*- mode: jsonc -*-
 {
     "reload_style_on_change": true,
+    "margin-left": 12,
+    "margin-right": 12,
+    "margin-top": 12,
     "modules-left": [
+        "hyprland/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/workspaces",
+        "clock",
     ],
     "modules-right": [
         "tray",
         "network",
         "cpu",
         "memory",
+        "temperature",
+        "cava",
         "pulseaudio",
         "hyprland/language",
-        "clock",
         "battery",
     ],
     "hyprland/workspaces": {
         "all-outputs": true,
-        "format": "{icon}"
+        "format": "{icon}",
     },
-    "hyprland/language": {
-        "format" : "  {}",
-        "format-en": "us",
-        "format-de": "de"
+    "hyprland/window": {
+        "separate-outputs": true,
+        "rewrite": {
+            "tmux attach": "Tmux Session",
+            "sessionizer": "Tmux Session"
+        }
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 12
     },
     "network": {
         "format-wifi": "󰖩  {essid}",
@@ -32,22 +43,46 @@
         "tooltip": false
     },
     "cpu": {
-        "format": "  {usage}%"
+        "format": "  {usage}%",
     },
     "memory": {
-        "format": "  {percentage}%"
+        "format": "  {percentage}%",
+        "tooltip": false
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "  {:%H:%M}",
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 75,
+        "format-icons": [
+            ""
+        ],
+        "format": "{icon} {temperatureC}°C",
+        "tooltip": false
     },
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
+    "cava": {
+        "framerate": 30,
+            "bars": 16,
+            "hide_on_silence": true,
+            "bar_delimiter": 0,
+            "noise_reduction": 0.85,
+            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+            "on-click": "playerctl play-pause"
     },
     "pulseaudio": {
         "format": "  {volume}%",
-        "format-muted": "   0%"
+        "format-muted": "   0%",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "  {:%a %m/%d %H:%M}",
+    },
+    "hyprland/language": {
+        "format" : "  {}",
+        "format-en": "us",
+        "format-de": "de",
+        "on-click": "hyprctl switchxkblayout all next"
     },
     "battery": {
         "bat": "BAT1",
