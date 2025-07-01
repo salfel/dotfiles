@@ -76,7 +76,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "  {:%a %m/%d %H:%M}",
+        "format": "  {:%a %d/%m %H:%M}",
     },
     "hyprland/language": {
         "format" : "  {}",
