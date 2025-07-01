@@ -5,7 +5,7 @@
       theme = "catppuccin-mocha";
       gtk-titlebar = false;
 
-      background-opacity = 0.9;
+      background-opacity = 0.93;
 
       font-family = "JetBrainsMono Nerd Font";
       font-size = 12;
