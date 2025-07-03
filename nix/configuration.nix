@@ -162,13 +162,6 @@
 
   virtualisation = {
     docker.enable = true;
-
-    virtualbox.host = {
-      enable = true;
-      enableExtensionPack = true;
-      enableKvm = true;
-      addNetworkInterface = false;
-    };
   };
 
   programs.gnupg.agent = {
