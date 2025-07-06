@@ -152,11 +152,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749971680,
-        "narHash": "sha256-p6EkZu4lQNPWIR28QgapzbjVK/WpFSpOVH60LPBhQFc=",
+        "lastModified": 1750350459,
+        "narHash": "sha256-8OQycjUwhrM/XGJc8WeM1i1Tp8/EhS/GJE9GwP0abDA=",
         "owner": "salfel",
         "repo": "sessionizer",
-        "rev": "1c618c3141f5e765d8b1d48d37552f3957cda9e3",
+        "rev": "eede0d5d268f55fb1fb534ad22fa6546f7ced9b5",
         "type": "github"
       },
       "original": {
