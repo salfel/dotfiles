@@ -11,6 +11,7 @@ return {
 			typescript = { "biome" },
 			css = { "prettier" },
 			nix = { "alejandra" },
+			cmake = { "cmake_format" },
 		},
 		format_on_save = {
 			timeout_ms = 200,

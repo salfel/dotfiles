@@ -34,6 +34,8 @@
     biome
     prettier
     black
+    cmake-format
+    cmake-language-server
 
     # Dev packages
     air
