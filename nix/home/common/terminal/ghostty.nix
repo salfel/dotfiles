@@ -7,7 +7,7 @@
 
       background-opacity = 0.93;
 
-      font-family = "JetBrainsMono Nerd Font";
+      font-family = "FiraCode Nerd Font";
       font-size = 12;
 
       adjust-underline-position = 6;
