@@ -5,7 +5,7 @@
   customPkgs,
   ...
 }: {
-  imports = [./modules];
+  imports = [./modules ./overlays];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
