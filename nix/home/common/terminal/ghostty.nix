@@ -5,7 +5,7 @@
       theme = "catppuccin-mocha";
       gtk-titlebar = false;
 
-      background-opacity = 0.93;
+      background-opacity = 0.9;
 
       font-family = "FiraCode Nerd Font";
       font-size = 12;

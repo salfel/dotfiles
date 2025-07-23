@@ -12,6 +12,7 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser.inputs.home-manager.follows = "home-manager";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +55,7 @@
 
         extraSpecialArgs = {
           inherit customPkgs;
+          inherit inputs;
         };
       };
 
@@ -70,6 +72,7 @@
         specialArgs = {
           inherit inputs;
           inherit system;
+          inherit customPkgs;
         };
       };
   in {

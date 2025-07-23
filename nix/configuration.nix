@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  customPkgs,
   ...
 }: {
   imports = [./modules];
@@ -136,6 +137,8 @@
     obs-studio
 
     inputs.sessionizer.packages.${system}.default
+
+    lutgen
   ];
 
   hardware.keyboard.zsa.enable = true;
@@ -148,6 +151,7 @@
     montserrat
     open-sans
     oswald
+    customPkgs.font
   ];
 
   # 1password
