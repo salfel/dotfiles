@@ -28,6 +28,8 @@ return {
 					"dist",
 					".pio/",
 					"out",
+					"build",
+					".cache",
 					".ccls-cache",
 				},
 				mappings = {
