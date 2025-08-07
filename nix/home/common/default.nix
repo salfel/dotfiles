@@ -3,7 +3,7 @@
   customPkgs,
   ...
 }: {
-  imports = [./languages ./terminal];
+  imports = [./languages ./terminal ./desktop];
 
   catppuccin.accent = "lavender";
 

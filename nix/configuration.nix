@@ -91,7 +91,6 @@
   environment.systemPackages = with pkgs; [
     # Desktop Utilities
     waybar
-    rofi
     hyprshot
     hyprpaper
     hypridle
