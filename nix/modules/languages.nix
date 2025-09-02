@@ -13,6 +13,7 @@
     cargo
     zig
     rustup
+    odin
 
     # Compilers
     gcc
@@ -26,6 +27,7 @@
     ccls
     clang
     clang-tools
+    ols
 
     # Formatter
     alejandra
