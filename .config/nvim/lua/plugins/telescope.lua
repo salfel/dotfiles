@@ -27,7 +27,6 @@ return {
 					"target",
 					"dist",
 					".pio/",
-					"out",
 					"build",
 					".cache",
 					".ccls-cache",
