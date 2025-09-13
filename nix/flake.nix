@@ -67,8 +67,7 @@
       inherit pkgs;
 
       modules = [
-        ./home/users/felix/default.nix
-        ./home/common
+        ./home
         catppuccin.homeModules.catppuccin
         sops-nix.homeManagerModules.sops
       ];

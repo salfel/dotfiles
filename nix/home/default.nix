@@ -3,7 +3,7 @@
   customPkgs,
   ...
 }: {
-  imports = [./languages ./terminal];
+  imports = [./languages ./terminal ./secrets.nix];
 
   catppuccin.accent = "lavender";
 
@@ -13,6 +13,9 @@
   };
 
   home.packages = [customPkgs.banana-cursor] ++ customPkgs.applications;
+
+  home.username = "felix";
+  home.homeDirectory = "/home/felix";
 
   dconf = {
     enable = true;
