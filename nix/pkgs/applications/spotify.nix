@@ -5,7 +5,7 @@
 makeDesktopItem {
   name = "Spotify";
   desktopName = "Spotify";
-  exec = "${pkgs.chromium}/bin/chromium --app=https://open.spotify.com/";
+  exec = "${pkgs.brave}/bin/brave --app=https://open.spotify.com/";
   icon = "/home/felix/Downloads/spotify.svg";
   terminal = false;
   type = "Application";

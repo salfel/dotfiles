@@ -10,7 +10,7 @@
     inputs.zen-browser.packages."${system}".default
     lunar-client
     steam
-    (chromium.override {enableWideVine = true;})
+    brave
     filezilla
   ];
 }

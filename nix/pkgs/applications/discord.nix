@@ -5,7 +5,7 @@
 makeDesktopItem {
   name = "Discord";
   desktopName = "Discord";
-  exec = "${pkgs.chromium}/bin/discord";
+  exec = "${pkgs.brave}/bin/brave --app=https://discord.com/channels/@me/";
   icon = "/home/felix/Downloads/discord.svg";
   terminal = false;
   type = "Application";
