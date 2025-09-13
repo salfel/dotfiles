@@ -76,13 +76,8 @@
     felix = {
       isNormalUser = true;
       description = "Felix Salcher";
-      extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
-    };
-
-    work = {
-      isNormalUser = true;
-      description = "Work";
-      extraGroups = ["networkmanager" "wheel" "docker" "vboxusers"];
+      extraGroups = ["networkmanager" "wheel" "docker"];
+      initialPassword = "password";
     };
   };
 
