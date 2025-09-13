@@ -12,7 +12,7 @@
     settings = {experimental-features = ["flakes" "nix-command"];};
   };
 
-  home.packages = [customPkgs.banana-cursor];
+  home.packages = [customPkgs.banana-cursor] ++ customPkgs.applications;
 
   dconf = {
     enable = true;
