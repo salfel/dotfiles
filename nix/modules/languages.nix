@@ -39,6 +39,9 @@
     cmake-format
     cmake-language-server
 
+    # Debuggers
+    gdb
+
     # Dev packages
     air
   ];
