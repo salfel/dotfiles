@@ -1,72 +1,39 @@
 @import 'mocha.css';
 
 * {
-    all: unset;
+    /* all: unset; */
     font-family: FiraCode Nerd Font;
     font-size: 12px;
 }
 
-#window,
-#tray,
-#network,
-#cpu,
-#memory,
-#temperature,
-#cava,
-#pulseaudio,
-#language,
-#clock,
-#battery {
+window#waybar {
     background: @crust;
-    padding: 4px 12px;
+    border-bottom: 0.5px solid @blue;
 }
 
-#tray,
-#network,
-#language,
-#clock {
-    border-radius: 16px;
-    margin-right: 12px;
-}
-
-#workspaces:first-child {
-    margin-left: 0px;
-}
-
-#workspaces:last-child {
-    margin-right: 0px;
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 12px;
 }
 
 #workspaces button {
-    margin: 2px;
-    padding: 4px 10px;
-    background: @crust;
-    border-radius: 16px;
-}
-
-#workspaces button.urgent {
-    background: @maroon;
-    color: @crust;
-}
-
-#workspaces button.empty {
-    background: @peach;
-    color: @crust;
+    all: unset;
+    margin: 4px;
+    padding: 0;
+    color: @overlay0;
 }
 
 #workspaces button.active {
-    padding: 4px 20px;
-    background: @green;
-    color: @crust;
+    color: @text;
 }
 
-#window {
-    border-radius: 16px;
-    margin: 0 24px 0 12px;
+#workspaces button.urgent {
+    color: @maroon;
 }
 
-window#waybar.empty #window {
-    background: transparent;
+#workspaces button.empty {
+    color: @yellow;
 }
 
 #tray menu {
@@ -85,44 +52,10 @@ window#waybar.empty #window {
     color: @white;
 }
 
-#cpu {
-    border-radius: 16px 0 0 16px;
-}
-
-#temperature {
-    border-radius: 0 16px 16px 0;
-}
-
-#temperature.critical {
-    color: @maroon;
-}
-
-#cava {
-    border-radius: 16px 0 0 16px;
-    margin-left: 12px;
-}
-
-#pulseaudio {
-    border-radius: 0 16px 16px 0;
-    margin-right: 12px;
-}
-
 tooltip {
     background: @crust;
-    border: 0.5px solid @lavender;
+    border: 1px solid @blue;
     border-radius: 4px;
-}
-
-#battery {
-    border-radius: 16px;
-}
-
-#battery.warning {
-    color: @peach;
-}
-
-#battery.critical {
-    color: @maroon;
 }
 
 #battery.charging {
@@ -130,5 +63,13 @@ tooltip {
 }
 
 #battery.full {
-    color: @sapphire;
+    color: @blue;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @maroon;
 }
