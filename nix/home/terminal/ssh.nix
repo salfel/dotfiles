@@ -3,11 +3,18 @@ let
 in {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
-    extraConfig = ''
-      Host github.com
-        IdentityFile ${githubToken}
-        User git
-    '';
+    matchBlocks = {
+      "*" = {
+        serverAliveInterval = 60;
+        compression = true;
+      };
+
+      "github.com" = {
+        identityFile = githubToken;
+        user = "git";
+      };
+    };
   };
 }
