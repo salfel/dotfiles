@@ -57,18 +57,18 @@ tooltip {
     border-radius: 4px;
 }
 
-#battery.charging {
-    color: @green;
-}
-
-#battery.full {
-    color: @blue;
-}
-
 #battery.warning {
     color: @yellow;
 }
 
 #battery.critical {
     color: @maroon;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.full {
+    color: @blue;
 }
