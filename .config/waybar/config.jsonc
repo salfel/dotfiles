@@ -8,7 +8,6 @@
     "modules-center": ["clock"],
     "modules-right": [
         "group/tray-expander",
-        "pulseaudio",
         "hyprland/language",
         "battery"
     ],
@@ -35,10 +34,6 @@
     "tray": {
         "icon-size": 20,
         "spacing": 12
-    },
-    "pulseaudio": {
-        "format": "  {volume}%",
-        "format-muted": "   0%",
     },
     "hyprland/language": {
         "format" : "  {}",

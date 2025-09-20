@@ -1,0 +1,24 @@
+@import '../waybar/mocha.css';
+
+window {
+    border-radius: 32px;
+    opacity: 0.9;
+    border: 1px solid @blue;
+
+    background-color: @base;
+}
+
+label {
+    font-family: 'FiraCode Nerd Font';
+    font-size: 15px;
+
+    color: @text;
+}
+
+image {
+    color: @text;
+}
+
+progress {
+    background-color: @text;
+}
