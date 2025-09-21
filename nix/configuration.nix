@@ -99,6 +99,7 @@
     playerctl
     swaynotificationcenter
     libnotify
+    swayosd
 
     # Terminal utilities
     tmux
