@@ -65,6 +65,8 @@
     };
   };
 
+  services.blueman.enable = true;
+
   # shells
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
@@ -98,7 +100,6 @@
     swaynotificationcenter
     libnotify
     swayosd
-    blueberry
 
     # Terminal utilities
     tmux
