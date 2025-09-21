@@ -57,6 +57,21 @@ return {
 				dap.continue,
 				desc = "Continue",
 			},
+			{
+				"<leader>do",
+				dap.step_over,
+				desc = "Step over",
+			},
+			{
+				"<leader>di",
+				dap.step_into,
+				desc = "Step into",
+			},
+			{
+				"<leader>dn",
+				dap.step_out,
+				desc = "Step out",
+			},
 		})
 	end,
 }
