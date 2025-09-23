@@ -2,3 +2,6 @@
 nix
 README.md
 .sops.yaml
+LICENSE
+assets
+sessionizer.toml
