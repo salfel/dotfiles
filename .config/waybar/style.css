@@ -8,6 +8,7 @@
 window#waybar {
     background: @crust;
     border-bottom: 0.5px solid @blue;
+    color: @text;
 }
 
 .modules-left,
