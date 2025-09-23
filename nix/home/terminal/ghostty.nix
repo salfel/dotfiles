@@ -7,7 +7,7 @@
 
       background-opacity = 0.9;
 
-      font-family = "FiraCode Nerd Font";
+      font-family = "MonaspiceNe Nerd Font";
       font-size = 12;
 
       adjust-underline-position = 6;
