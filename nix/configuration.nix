@@ -135,6 +135,8 @@
     inputs.sessionizer.packages.${system}.default
 
     lutgen
+    claude-code
+    renderdoc
   ];
 
   hardware.keyboard.zsa.enable = true;
