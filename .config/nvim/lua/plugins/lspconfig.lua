@@ -44,5 +44,12 @@ return {
 		vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+
+		vim.diagnostic.config({
+			virtual_text = true,
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+		})
 	end,
 }
