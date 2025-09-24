@@ -59,7 +59,7 @@ tooltip {
 }
 
 #battery.warning {
-    color: @yellow;
+    color: @peach;
 }
 
 #battery.critical {
