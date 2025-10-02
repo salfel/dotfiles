@@ -19,6 +19,7 @@
     gcc
     gnumake
     cmake
+    fpc
 
     # LSPs
     nixd
