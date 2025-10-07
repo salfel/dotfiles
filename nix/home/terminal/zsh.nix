@@ -7,7 +7,10 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
 
-    shellAliases = {ls = "ls -la --color=auto";};
+    shellAliases = {
+      ls = "ls -la --color=auto";
+      nd = "nix develop -c zsh";
+    };
 
     initContent = ''
       export OPENAI_API_KEY=$(cat ${config.sops.secrets."openai_secret_key".path})
