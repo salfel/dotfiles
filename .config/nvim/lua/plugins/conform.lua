@@ -12,6 +12,16 @@ return {
 			css = { "prettier" },
 			nix = { "alejandra" },
 			cmake = { "cmake_format" },
+			pascal = { "ptop" },
+		},
+		formatters = {
+			ptop = {
+				stdin = false,
+				inherit = false,
+				command = "ptop",
+				args = { "$FILENAME", "$FILENAME" },
+				tmpfile_format = "FILENAME",
+			},
 		},
 		format_on_save = {
 			timeout_ms = 200,
