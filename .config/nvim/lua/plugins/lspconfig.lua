@@ -10,7 +10,7 @@ return {
 			ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
 			handlers = {
 				function(server_name)
-					require("lspconfig")[server_name].setup({})
+					vim.lsp.config[server_name] = {}
 				end,
 				rust_analyzer = function() end,
 			},
@@ -20,7 +20,7 @@ return {
 		local custom_lsp_servers = { "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols" }
 
 		for _, server_name in pairs(custom_lsp_servers) do
-			require("lspconfig")[server_name].setup({})
+			vim.lsp.config[server_name] = {}
 		end
 
 		-- tabs are of length 2 in nix
