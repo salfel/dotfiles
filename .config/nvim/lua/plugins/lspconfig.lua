@@ -1,3 +1,13 @@
+local function set_tab_width(filetype, width)
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = filetype,
+		callback = function()
+			vim.bo.tabstop = width
+			vim.bo.shiftwidth = width
+		end,
+	})
+end
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -8,29 +18,15 @@ return {
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
-			handlers = {
-				function(server_name)
-					vim.lsp.config[server_name] = {}
-				end,
-				rust_analyzer = function() end,
-			},
 		})
 
 		-- Language Servers not able to be installed through mason due to dynamic linking
 		local custom_lsp_servers = { "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols" }
-
-		for _, server_name in pairs(custom_lsp_servers) do
-			vim.lsp.config[server_name] = {}
-		end
+		vim.lsp.enable(custom_lsp_servers)
 
 		-- tabs are of length 2 in nix
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = "nix",
-			callback = function()
-				vim.bo.tabstop = 2
-				vim.bo.shiftwidth = 2
-			end,
-		})
+		set_tab_width("nix", 2)
+		set_tab_width("pascal", 2)
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.jump({ count = 1, float = true })
