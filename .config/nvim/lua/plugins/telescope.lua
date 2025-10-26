@@ -30,6 +30,7 @@ return {
 					"build",
 					".cache",
 					".ccls-cache",
+					"lib",
 				},
 				mappings = {
 					i = {
