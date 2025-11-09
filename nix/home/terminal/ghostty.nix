@@ -3,11 +3,10 @@
     enable = true;
     settings = {
       theme = "Catppuccin Mocha";
-      gtk-titlebar = false;
 
       background-opacity = 0.9;
 
-      font-family = "MonaspiceNe Nerd Font";
+      font-family = "MonaspiceKr Nerd Font";
       font-size = 12;
 
       adjust-underline-position = 6;
