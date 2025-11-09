@@ -137,6 +137,7 @@
     lutgen
     claude-code
     renderdoc
+    opencode
   ];
 
   hardware.keyboard.zsa.enable = true;
