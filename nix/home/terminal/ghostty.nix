@@ -7,7 +7,7 @@
       background-opacity = 0.9;
 
       font-family = "MonaspiceKr Nerd Font";
-      font-size = 12;
+      font-size = 13;
 
       adjust-underline-position = 6;
       adjust-underline-thickness = 1;
