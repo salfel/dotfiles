@@ -1,7 +1,6 @@
 {pkgs, ...}: let
   keyboards = [
-    "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
-    "/dev/input/event12"
+    "/dev/input/event13"
   ];
 
   mk-keyboard = keyboard-name: {
@@ -16,10 +15,7 @@
         )
 
         (defsrc
-          capslock esc
-
-          ;; Home row modifiers
-          a    s    d    f    g    h    j    k    l    ;
+          capslock esc    a    s    d    f    g    h    j    k    l    ;
         )
 
         (defalias
@@ -35,7 +31,7 @@
         )
 
         (deflayer homerowmods
-          esc capslock @alt_a @met_s @sft_d @ctl_f g h @ctl_j @sft_k @met_l @alt_;
+          capslock esc @alt_a @met_s @sft_d @ctl_f g h @ctl_j @sft_k @met_l @alt_;
         )
       '';
     };

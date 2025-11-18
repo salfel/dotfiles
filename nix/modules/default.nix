@@ -3,7 +3,7 @@
     ./apps.nix
     ./audio.nix
     ./battery.nix
-    ./keyboard.nix
+    # ./keyboard.nix
     ./languages.nix
     ./virtualisation.nix
   ];
