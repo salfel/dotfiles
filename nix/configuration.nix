@@ -76,7 +76,7 @@
     felix = {
       isNormalUser = true;
       description = "Felix Salcher";
-      extraGroups = ["networkmanager" "wheel" "docker"];
+      extraGroups = ["networkmanager" "wheel"];
       initialPassword = "password";
     };
   };
@@ -165,10 +165,6 @@
   };
 
   programs.hyprland.enable = true;
-
-  virtualisation = {
-    docker.enable = true;
-  };
 
   programs.gnupg.agent = {
     enable = true;

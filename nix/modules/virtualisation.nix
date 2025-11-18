@@ -1,15 +1,19 @@
 {pkgs, ...}: {
-  virtualisation.libvirtd = {
-    enable = true;
+  virtualisation = {
+    docker.enable = true;
 
-    qemu = {
-      package = pkgs.qemu_kvm;
-      swtpm.enable = true;
+    libvirtd = {
+      enable = true;
+
+      qemu = {
+        package = pkgs.qemu_kvm;
+        swtpm.enable = true;
+      };
     };
   };
   virtualisation.spiceUSBRedirection.enable = true;
 
   programs.virt-manager.enable = true;
 
-  users.users.felix.extraGroups = ["libvirtd" "kvm"];
+  users.users.felix.extraGroups = ["libvirtd" "kvm" "docker"];
 }
