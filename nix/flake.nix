@@ -46,8 +46,7 @@
         inherit system;
         modules = [
           disko.nixosModules.disko
-          ./machines/${name}/disko-config.nix
-          ./machines/${name}/hardware-configuration.nix
+          ./machines/${name}
 
           ./configuration.nix
         ];
