@@ -17,6 +17,7 @@ return {
 				"python",
 				"c",
 				"cpp",
+				"odin",
 			})
 			:wait(5 * 60 * 1000)
 
