@@ -142,6 +142,7 @@
     claude-code
     renderdoc
     opencode
+    logisim
 
     customPkgs.odin-bindgen
   ];
