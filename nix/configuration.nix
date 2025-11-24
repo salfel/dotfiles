@@ -142,6 +142,8 @@
     claude-code
     renderdoc
     opencode
+
+    customPkgs.odin-bindgen
   ];
 
   hardware.keyboard.zsa.enable = true;
