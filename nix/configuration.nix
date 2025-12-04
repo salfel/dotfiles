@@ -56,6 +56,20 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Fingerprint reader
+  services.fprintd.enable = true;
+  security.pam.services.sudo.fprintAuth = true;
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if ((action.id == "net.reactivated.fprint.device.enroll" ||
+           action.id == "net.reactivated.fprint.device.verify" ||
+           action.id == "net.reactivated.fprint.device.identify") &&
+          subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -80,7 +94,7 @@
     felix = {
       isNormalUser = true;
       description = "Felix Salcher";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "input"];
       initialPassword = "password";
     };
   };
