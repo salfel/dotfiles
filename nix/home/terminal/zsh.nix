@@ -10,6 +10,7 @@
     shellAliases = {
       ls = "ls -la --color=auto";
       nd = "nix develop -c zsh";
+      open = "xdg-open";
     };
 
     initContent = ''
