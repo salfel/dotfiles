@@ -145,7 +145,7 @@
     gimp
     keymapp
 
-    pavucontrol
+    pwvucontrol
     networkmanagerapplet
 
     obs-studio
