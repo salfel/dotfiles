@@ -1,6 +1,4 @@
 {
-  home.file.".config/ghostty/shaders/cursor_smear.glsl".source = ./shaders/cursor_smear.glsl;
-
   programs.ghostty = {
     enable = true;
     settings = {
@@ -19,8 +17,6 @@
       window-padding-y = 12;
 
       confirm-close-surface = false;
-
-      custom-shader = "shaders/cursor_smear.glsl";
     };
   };
 }
