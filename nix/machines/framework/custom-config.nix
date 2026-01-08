@@ -1,6 +1,6 @@
 {
   hardware.fw-fanctrl = {
-    enable = true;
+    enable = false;
     config = {
       defaultStrategy = "medium";
     };
