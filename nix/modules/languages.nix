@@ -32,7 +32,7 @@
 
     # Formatter
     alejandra
-    nixfmt-classic
+    nixfmt
     stylua
     biome
     prettier
