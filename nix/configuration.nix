@@ -5,7 +5,7 @@
   customPkgs,
   ...
 }: {
-  imports = [./modules ./overlays];
+  imports = [./modules];
 
   # Bootloader.
   boot = {
