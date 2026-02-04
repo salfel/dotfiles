@@ -44,12 +44,34 @@
     mkMachine = name:
       nixpkgs.lib.nixosSystem {
         inherit system;
+
         modules = [
-          disko.nixosModules.disko
           ./machines/${name}
 
           ./configuration.nix
+
+          home-manager.nixosModules.home-manager
+          catppuccin.nixosModules.catppuccin
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit customPkgs;
+                inherit inputs;
+              };
+              users.felix = {
+                imports = [
+                  ./home/home.nix
+                  catppuccin.homeModules.catppuccin
+                  sops-nix.homeManagerModules.sops
+                ];
+              };
+            };
+          }
         ];
+
         specialArgs = {
           inherit inputs;
           inherit system;
@@ -62,19 +84,5 @@
         value = mkMachine name;
       })
       machines);
-    homeConfigurations.felix = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      modules = [
-        ./home
-        catppuccin.homeModules.catppuccin
-        sops-nix.homeManagerModules.sops
-      ];
-
-      extraSpecialArgs = {
-        inherit customPkgs;
-        inherit inputs;
-      };
-    };
   };
 }

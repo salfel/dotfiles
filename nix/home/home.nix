@@ -8,7 +8,7 @@
   catppuccin.accent = "lavender";
 
   nix = {
-    package = pkgs.nix;
+    # package = pkgs.nix;
     settings = {experimental-features = ["flakes" "nix-command"];};
   };
 
