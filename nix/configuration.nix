@@ -10,9 +10,19 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot.enable = false;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = true;
+      };
       efi.canTouchEfiVariables = true;
     };
+  };
+  catppuccin.grub = {
+    enable = true;
+    flavor = "mocha";
   };
 
   networking.hostName = "salfel";
