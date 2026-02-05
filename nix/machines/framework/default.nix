@@ -1,3 +1,3 @@
 {
-  imports = [./custom-config.nix ./disko-config.nix ./hardware-configuration.nix];
+  imports = [./custom-config.nix ./hardware-configuration.nix];
 }

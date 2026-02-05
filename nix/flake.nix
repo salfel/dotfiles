@@ -17,9 +17,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-
     sessionizer.url = "github:salfel/sessionizer/master";
     sessionizer.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -30,7 +27,6 @@
     nixpkgs,
     home-manager,
     catppuccin,
-    disko,
     sops-nix,
     ...
   } @ inputs: let
