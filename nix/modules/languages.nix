@@ -45,5 +45,7 @@
 
     # Dev packages
     air
+
+    tree-sitter
   ];
 }
