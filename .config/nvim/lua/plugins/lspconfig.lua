@@ -21,7 +21,7 @@ return {
 		})
 
 		-- Language Servers not able to be installed through mason due to dynamic linking
-		local custom_lsp_servers = { "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols" }
+		local custom_lsp_servers = { "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols", "jdtls" }
 		vim.lsp.enable(custom_lsp_servers)
 
 		-- tabs are of length 2 in nix

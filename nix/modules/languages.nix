@@ -14,6 +14,7 @@
     zig
     rustup
     odin
+    jdk25
 
     # Compilers
     gcc
@@ -29,6 +30,7 @@
     clang
     clang-tools
     ols
+    jdt-language-server
 
     # Formatter
     alejandra
@@ -39,6 +41,7 @@
     black
     cmake-format
     cmake-language-server
+    google-java-format
 
     # Debuggers
     gdb

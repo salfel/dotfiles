@@ -13,9 +13,10 @@ return {
 			nix = { "alejandra" },
 			cmake = { "cmake_format" },
 			pascal = { "ptop" },
+			java = { "google-java-format" },
 		},
 		format_on_save = {
-			timeout_ms = 200,
+			timeout_ms = 3000,
 			lsp_format = "fallback",
 		},
 	},
