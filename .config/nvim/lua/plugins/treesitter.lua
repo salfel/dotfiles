@@ -6,25 +6,25 @@ return {
 	config = function()
 		local treesitter = require("nvim-treesitter")
 
-		treesitter
-			.update({
-				"rust",
-				"go",
-				"lua",
-				"javascript",
-				"typescript",
-				"php",
-				"python",
-				"c",
-				"cpp",
-				"java",
-				"odin",
-			})
-			:wait(5 * 60 * 1000)
+		local languages = {
+			"rust",
+			"go",
+			"lua",
+			"javascript",
+			"typescript",
+			"php",
+			"python",
+			"c",
+			"cpp",
+			"java",
+			"odin",
+		}
+
+		treesitter.update(languages):wait(5 * 60 * 1000)
 
 		-- Highlighting
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "*" },
+			pattern = languages,
 			callback = function()
 				vim.treesitter.start()
 			end,
