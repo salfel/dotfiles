@@ -20,7 +20,7 @@ return {
 			"odin",
 		}
 
-		treesitter.update(languages):wait(5 * 60 * 1000)
+		treesitter.install(languages)
 
 		-- Highlighting
 		vim.api.nvim_create_autocmd("FileType", {
