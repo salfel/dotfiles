@@ -29,7 +29,7 @@
     ccls
     clang
     clang-tools
-    ols
+    # ols doesn't work currently
     jdt-language-server
 
     # Formatter
