@@ -20,9 +20,6 @@
     sessionizer.url = "github:salfel/sessionizer/master";
     sessionizer.inputs.nixpkgs.follows = "nixpkgs";
 
-    helium.url = "github:AlvaroParker/helium-nix";
-    helium.inputs.nixpkgs.follows = "nixpkgs";
-
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
