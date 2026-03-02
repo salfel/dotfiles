@@ -7,7 +7,7 @@
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": [
-        "group/tray-expander",
+        "tray",
         "hyprland/language",
         "battery"
     ],
@@ -18,18 +18,6 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%H:%M}",
-    },
-    "group/tray-expander": {
-      "orientation": "inherit",
-      "drawer": {
-        "transition-duration": 600,
-        "children-class": "tray-group-item"
-      },
-      "modules": ["custom/expand-icon", "tray"]
-    },
-    "custom/expand-icon": {
-      "format": " ",
-      "tooltip": false
     },
     "tray": {
         "icon-size": 20,
