@@ -13,5 +13,6 @@
     steam
     brave
     filezilla
+    drawio
   ];
 }
