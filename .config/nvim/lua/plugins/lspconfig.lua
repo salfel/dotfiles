@@ -55,7 +55,6 @@ return {
 
 		-- tabs are of length 2 in nix
 		set_tab_width("nix", 2)
-		set_tab_width("pascal", 2)
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.jump({ count = 1, float = true })
