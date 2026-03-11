@@ -33,6 +33,22 @@ return {
 			},
 		})
 
+		vim.lsp.config("jdtls", {
+			settings = {
+				java = {
+					configuration = {
+						runtimes = {
+							{
+								name = "Java 25",
+								path = "/run/current-system/sw/lib/openjdk",
+								default = true,
+							},
+						},
+					},
+				},
+			},
+		})
+
 		-- Language Servers not able to be installed through mason due to dynamic linking
 		local custom_lsp_servers = { "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols", "jdtls" }
 		vim.lsp.enable(custom_lsp_servers)
