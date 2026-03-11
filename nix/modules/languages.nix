@@ -41,7 +41,6 @@
     black
     cmake-format
     cmake-language-server
-    google-java-format
 
     # Debuggers
     gdb
