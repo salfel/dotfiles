@@ -34,6 +34,12 @@
       device = "/dev/disk/by-uuid/06696a4f-f1fa-4f29-822d-f0f7a3f0e741";
       fsType = "ext4";
     };
+
+    "/mnt/windows" = {
+      device = "/dev/disk/by-uuid/B6BEA7BABEA77193";
+      fsType = "ntfs3";
+      options = ["rw" "uid=1000" "gid=100"];
+    };
   };
 
   swapDevices = [];
