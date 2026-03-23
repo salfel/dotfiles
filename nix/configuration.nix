@@ -143,6 +143,7 @@
     silicon
     jq
     xxd
+    socat
 
     # Dev Apps
     vscode
