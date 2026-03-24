@@ -18,7 +18,7 @@ return {
 	config = function()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "gopls", "intelephense", "phpactor", "astro" },
+			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright" },
 		})
 
 		vim.lsp.config("lua_ls", {
@@ -30,6 +30,15 @@ return {
 						checkThirdParty = false,
 					},
 					telemetry = { enable = false },
+				},
+			},
+		})
+
+		vim.lsp.config("pyright", {
+			settings = {
+				python = {
+					venvPath = ".",
+					venv = "venv",
 				},
 			},
 		})

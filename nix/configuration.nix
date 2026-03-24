@@ -169,6 +169,8 @@
     opencode
     logisim
 
+    uv
+
     customPkgs.odin-bindgen
   ];
 
