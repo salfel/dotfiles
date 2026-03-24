@@ -169,6 +169,10 @@
     opencode
     logisim
 
+    pgf
+    texliveMedium
+    zathura
+
     uv
 
     customPkgs.odin-bindgen

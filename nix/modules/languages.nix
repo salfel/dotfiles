@@ -31,6 +31,7 @@
     clang-tools
     ols
     jdt-language-server
+    texlab
 
     # Formatter
     alejandra
