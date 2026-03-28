@@ -163,6 +163,10 @@
 
     inputs.sessionizer.packages.${system}.default
 
+    wineWow64Packages.stable
+    wineWow64Packages.wayland
+    winetricks
+
     lutgen
     claude-code
     renderdoc
