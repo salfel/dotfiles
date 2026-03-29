@@ -49,7 +49,7 @@ return {
 					configuration = {
 						runtimes = {
 							{
-								name = "Java 25",
+								name = "JavaSE-25",
 								path = "/run/current-system/sw/lib/openjdk",
 								default = true,
 							},
