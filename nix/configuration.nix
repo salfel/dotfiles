@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   inputs,
   customPkgs,
   ...
@@ -168,7 +167,6 @@
     winetricks
 
     lutgen
-    claude-code
     renderdoc
     opencode
     logisim
@@ -195,6 +193,12 @@
     oswald
     customPkgs.font
   ];
+
+  services.actual = {
+    enable = true;
+    settings = {
+    };
+  };
 
   programs.hyprland.enable = true;
 
