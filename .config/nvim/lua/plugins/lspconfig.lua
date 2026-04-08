@@ -8,6 +8,55 @@ local function set_tab_width(filetype, width)
 	})
 end
 
+local function set_options(filetype, options)
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = filetype,
+		callback = function()
+			for key, value in pairs(options) do
+				vim.opt_local[key] = value
+			end
+		end,
+	})
+end
+
+local luals_settings = {
+	settings = {
+		Lua = {
+			diagnostics = { globals = { "vim" } },
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+			},
+			telemetry = { enable = false },
+		},
+	},
+}
+
+local pyright_settings = {
+	settings = {
+		python = {
+			venvPath = ".",
+			venv = "venv",
+		},
+	},
+}
+
+local jdtls_settings = {
+	settings = {
+		java = {
+			configuration = {
+				runtimes = {
+					{
+						name = "JavaSE-25",
+						path = "/run/current-system/sw/lib/openjdk",
+						default = true,
+					},
+				},
+			},
+		},
+	},
+}
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -21,51 +70,22 @@ return {
 			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls", "csharp_ls" },
 		})
 
-		vim.lsp.config("lua_ls", {
-			settings = {
-				Lua = {
-					diagnostics = { globals = { "vim" } },
-					workspace = {
-						library = vim.api.nvim_get_runtime_file("", true),
-						checkThirdParty = false,
-					},
-					telemetry = { enable = false },
-				},
-			},
-		})
-
-		vim.lsp.config("pyright", {
-			settings = {
-				python = {
-					venvPath = ".",
-					venv = "venv",
-				},
-			},
-		})
-
-		vim.lsp.config("jdtls", {
-			settings = {
-				java = {
-					configuration = {
-						runtimes = {
-							{
-								name = "JavaSE-25",
-								path = "/run/current-system/sw/lib/openjdk",
-								default = true,
-							},
-						},
-					},
-				},
-			},
-		})
-
 		-- Language Servers not able to be installed through mason due to dynamic linking
 		local custom_lsp_servers =
 			{ "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols", "jdtls", "texlab" }
 		vim.lsp.enable(custom_lsp_servers)
 
+		vim.lsp.config("lua_ls", luals_settings)
+		vim.lsp.config("pyright", pyright_settings)
+		vim.lsp.config("jdtls", jdtls_settings)
+
 		-- tabs are of length 2 in nix
 		set_tab_width("nix", 2)
+
+		set_options("markdown", {
+			wrap = true,
+			linebreak = true,
+		})
 
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.jump({ count = 1, float = true })
