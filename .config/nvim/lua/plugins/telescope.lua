@@ -42,6 +42,7 @@ return {
 				find_files = {
 					hidden = true,
 					no_ignore = true,
+                    path_display = { "truncate" },
 				},
 				oldfiles = {
 					prompt_title = "History",
