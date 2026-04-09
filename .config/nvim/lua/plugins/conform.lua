@@ -13,6 +13,7 @@ return {
 			nix = { "alejandra" },
 			cmake = { "cmake_format" },
 			pascal = { "ptop" },
+			cs = { "clang-format" },
 		},
 		format_on_save = {
 			timeout_ms = 3000,

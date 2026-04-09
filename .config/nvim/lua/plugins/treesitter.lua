@@ -18,6 +18,7 @@ return {
 			"cpp",
 			"java",
 			"odin",
+			"c_sharp",
 		}
 
 		treesitter.install(languages)

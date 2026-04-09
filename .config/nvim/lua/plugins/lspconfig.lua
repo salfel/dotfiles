@@ -18,7 +18,7 @@ return {
 	config = function()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls" },
+			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls", "csharp_ls" },
 		})
 
 		vim.lsp.config("lua_ls", {
