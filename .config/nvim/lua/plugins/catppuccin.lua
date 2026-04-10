@@ -15,6 +15,7 @@ return {
 				dap_ui = true,
 				render_markdown = true,
 				telescope = { enabled = true },
+				lualine = {},
 			},
 			transparent_background = true,
 			styles = {

@@ -5,7 +5,7 @@ return {
 		require("lualine").setup({
 			options = {
 				globalstatus = true,
-				theme = "catppuccin",
+				theme = "auto",
 			},
 			sections = {
 				lualine_a = { "mode" },
