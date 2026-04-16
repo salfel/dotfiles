@@ -42,6 +42,12 @@
   };
 
   home.sessionVariables = {EDITOR = "nvim";};
+  home.sessionPath = ["$HOME/.local/bin"];
+
+  home.file.".local/bin/build_cpp" = {
+    source = ../scripts/build_cpp.sh;
+    executable = true;
+  };
 
   home.stateVersion = "26.05";
 }
