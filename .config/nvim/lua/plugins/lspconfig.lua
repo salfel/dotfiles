@@ -67,7 +67,7 @@ return {
 	config = function()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls", "csharp_ls" },
+			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls" },
 		})
 
 		-- Language Servers not able to be installed through mason due to dynamic linking
