@@ -31,6 +31,8 @@ return {
 					".cache/",
 					".ccls-cache",
 					"lib",
+					"bin",
+					"obj",
 				},
 				mappings = {
 					i = {
@@ -42,7 +44,7 @@ return {
 				find_files = {
 					hidden = true,
 					no_ignore = true,
-                    path_display = { "truncate" },
+					path_display = { "truncate" },
 				},
 				oldfiles = {
 					prompt_title = "History",
