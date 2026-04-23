@@ -43,12 +43,16 @@
     cmake-format
     cmake-language-server
 
+    # Build tools
+    pkg-config
+
     # Debuggers
     gdb
 
+    # Package managers
+    uv
+
     # Dev packages
     air
-
-    tree-sitter
   ];
 }

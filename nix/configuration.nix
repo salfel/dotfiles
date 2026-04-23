@@ -114,12 +114,12 @@
     # Desktop Utilities
     waybar
     rofi
-    hyprshot
     hyprpaper
     hypridle
     hyprlock
     hyprcursor
     hyprsunset
+    hyprshot
     wl-clipboard
     pulseaudio
     brightnessctl
@@ -127,10 +127,13 @@
     swaynotificationcenter
     libnotify
     swayosd
+    pwvucontrol
+    networkmanagerapplet
 
     # Terminal utilities
     tmux
     neovim
+    tree-sitter
     ghostty
     fastfetch
     stow
@@ -143,41 +146,46 @@
     jq
     xxd
     socat
+    inputs.sessionizer.packages.${system}.default
+    lutgen
+    # customPkgs.odin-bindgen
+
+    # Browsers
+    inputs.zen-browser.packages."${system}".default
+    brave
+
+    # Productivity
+    libreoffice
+    obsidian
+    drawio
+    gimp
+
+    # Latex
+    pgf
+    texliveMedium
+    zathura
 
     # Dev Apps
     vscode
     postman
     qemu
+    renderdoc
+    opencode
+    filezilla
 
-    sops
-    age
+    # Games
+    steam
+    lunar-client
+    discord
 
-    gimp
+    # Misc
+    obs-studio
     keymapp
 
-    pwvucontrol
-    networkmanagerapplet
-
-    obs-studio
-
-    inputs.sessionizer.packages.${system}.default
-
+    # wine
     wineWow64Packages.stable
     wineWow64Packages.wayland
     winetricks
-
-    lutgen
-    renderdoc
-    opencode
-    logisim
-
-    pgf
-    texliveMedium
-    zathura
-
-    uv
-
-    customPkgs.odin-bindgen
   ];
 
   hardware.keyboard.zsa.enable = true;
