@@ -33,6 +33,7 @@ return {
 					"lib",
 					"bin",
 					"obj",
+					"tmux/plugins",
 				},
 				mappings = {
 					i = {
