@@ -37,7 +37,7 @@
 
     "/mnt/windows" = {
       device = "/dev/disk/by-uuid/B6BEA7BABEA77193";
-      fsType = "ntfs3";
+      fsType = "ntfs";
       options = ["rw" "uid=1000" "gid=100"];
     };
   };
