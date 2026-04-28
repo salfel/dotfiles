@@ -6,6 +6,7 @@ handle() {
 
     case $event in
         openwindow) open_window $data  ;;
+        monitorremovedv2) monitor_removed $data ;;
     esac
 }
 
@@ -16,6 +17,15 @@ open_window() {
     if [[ $class == "gcr-prompter" ]]; then
         hyprctl dispatch closewindow address:0x$address
     fi
+}
+
+monitor_removed() {
+    if [ -f ~/disabled-integrated-screen.tmp ]; then
+        rm ~/disabled-integrated-screen.tmp
+        return
+    fi
+
+    hyprctl reload
 }
 
 socat -U - UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read -r line; do handle "$line"; done
