@@ -1,0 +1,13 @@
+search_paths = ["/home/felix/dev"]
+max_depth = 4
+
+[[session.windows]]
+name = "Editor"
+cmd = "nvim"
+
+[[session.windows]]
+name = "Git"
+cmd = "lazygit"
+
+[[session.windows]]
+name = "Terminal"
