@@ -1,0 +1,12 @@
+local apps = require("lua/applications")
+
+hl.on("hyprland.start", function()
+	hl.exec_cmd(apps.browser)
+	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("hyprpaper & hypridle & hyprsunset & waybar")
+	hl.exec_cmd('hyprctl setcursor "Banana-Catppuccin-Mocha" 64')
+	hl.exec_cmd("nm-applet")
+	hl.exec_cmd("swayosd-server")
+	hl.exec_cmd("~/.config/hypr/scripts/sock-listen.sh")
+end)

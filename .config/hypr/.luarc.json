@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/felix/dev/dotfiles/.config/hypr/hl.meta.lua",
+    ]
+  },
+  "diagnostics": {
+    "globals": ["hl"]
+  }
+}
