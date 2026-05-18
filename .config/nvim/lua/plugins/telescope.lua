@@ -34,6 +34,7 @@ return {
 					"bin",
 					"obj",
 					"tmux/plugins",
+					".vscode",
 				},
 				mappings = {
 					i = {
