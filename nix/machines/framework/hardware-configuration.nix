@@ -13,20 +13,20 @@
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod"];
+  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "usbhid" "thunderbolt" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/4149-36F5";
+      device = "/dev/disk/by-uuid/8977-BEB6";
       fsType = "vfat";
-      options = ["fmask=0077" "dmask=0077"];
+      options = ["fmask=0022" "dmask=0022"];
     };
 
     "/" = {
-      device = "/dev/disk/by-uuid/226a3546-a4ed-4a91-b34c-35c7b155343a";
+      device = "/dev/disk/by-uuid/3feef151-1c9d-4972-af52-ad28ae522d8b";
       fsType = "ext4";
     };
 
