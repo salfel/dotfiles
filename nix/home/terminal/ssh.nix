@@ -5,7 +5,7 @@ in {
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {
         serverAliveInterval = 60;
         compression = true;

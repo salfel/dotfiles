@@ -144,12 +144,12 @@
     jq
     xxd
     socat
-    inputs.sessionizer.packages.${system}.default
+    inputs.sessionizer.packages.${pkgs.stdenv.hostPlatform.system}.default
     lutgen
     # customPkgs.odin-bindgen
 
     # Browsers
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
     brave
 
     # Productivity
