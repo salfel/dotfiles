@@ -85,6 +85,7 @@
 
     settings = {
       General = {
+        Enable = "Source,Sink,Media,Socket";
         Experimental = true;
       };
     };
@@ -157,6 +158,7 @@
     obsidian
     drawio
     gimp
+    dbeaver-bin
 
     # Latex
     pgf
