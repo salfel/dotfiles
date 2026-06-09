@@ -7,6 +7,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd('hyprctl setcursor "Banana-Catppuccin-Mocha" 64')
+	hl.exec_cmd("~/.config/hypr/scripts/battery-alert.sh")
 
 	for _, cmd in ipairs(cmds) do
 		hl.exec_cmd(cmd)
