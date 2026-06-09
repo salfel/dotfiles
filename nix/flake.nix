@@ -21,6 +21,10 @@
     sessionizer.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
+
+    hyprmoncfg.url = "github:salfel/hyprmoncfg/flake";
+    hyprmoncfg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -28,6 +32,7 @@
     home-manager,
     catppuccin,
     sops-nix,
+    hyprmoncfg,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -48,6 +53,7 @@
 
           home-manager.nixosModules.home-manager
           catppuccin.nixosModules.catppuccin
+          hyprmoncfg.nixosModules.default
 
           {
             home-manager = {
