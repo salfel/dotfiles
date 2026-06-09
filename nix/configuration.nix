@@ -19,6 +19,9 @@
       efi.canTouchEfiVariables = true;
     };
   };
+  catppuccin.enable = true;
+  catppuccin.autoEnable = true;
+
   catppuccin.grub = {
     enable = true;
     flavor = "mocha";

@@ -5,10 +5,14 @@
 }: {
   imports = [./languages ./terminal ./secrets.nix];
 
-  catppuccin.accent = "lavender";
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    accent = "lavender";
+    flavor = "mocha";
+  };
 
   nix = {
-    # package = pkgs.nix;
     settings = {experimental-features = ["flakes" "nix-command"];};
   };
 
