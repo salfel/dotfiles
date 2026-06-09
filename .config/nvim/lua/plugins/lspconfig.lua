@@ -65,7 +65,12 @@ return {
 		"mfussenegger/nvim-jdtls",
 	},
 	config = function()
-		require("mason").setup({})
+		require("mason").setup({
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
+		})
 		require("mason-lspconfig").setup({
 			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls" },
 		})
@@ -105,6 +110,12 @@ return {
 			signs = true,
 			underline = true,
 			update_in_insert = false,
+		})
+
+		vim.filetype.add({
+			extension = {
+				axaml = "xml",
+			},
 		})
 	end,
 }

@@ -13,7 +13,8 @@ return {
 			nix = { "alejandra" },
 			cmake = { "cmake_format" },
 			pascal = { "ptop" },
-			cs = { "csharpier" },
+			sh = { "beautysh" },
+			-- cs = { "csharpier" },
 		},
 		format_on_save = {
 			timeout_ms = 3000,
