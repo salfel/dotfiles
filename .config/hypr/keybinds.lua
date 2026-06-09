@@ -1,23 +1,7 @@
-local apps = require("lua/applications")
+local apps = require("/applications")
+local utils = require("utils")
 
 local main_mod = "SUPER"
-
-local function workspace_switch_sceen()
-	local active_monitor = hl.get_active_monitor().name
-
-	for _, monitor in ipairs(hl.get_monitors()) do
-		if monitor.name ~= active_monitor then
-			hl.dispatch(hl.dsp.workspace.move({ workspace = hl.get_active_workspace(), monitor = monitor }))
-		end
-	end
-end
-
-local function toggle_integrated_screen()
-	local default_monitor = require("lua/monitors").default
-	local monitors = hl.get_monitors()
-
-	hl.monitor({ output = default_monitor.output, disabled = #monitors >= 2 })
-end
 
 hl.bind(main_mod .. " + Return", hl.dsp.exec_cmd(apps.terminal))
 hl.bind(main_mod .. " + B", hl.dsp.exec_cmd(apps.browser))
@@ -25,15 +9,20 @@ hl.bind(main_mod .. " + O", hl.dsp.exec_cmd(apps.obsidian))
 hl.bind(main_mod .. " + Q", hl.dsp.window.close())
 hl.bind(main_mod .. " + M", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(main_mod .. " + N", hl.dsp.exec_cmd("networkmanager"))
-hl.bind(main_mod .. " + W", workspace_switch_sceen)
-hl.bind(main_mod .. " + SHIFT + W", toggle_integrated_screen)
+hl.bind(main_mod .. " + W", utils.workspace_switch_screen)
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(apps.file_manager))
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(apps.menu))
 hl.bind(main_mod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 0"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
-hl.bind(main_mod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window"))
-hl.bind(main_mod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o " .. os.getenv("HOME") .. "/Pictures/Screenshots/"))
+hl.bind(
+	main_mod .. " + PRINT",
+	hl.dsp.exec_cmd("hyprshot -m window -o " .. os.getenv("HOME") .. "/Pictures/Screenshots/")
+)
+hl.bind(
+	main_mod .. " + SHIFT + PRINT",
+	hl.dsp.exec_cmd("hyprshot -m region -o " .. os.getenv("HOME") .. "/Pictures/Screenshots/")
+)
 
 for i = 1, 10 do
 	local key = tostring(i % 10)

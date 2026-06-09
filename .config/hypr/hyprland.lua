@@ -3,16 +3,17 @@ local colors = {
 	overlay1 = "rgb(7f849c)",
 }
 
-require("lua/monitors")
-require("lua/autostart")
-require("lua/keybinds")
-require("lua/rules")
+require("monitors")
+require("utils")
+require("keybinds")
+require("rules")
+require("events")
 
 hl.config({
 	general = {
 		gaps_in = 4,
-		gaps_out = 8,
-		border_size = 1,
+		gaps_out = 12,
+		border_size = 2,
 		col = {
 			active_border = colors.blue,
 			inactive_border = colors.overlay1,
