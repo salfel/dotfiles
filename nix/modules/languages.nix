@@ -8,8 +8,8 @@
     yarn
     bun
     go
-    php83
-    php83Packages.composer
+    php
+    phpPackages.composer
     cargo
     zig
     rustup
@@ -54,5 +54,6 @@
 
     # Dev packages
     air
+    laravel
   ];
 }
