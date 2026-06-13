@@ -87,6 +87,7 @@ return {
 			"jdtls",
 			"texlab",
 			"intelephense",
+			"qmlls",
 		}
 		vim.lsp.enable(custom_lsp_servers)
 

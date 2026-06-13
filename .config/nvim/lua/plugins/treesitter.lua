@@ -22,6 +22,7 @@ return {
 			"odin",
 			"c_sharp",
 			"blade",
+			"qmljs",
 		}
 
 		treesitter.install(languages)

@@ -45,6 +45,8 @@
     cmake-language-server
     blade-formatter
 
+    kdePackages.qtdeclarative
+
     # Build tools
     pkg-config
 

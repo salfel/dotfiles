@@ -132,6 +132,7 @@
     swayosd
     pwvucontrol
     networkmanagerapplet
+    quickshell
 
     # Terminal utilities
     tmux

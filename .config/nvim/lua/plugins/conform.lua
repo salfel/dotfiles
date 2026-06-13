@@ -15,6 +15,7 @@ return {
 			pascal = { "ptop" },
 			sh = { "beautysh" },
 			blade = { "blade-formatter" },
+			qml = { "qmlformat" },
 		},
 		format_on_save = {
 			timeout_ms = 3000,
