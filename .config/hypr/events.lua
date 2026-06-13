@@ -1,7 +1,7 @@
 local applications = require("applications")
 
 hl.on("hyprland.start", function()
-	local cmds = { "hyprpaper", "hypridle", "hyprsunset", "waybar", "nm-applet", "swayosd-server" }
+	local cmds = { "hyprpaper", "hypridle", "hyprsunset", "qs -c bar", "nm-applet", "swayosd-server" }
 
 	hl.exec_cmd(applications.browser)
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
