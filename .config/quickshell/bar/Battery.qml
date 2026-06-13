@@ -59,10 +59,12 @@ Row {
         }
         color: root.batteryLevel >= root.batteryMaxCap ? theme.cBlue : (root.batteryStatus === "Charging" ? theme.cGreen : (root.batteryLevel < 15 ? theme.cRed : (root.batteryLevel < 30 ? theme.cPeach : theme.cText)))
         font.pointSize: 9
+        font.family: theme.fontFamily
     }
     Text {
         text: root.batteryLevel + "%"
         color: root.batteryLevel >= root.batteryMaxCap ? theme.cBlue : (root.batteryStatus === "Charging" ? theme.cGreen : (root.batteryLevel < 15 ? theme.cRed : (root.batteryLevel < 30 ? theme.cPeach : theme.cText)))
         font.pointSize: 9
+        font.family: theme.fontFamily
     }
 }

@@ -27,4 +27,5 @@ QtObject {
     property color cPink: "#f5c2e7"
     property color cFlamingo: "#f2cdcd"
     property color cRosewater: "#f5e0dc"
+    property string fontFamily: "MonaspiceKr Nerd Font"
 }

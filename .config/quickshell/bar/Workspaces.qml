@@ -27,6 +27,7 @@ Row {
                 color: modelData.focused ? theme.cText : theme.cOverlay2
                 font.bold: true
                 font.pointSize: 9
+                font.family: theme.fontFamily
             }
             //
             // MouseArea {

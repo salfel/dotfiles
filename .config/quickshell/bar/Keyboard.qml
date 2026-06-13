@@ -39,13 +39,15 @@ Row {
     }
 
     Text {
-        text: "⌨"
+        text: ""
         color: theme.cText
         font.pointSize: 9
+        font.family: theme.fontFamily
     }
     Text {
         text: root.kbLayout
         color: theme.cText
         font.pointSize: 9
+        font.family: theme.fontFamily
     }
 }

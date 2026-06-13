@@ -67,6 +67,7 @@ Item {
             text: Qt.formatDateTime(clock.date, "hh:mm")
             color: theme.cSubtext0
             font.pointSize: 10
+            font.family: theme.fontFamily
             font.bold: true
         }
     }
@@ -106,6 +107,7 @@ Item {
             Text {
                 text: root.dateStr
                 color: theme.cLavender
+                font.family: theme.fontFamily
                 font.bold: true
                 font.pointSize: 12
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -113,7 +115,7 @@ Item {
             Text {
                 text: root.calText
                 color: theme.cText
-                font.family: "monospace"
+                font.family: theme.fontFamily
                 font.pointSize: 10
                 lineHeight: 1.2
                 anchors.horizontalCenter: parent.horizontalCenter

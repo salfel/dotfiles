@@ -89,6 +89,7 @@ Row {
         text: "\uF1EB "
         color: theme.cText
         font.pointSize: 9
+        font.family: theme.fontFamily
 
         MouseArea {
             id: iconMouseArea
@@ -169,6 +170,7 @@ Row {
                         Text {
                             text: "Wi-Fi"
                             color: theme.cLavender
+                            font.family: theme.fontFamily
                             font.bold: true
                             font.pointSize: 10
                         }
@@ -177,6 +179,7 @@ Row {
                             text: "No networks found"
                             color: theme.cOverlay0
                             font.pointSize: 9
+                            font.family: theme.fontFamily
                             visible: !wifiDevice || !wifiDevice.networks.values || wifiDevice.networks.values.length === 0
                         }
 
@@ -199,6 +202,7 @@ Row {
                                         text: modelData.name
                                         color: theme.cText
                                         font.pointSize: 9
+                                        font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
 
@@ -206,6 +210,7 @@ Row {
                                         text: modelData.security !== WifiSecurityType.Open ? "\uD83D\uDD12" : ""
                                         color: theme.cOverlay0
                                         font.pointSize: 8
+                                        font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
 
@@ -213,6 +218,7 @@ Row {
                                         text: modelData.connected ? "\u25CF" : ""
                                         color: theme.cGreen
                                         font.pointSize: 7
+                                        font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
                                 }
