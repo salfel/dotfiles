@@ -11,14 +11,23 @@ Row {
 
     Process {
         id: kbProc
-        command: ["bash", "-c", "setxkbmap -query 2>/dev/null | grep layout | awk '{print $2}' || echo 'N/A'"]
+        command: ["bash", "-c", "hyprctl -j devices | jq '.keyboards[] | .name, .\"active_keymap\"'| tail -n1"]
         running: true
         stdout: StdioCollector {
-            onStreamFinished: root.kbLayout = this.text.trim()
+            onStreamFinished: {
+                var rawLayout = this.text.trim();
+                if (rawLayout == "\"English (US)\"") {
+                    kbLayout = "us";
+                } else if (rawLayout == "\"German\"") {
+                    kbLayout = "de";
+                } else {
+                    kbLayout = rawLayout;
+                }
+            }
         }
     }
     Timer {
-        interval: 5000
+        interval: 200
         running: true
         repeat: true
         onTriggered: kbProc.running = true
@@ -35,7 +44,7 @@ Row {
         font.pointSize: 9
     }
     Text {
-        text: root.kbLayout.toUpperCase()
+        text: root.kbLayout
         color: theme.cText
         font.pointSize: 9
     }
