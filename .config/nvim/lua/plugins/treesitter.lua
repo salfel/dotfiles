@@ -10,6 +10,8 @@ return {
 			"rust",
 			"go",
 			"lua",
+			"html",
+			"css",
 			"javascript",
 			"typescript",
 			"php",
@@ -19,6 +21,7 @@ return {
 			"java",
 			"odin",
 			"c_sharp",
+			"blade",
 		}
 
 		treesitter.install(languages)

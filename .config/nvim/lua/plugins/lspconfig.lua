@@ -72,12 +72,22 @@ return {
 			},
 		})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "gopls", "intelephense", "phpactor", "astro", "pyright", "bashls" },
+			ensure_installed = { "gopls", "astro", "pyright", "bashls" },
 		})
 
 		-- Language Servers not able to be installed through mason due to dynamic linking
-		local custom_lsp_servers =
-			{ "nixd", "clangd", "lua_ls", "zls", "rust_analyzer", "cmake", "ols", "jdtls", "texlab" }
+		local custom_lsp_servers = {
+			"nixd",
+			"clangd",
+			"lua_ls",
+			"zls",
+			"rust_analyzer",
+			"cmake",
+			"ols",
+			"jdtls",
+			"texlab",
+			"intelephense",
+		}
 		vim.lsp.enable(custom_lsp_servers)
 
 		vim.lsp.config("lua_ls", luals_settings)
@@ -115,6 +125,12 @@ return {
 		vim.filetype.add({
 			extension = {
 				axaml = "xml",
+			},
+		})
+
+		vim.filetype.add({
+			extension = {
+				blade = "%.blade.php",
 			},
 		})
 	end,

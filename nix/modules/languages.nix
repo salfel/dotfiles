@@ -32,6 +32,7 @@
     ols
     jdt-language-server
     texlab
+    intelephense
 
     # Formatter
     alejandra
@@ -42,6 +43,7 @@
     black
     cmake-format
     cmake-language-server
+    blade-formatter
 
     # Build tools
     pkg-config

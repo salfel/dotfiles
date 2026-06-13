@@ -14,7 +14,7 @@ return {
 			cmake = { "cmake_format" },
 			pascal = { "ptop" },
 			sh = { "beautysh" },
-			-- cs = { "csharpier" },
+			blade = { "blade-formatter" },
 		},
 		format_on_save = {
 			timeout_ms = 3000,
