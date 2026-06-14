@@ -28,4 +28,6 @@ QtObject {
     property color cFlamingo: "#f2cdcd"
     property color cRosewater: "#f5e0dc"
     property string fontFamily: "MonaspiceKr Nerd Font"
+    property int fontSize: 10
+    property int fontSizeLarge: 12
 }

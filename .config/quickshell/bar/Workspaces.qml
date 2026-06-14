@@ -26,7 +26,7 @@ Row {
                 text: modelData.id
                 color: modelData.focused ? theme.cText : theme.cOverlay2
                 font.bold: true
-                font.pointSize: 9
+                font.pointSize: theme.fontSize
                 font.family: theme.fontFamily
             }
             //

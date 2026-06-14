@@ -88,7 +88,7 @@ Row {
         id: netText
         text: "\uF1EB "
         color: theme.cText
-        font.pointSize: 9
+        font.pointSize: theme.fontSize
         font.family: theme.fontFamily
 
         MouseArea {
@@ -172,13 +172,13 @@ Row {
                             color: theme.cLavender
                             font.family: theme.fontFamily
                             font.bold: true
-                            font.pointSize: 10
+                            font.pointSize: theme.fontSizeLarge
                         }
 
                         Text {
                             text: "No networks found"
                             color: theme.cOverlay0
-                            font.pointSize: 9
+                            font.pointSize: theme.fontSize
                             font.family: theme.fontFamily
                             visible: !wifiDevice || !wifiDevice.networks.values || wifiDevice.networks.values.length === 0
                         }
@@ -201,7 +201,7 @@ Row {
                                     Text {
                                         text: modelData.name
                                         color: theme.cText
-                                        font.pointSize: 9
+                                        font.pointSize: theme.fontSize
                                         font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
@@ -209,7 +209,7 @@ Row {
                                     Text {
                                         text: modelData.security !== WifiSecurityType.Open ? "\uD83D\uDD12" : ""
                                         color: theme.cOverlay0
-                                        font.pointSize: 8
+                                        font.pointSize: theme.fontSize
                                         font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }
@@ -217,7 +217,7 @@ Row {
                                     Text {
                                         text: modelData.connected ? "\u25CF" : ""
                                         color: theme.cGreen
-                                        font.pointSize: 7
+                                        font.pointSize: theme.fontSize
                                         font.family: theme.fontFamily
                                         anchors.verticalCenter: parent.verticalCenter
                                     }

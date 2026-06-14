@@ -66,7 +66,7 @@ Item {
         Text {
             text: Qt.formatDateTime(clock.date, "hh:mm")
             color: theme.cSubtext0
-            font.pointSize: 10
+            font.pointSize: theme.fontSizeLarge
             font.family: theme.fontFamily
             font.bold: true
         }
@@ -89,8 +89,8 @@ Item {
         anchor.window: root.barWindow
         anchor.rect.x: root.barWindow.width / 2 - implicitWidth / 2
         anchor.rect.y: root.barWindow.height
-        implicitWidth: 200
-        implicitHeight: 200
+        implicitWidth: 250
+        implicitHeight: 230
         visible: calendarOpen
         color: theme.cCrust
 
@@ -109,14 +109,14 @@ Item {
                 color: theme.cLavender
                 font.family: theme.fontFamily
                 font.bold: true
-                font.pointSize: 12
+                font.pointSize: theme.fontSizeLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Text {
                 text: root.calText
                 color: theme.cText
                 font.family: theme.fontFamily
-                font.pointSize: 10
+                font.pointSize: theme.fontSizeLarge
                 lineHeight: 1.2
                 anchors.horizontalCenter: parent.horizontalCenter
             }
