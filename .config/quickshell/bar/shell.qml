@@ -56,6 +56,10 @@ Scope {
                         id: network
                         barWindow: barWindow
                     }
+                    Bluetooth {
+                        id: bluetooth
+                        barWindow: barWindow
+                    }
                     Keyboard {
                         id: keyboard
                     }
