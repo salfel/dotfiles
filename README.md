@@ -7,7 +7,7 @@ This repo contains my dotfiles used on my daily machine. It includes all the too
 - [nixos](https://github.com/NixOS/nixpkgs)
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [waybar](https://github.com/Alexays/Waybar)
+- [Quickshell](https://quickshell.org)
 - and many more...
 
 ## Installation

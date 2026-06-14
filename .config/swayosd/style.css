@@ -1,4 +1,4 @@
-@import '../waybar/mocha.css';
+@import 'mocha.css';
 
 window {
     border-radius: 32px;
