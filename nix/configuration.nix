@@ -130,7 +130,6 @@
     libnotify
     swayosd
     pwvucontrol
-    networkmanagerapplet
     quickshell
 
     # Terminal utilities
@@ -171,6 +170,9 @@
 
     # Dev Apps
     vscode
+    cursor-cli
+    codex
+    claude-code
     postman
     qemu
     renderdoc
