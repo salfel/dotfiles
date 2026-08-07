@@ -13,7 +13,7 @@ hl.bind(main_mod .. " + W", utils.workspace_switch_screen)
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(apps.file_manager))
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd(apps.menu))
 hl.bind(main_mod .. " + T", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(main_mod .. " + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 0"))
+hl.bind(main_mod .. " + F", hl.dsp.window.fullscreen())
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o " .. os.getenv("HOME") .. "/Pictures/Screenshots/"))
 hl.bind(
 	main_mod .. " + PRINT",
