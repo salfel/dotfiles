@@ -162,6 +162,7 @@
     drawio
     gimp
     dbeaver-bin
+    beekeeper-studio
 
     # Latex
     pgf
