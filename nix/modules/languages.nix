@@ -8,6 +8,8 @@
     yarn
     bun
     go
+    gopls
+    go-tools
     php
     phpPackages.composer
     cargo
