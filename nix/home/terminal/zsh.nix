@@ -1,5 +1,11 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   catppuccin.zsh-syntax-highlighting.enable = true;
+
+  home.packages = [pkgs.eza];
 
   programs.zsh = {
     enable = true;
@@ -8,7 +14,7 @@
     oh-my-zsh.enable = true;
 
     shellAliases = {
-      ls = "ls -la --color=auto";
+      ls = "eza -la --color=auto";
       nd = "nix develop -c zsh";
       open = "xdg-open";
     };
