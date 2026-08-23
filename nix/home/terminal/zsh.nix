@@ -5,7 +5,7 @@
 }: {
   catppuccin.zsh-syntax-highlighting.enable = true;
 
-  home.packages = [pkgs.eza];
+  home.packages = with pkgs; [eza fzf];
 
   programs.zsh = {
     enable = true;

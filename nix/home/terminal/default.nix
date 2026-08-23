@@ -7,7 +7,6 @@
     ./btop.nix
     ./yazi.nix
     ./ssh.nix
-    ./misc.nix
     ./zoxide.nix
     ./ghostty.nix
   ];
