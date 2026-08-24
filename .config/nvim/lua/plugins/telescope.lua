@@ -31,7 +31,6 @@ return {
 					".cache/",
 					".ccls-cache",
 					"lib",
-					"bin",
 					"obj",
 					"tmux/plugins",
 					".vscode",
