@@ -122,6 +122,7 @@
     hyprcursor
     hyprsunset
     hyprshot
+    hyprshutdown
     wl-clipboard
     pulseaudio
     brightnessctl
