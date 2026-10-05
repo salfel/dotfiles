@@ -1,4 +1,4 @@
-local apps = require("/applications")
+local apps = require("applications")
 local utils = require("utils")
 
 local main_mod = "SUPER"
