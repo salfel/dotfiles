@@ -11,3 +11,7 @@ cmd = "lazygit"
 
 [[session.windows]]
 name = "Terminal"
+
+[[session.windows]]
+name = "Opencode"
+cmd = "opencode2"

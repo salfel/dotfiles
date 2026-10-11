@@ -11,5 +11,9 @@ name = "Terminal"
 path = "nix"
 
 [[windows]]
+name = "Opencode"
+cmd = "opencode2"
+
+[[windows]]
 name = "System Monitor"
 cmd = "btop"
