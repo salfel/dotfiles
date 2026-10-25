@@ -163,6 +163,7 @@
     drawio
     gimp
     dbeaver-bin
+    customPkgs.visual-paradigm-academic
     beekeeper-studio
 
     # Latex

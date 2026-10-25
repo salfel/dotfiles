@@ -3,4 +3,5 @@
   font = pkgs.callPackage ./fonts/alfaslabone {inherit pkgs;};
   applications = pkgs.callPackage ./applications pkgs;
   odin-bindgen = pkgs.callPackage ./odin-bindgen.nix {};
+  visual-paradigm-academic = pkgs.callPackage ./visual-paradigm-academic.nix {};
 }
