@@ -179,6 +179,7 @@
     qemu
     renderdoc
     opencode
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.opencode2
     filezilla
 
     # Games
