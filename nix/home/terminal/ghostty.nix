@@ -4,8 +4,6 @@
     settings = {
       theme = "Catppuccin Mocha";
 
-      background-opacity = 0.9;
-
       font-family = "MonaspiceKr Nerd Font";
       font-size = 12;
 
